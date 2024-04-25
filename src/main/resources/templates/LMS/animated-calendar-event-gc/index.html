@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" th:href="@{/animated-calendar-event-gc/src/calendar-gc.css}" />
+    <style>
+      html,
+      body {
+        margin: 0;
+        display: flexbox;
+        justify-content: end;
+        width: 1450px;
+        max-height: 700px;
+        overflow-x: hidden;
+      }
+    </style>
+    
+  </head>
+
+  <body>
+    <div id="calendar" style="padding: 1rem">
+  
+  <!-- <div id="cla" >
+  <?php  $_SESSION['date22'];?>
+  </div> -->
+  
+  </div>
+  </body>
+
+  <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"
+  ></script>
+  
+  <script th:src="@{/animated-calendar-event-gc/dist/calendar-gc.min.js}"></script>
+  <script>
+    $(function (e) {
+      var calendar = $("#calendar").calendarGC({
+        dayBegin: 0,
+        prevIcon: "&#x3c;",
+        nextIcon: "&#x3e;",
+        onPrevMonth: function (e) {
+          console.log("prev");
+          console.log(e);
+        },
+        onNextMonth: function (e) {
+          console.log("next");
+          console.log(e);
+        },
+        events: getHoliday(),
+        onclickDate: function (e, data) {
+          console.log(e, data);
+        },
+      });
+    });
+    
+    
+    function getHoliday() {
+      var d = new Date();
+      var totalDay = new Date(d.getFullYear(), d.getMonth(), 0).getDate();
+      var events = [];
+      // if(newDate==$_SESSION['date']){
+          var dtToday = new Date();    
+                        var month = dtToday.getMonth() + 1;
+                        var day = dtToday.getDate();
+                        var year = dtToday.getFullYear();
+                        if(month < 10)
+                          month = '0' + month.toString();
+                        if(day < 10)
+                          day = '0' + day.toString();
+
+                        var maxxDate = year + '-' + month + '-' + day;
+                        
+
+
+      // }
+
+
+
+      var a="<?php echo $_SESSION['date']; ?>";
+    //   a=;
+    //  document.write(a);
+    var month = a[8]+a[9];
+     // Extract the month (0 to 11)
+
+                  var value = month % 2; // Divide the month by 2 and take the remainder
+                  if (value === 0 || value === 1) {
+                    value += 1; // Add 1 if the remainder is 0 or 1
+
+                    
+}
+      for (var i = 1; i <= totalDay; i++) {
+        var newDate = new Date(d.getFullYear(), d.getMonth(), i);
+      //  document.write(newDate.getDate());
+       
+      //   switch (newDate) {
+      //   case :
+          
+      //     break;
+      
+      //   default:
+      //     break;
+      // }
+      if (newDate.getDate()==month){
+          // if( newDate.getDay()<6 && newDate.getDay()>0)
+          {
+          events.push({
+            date: newDate,
+ eventName: "Class id :"+"<?php echo $_SESSION['date']; ?>"+"<br>"+"Topic  :"+"<?php echo $_SESSION['topic']; ?>"+"<br>"+"Duration  :"+"<?php echo $_SESSION['time']; ?>"+"<br>"+"Zoom Link :"+"<br>"+"<?php echo $_SESSION['link']; ?>",
+
+            
+
+            // className: "badge bg-danger",
+            onclick(e, data) {
+              console.log(data);
+            },
+           
+          });}
+        }
+      
+        if (newDate.getDay() == 0) {
+          //if Sunday
+          events.push({
+            date: newDate,
+eventName: "",            
+            
+              
+                onclick(e, data) {
+              console.log(data);
+            },
+            dateColor: "red",
+          });
+        }
+        
+        if (newDate.getDay() == 6) {
+          //if Saturday
+          events.push({
+            date: newDate,
+            eventName: "",
+
+            // className: "badge bg-danger",
+            onclick(e, data) {
+              console.log(data);
+            },
+            dateColor: "red",
+          });
+        } 
+        
+
+        //  $_SESSION['id']=$id;
+        //         $_SESSION['topic']=$topic;
+        //         $_SESSION['time']=$duration;
+        //         $_SESSION['link']=$zlink;
+        //         $_SESSION['date']=$datetime;
+
+        //  
+
+        // if()
+      }
+      return events;
+    }
+
+    getHoliday();
+  </script>
+</html>

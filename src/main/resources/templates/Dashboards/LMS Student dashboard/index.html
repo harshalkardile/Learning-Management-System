@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>LMS System</title>
+    <!-- plugins:css -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <link rel="stylesheet" href=""  th:href="@{./StudentDashboard/vendor/mdi/css/materialdesignicons.min.css}">
+    <link rel="stylesheet" href="" th:href="@{./StudentDashboard/vendor/css/vendor.bundle.base.css}">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <!-- endinject -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="" th:href="@{./StudentDashboard/css/style.css}">
+    <!-- End layout styles -->
+    <link rel="shortcut icon" href="" th:href="@{./StudentDashboard/images/favicon.ico}" />
+  </head>
+  <body>
+    <div class="container-scroller">
+      
+      <!-- partial:partials/_navbar.html -->
+      <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+        <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+          <!-- <a class="navbar-brand brand-logo" href="index.html"><img src="assets/images/" alt="logo" /></a> -->
+          <!-- <a class="navbar-brand brand-logo-mini" href="index.html"><img src="assets/images/logo-mini.svg" alt="logo" /></a> -->
+        </div>
+        <div class="navbar-menu-wrapper d-flex align-items-stretch">
+          <!-- <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+            <span class="mdi mdi-menu"></span>
+          </button>  -->
+          <div class="search-field d-none d-md-block">
+            <form class="d-flex align-items-center h-100" action="#">
+              <div class="input-group">
+                <div class="input-group-prepend bg-transparent">
+                  <!-- <i class="input-group-text border-0 mdi mdi-magnify"></i> -->
+                </div>
+                <!-- <input type="text" class="form-control bg-transparent border-0" placeholder="Search projects"> -->
+              </div>
+            </form>
+          </div>
+          <ul class="navbar-nav navbar-nav-right">
+           
+
+            <li class="nav-item d-none d-lg-block full-screen-link">
+              <a class="nav-link">
+                <i class="mdi mdi-fullscreen" id="fullscreen-button"></i>
+              </a>
+            </li>
+            
+
+            <li class="nav-item nav-profile dropdown">
+              <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                <div class="nav-profile-img">
+                  <img src="" th:src="@{./StudentDashboard/images/faces/face16.jpg}" alt="image">
+                  
+                </div>
+                <div class="nav-profile-text">
+                  <p class="mb-1 text-black" th:text="${username}"></p>
+                </div>
+              </a>
+              <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
+                <a class="dropdown-item" href="" onClick="window.location.reload(true)">
+                  <i class="mdi mdi-cached me-2 text-success"></i> Activity Log </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="basic_elements.html" th:href="@{./displayProfile}">
+                  <i class="mdi mdi-border-color me-2 text-primary" ></i> Update profile </a>
+
+<!--                  th:href="@{./Logout}"-->
+              </div>
+            </li>
+          </ul>
+          <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+            <span class="mdi mdi-menu"></span>
+          </button>
+        </div>
+      </nav>
+
+      <div class="container-fluid page-body-wrapper">
+
+          <div class="content-wrapper">
+            <div class="page-header">
+              <h3 class="page-title">
+                <span class="page-title-icon bg-gradient-success text-white me-2">
+                  <i class="mdi mdi-home"></i>
+                </span> Student Dashboard
+              </h3>
+              <!-- <nav aria-label="breadcrumb">
+                <ul class="breadcrumb">
+                   <li class="breadcrumb-item active" aria-current="page">
+                    <span></span>Overview <i class="mdi mdi-alert-circle-outline icon-sm text-primary align-middle"></i>
+                  </li> 
+                </ul>
+              </nav> -->
+            </div>
+            
+            <div class="row">
+              <div class="col-md-4 stretch-card grid-margin">
+                <!-- <div class="card bg-gradient-dark text-white card-img-holder "> -->
+                  <div class="card bg-gradient-success card-img-holder text-white"> 
+                  <div class="card-body">
+                    <img src="../../../static/StudentDashboard/images/dashboard/circle.svg" th:src="@{./StudentDashboard/images/dashboard/circle.svg}"class="card-img-absolute" alt="circle-image" />
+                    <h4 class="font-weight-normal mb-3">Upcoming Quiz  <i class="mdi mdi-chart-line mdi-24px float-right"></i>
+                    </h4>
+                    <h2 class="mb-5">#0</h2>
+                    <h6 class="card-text">Not yet any quiz uploaded for you</h6>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 stretch-card grid-margin">
+                <!-- <div class="card bg-gradient-success card-img-holder text-black"> -->
+                <div class="card bg-gradient-success card-img-holder text-white"> 
+                  <div class="card-body">
+                    <img src="../../../static/StudentDashboard/images/dashboard/circle.svg" th:src="@{./StudentDashboard/images/dashboard/circle.svg}"class="card-img-absolute" alt="circle-image" />
+                    <h4 class="font-weight-normal mb-3">Completed Quiz <i class="mdi mdi-checkbox-marked-outline mdi-24px float-right"></i>
+                    </h4>
+                    <h2 class="mb-5">#2</h2>
+                    <h6 class="card-text">You have completed two quiz cometition</h6>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 stretch-card grid-margin">
+                <div class="card bg-gradient-success card-img-holder text-white"> 
+                  <div class="card-body">
+                    <img src="../../../static/StudentDashboard/images/dashboard/circle.svg" th:src="@{./StudentDashboard/images/dashboard/circle.svg}" class="card-img-absolute" alt="circle-image" />
+                    <h4 class="font-weight-normal mb-3">Feedbacks provided <i class="mdi mdi-comment-multiple-outline mdi-24px float-right"></i>
+                    </h4>
+                    <h2 class="mb-5">#0</h2>
+                    <h6 class="card-text">No feedbacks are given yet </h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="row"> -->
+              <!-- <div class="col-lg-8 grid-margin stretch-card"> -->
+                <!-- <div class="col-md-7 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Line chart</h4>
+                    <canvas id="lineChart" style="height:250px"></canvas>
+                  </div>
+                </div>
+              </div> -->
+              <!-- <div class="col-lg-6 grid-margin stretch-card"> -->
+                <!-- <div class="col-md-5 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Area chart</h4>
+                    <canvas id="areaChart" style="height:250px"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+
+            <div class="row">
+              <div class="col-md-7 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="clearfix">
+                      <h4 class="card-title float-left">  Progress </h4>
+                      <div id="visit-sale-chart-legend" class="rounded-legend legend-horizontal legend-top-right float-right"></div>
+                    </div>
+                    <canvas id="visit-sale-chart" class="mt-4"></canvas>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-5 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Completion Rate</h4>
+                    <canvas id="traffic-chart"></canvas>
+                    <div id="traffic-chart-legend" class="rounded-legend legend-vertical legend-bottom-left pt-4"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="clearfix">
+                      <h4 class="card-title float-left"> Quiz Perfomance </h4>
+                      <div id="visit-sale-chart-legend" class="rounded-legend legend-horizontal legend-top-right float-right"></div>
+                    </div>
+                    <canvas id="visit-sale-chart-dark" class="mt-4"></canvas>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">TIme spent on LMS in Hrs</h4>
+                    <canvas id="events-chart"></canvas>
+
+                    <div id="traffic-chart-legend" th:utext="${chartLegend}" class="rounded-legend legend-vertical legend-bottom-left pt-4"></div>
+<!--                      <div id="traffic-chart-legend" class="rounded-legend legend-vertical legend-bottom-left pt-4"></div>-->
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+            
+<!--          -->
+<!--            <div class="row">-->
+<!--              <div class="col-md-5 grid-margin stretch-card">-->
+<!--                <div class="card">-->
+<!--                  <div class="card-body">-->
+<!--                    <h4 class="card-title ">Todo</h4>-->
+<!--                    <div class="add-items d-flex">-->
+<!--                      <input type="text" class="form-control todo-list-input" placeholder="What do you need to do today?">-->
+<!--                      <button class="add btn btn-gradient-success font-weight-bold todo-list-add-btn" id="add-task">Add</button>-->
+<!--                    </div>-->
+<!--                    <div class="list-wrapper">-->
+<!--                      <ul class="d-flex flex-column-reverse todo-list todo-list-custom">-->
+<!--                        <li>-->
+<!--                          <div class="form-check">-->
+<!--                            <label class="form-check-label">-->
+<!--                              <input class="checkbox" type="checkbox"> Meeting with Alisa </label>-->
+<!--                          </div>-->
+<!--                          <i class="remove mdi mdi-close-circle-outline"></i>-->
+<!--                        </li>-->
+<!--                        <li class="completed">-->
+<!--                          <div class="form-check">-->
+<!--                            <label class="form-check-label">-->
+<!--                              <input class="checkbox" type="checkbox" checked> Call John </label>-->
+<!--                          </div>-->
+<!--                          <i class="remove mdi mdi-close-circle-outline"></i>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                          <div class="form-check">-->
+<!--                            <label class="form-check-label">-->
+<!--                              <input class="checkbox" type="checkbox"> Create invoice </label>-->
+<!--                          </div>-->
+<!--                          <i class="remove mdi mdi-close-circle-outline"></i>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                          <div class="form-check">-->
+<!--                            <label class="form-check-label">-->
+<!--                              <input class="checkbox" type="checkbox"> Print Statements </label>-->
+<!--                          </div>-->
+<!--                          <i class="remove mdi mdi-close-circle-outline"></i>-->
+<!--                        </li>-->
+<!--                        <li class="completed">-->
+<!--                          <div class="form-check">-->
+<!--                            <label class="form-check-label">-->
+<!--                              <input class="checkbox" type="checkbox" checked> Prepare for presentation </label>-->
+<!--                          </div>-->
+<!--                          <i class="remove mdi mdi-close-circle-outline"></i>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                          <div class="form-check">-->
+<!--                            <label class="form-check-label">-->
+<!--                              <input class="checkbox" type="checkbox"> Pick up kids from school </label>-->
+<!--                          </div>-->
+<!--                          <i class="remove mdi mdi-close-circle-outline"></i>-->
+<!--                        </li>-->
+<!--                      </ul>-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--              <div class="col-md-7 grid-margin stretch-card">-->
+<!--                <div class="card">-->
+<!--                  <div class="card-body">-->
+<!--                    <h4 class="card-title">Course Status</h4>-->
+<!--                    <div class="table-responsive">-->
+<!--                      <table class="table">-->
+<!--                        <thead>-->
+<!--                          <tr>-->
+<!--                            <th> # </th>-->
+<!--                            <th> Name </th>-->
+<!--                            <th> Due Date </th>-->
+<!--                            <th> Progress </th>-->
+<!--                          </tr>-->
+<!--                        </thead>-->
+<!--                        <tbody>-->
+<!--                          <tr>-->
+<!--                            <td> 1 </td>-->
+<!--                            <td> C programming </td>-->
+<!--                            <td> May 15, 2015 </td>-->
+<!--                            <td>-->
+<!--                              <div class="progress">-->
+<!--                                <div class="progress-bar bg-gradient-success" role="progressbar" style="width: 95%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>-->
+<!--                              </div>-->
+<!--                            </td>-->
+<!--                          </tr>-->
+<!--                          <tr>-->
+<!--                            <td> 2 </td>-->
+<!--                            <td> HTML/CSS </td>-->
+<!--                            <td> Jul 01, 2015 </td>-->
+<!--                            <td>-->
+<!--                              <div class="progress">-->
+<!--                                <div class="progress-bar bg-gradient-success" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>-->
+<!--                              </div>-->
+<!--                            </td>-->
+<!--                          </tr>-->
+<!--                          <tr>-->
+<!--                            <td> 3 </td>-->
+<!--                            <td> JavaScript </td>-->
+<!--                            <td> Apr 12, 2015 </td>-->
+<!--                            <td>-->
+<!--                              <div class="progress">-->
+<!--                                <div class="progress-bar bg-gradient-success" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>-->
+<!--                              </div>-->
+<!--                            </td>-->
+<!--                          </tr>-->
+<!--                          <tr>-->
+<!--                            <td> 4 </td>-->
+<!--                            <td> Python programming </td>-->
+<!--                            <td> May 15, 2015 </td>-->
+<!--                            <td>-->
+<!--                              <div class="progress">-->
+<!--                                <div class="progress-bar bg-gradient-success" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>-->
+<!--                              </div>-->
+<!--                            </td>-->
+<!--                          </tr>-->
+<!--                          <tr>-->
+<!--                            <td> 5 </td>-->
+<!--                            <td> Core/Advanace Java </td>-->
+<!--                            <td> May 03, 2015 </td>-->
+<!--                            <td>-->
+<!--                              <div class="progress">-->
+<!--                                <div class="progress-bar bg-gradient-success" role="progressbar" style="width: 35%" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>-->
+<!--                              </div>-->
+<!--                            </td>-->
+<!--                          </tr>-->
+<!--                          <tr>-->
+<!--                            <td> 5 </td>-->
+<!--                            <td> PHP </td>-->
+<!--                            <td> Jun 05, 2015 </td>-->
+<!--                            <td>-->
+<!--                              <div class="progress">-->
+<!--                                <div class="progress-bar bg-gradient-success" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>-->
+<!--                              </div>-->
+<!--                            </td>-->
+<!--                          </tr>-->
+<!--                        </tbody>-->
+<!--                      </table>-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--        -->
+<!--            </div>-->
+
+<!--             <div class="row">-->
+<!--              <div class="col-12 grid-margin stretch-card">-->
+<!--                <div class="card">-->
+<!--                  <div class="card-body">-->
+<!--                    <h4 class="card-title">Recently Updated courses</h4>-->
+<!--                    <div class="d-flex">-->
+<!--                      &lt;!&ndash; <div class="d-flex align-items-center me-4 text-muted font-weight-light">-->
+<!--                        <i class="mdi mdi-account-outline icon-sm me-2"></i>-->
+<!--                        <span>jack Menqu</span>-->
+<!--                      </div> &ndash;&gt;-->
+<!--                      <div class="d-flex align-items-center text-muted font-weight-light">-->
+<!--&lt;!&ndash;                        <i class="mdi mdi-clock icon-sm me-2"></i>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <span>October 3rd, 2018</span>&ndash;&gt;-->
+<!--                      </div>-->
+<!--                    </div>-->
+<!--                    <div class="row mt-3">-->
+<!--                      <div class="col-6 pe-1">-->
+<!--                        <img src="../../../static/StudentDashboard/images/dashboard/img_3.svg" th:src="@{./StudentDashboard/images/dashboard/img_3.svg}" class="mb-2 mw-100 w-100 rounded" alt="image">-->
+<!--                        <img src="../../../static/StudentDashboard/images/dashboard/img_4.svg" th:src="@{./StudentDashboard/images/dashboard/img_4.svg}" class="mw-100 w-100 rounded" alt="image">-->
+<!--                      </div>-->
+<!--                      <div class="col-6 ps-1">-->
+<!--                        <img src="../../../static/StudentDashboard/images/dashboard/img_1.svg" th:src="@{./StudentDashboard/images/dashboard/img_1.svg} "class="mb-2 mw-100 w-100 rounded" alt="image">-->
+<!--                        <img src="../../../static/StudentDashboard/images/dashboard/img_5.svg" th:src="@{./StudentDashboard/images/dashboard/img_5.svg}"class="mw-100 w-100 rounded" alt="image">-->
+<!--                      </div>-->
+<!--                    </div>-->
+<!--                    <div class="d-flex mt-5 align-items-top">-->
+<!--                      &lt;!&ndash; <img src="assets/images/faces/face3.jpg" class="img-sm rounded-circle me-3" alt="image"> &ndash;&gt;-->
+<!--                      <div class="mb-0 flex-grow">-->
+<!--                        <h5 class="me-2 mb-2">Spring framework </h5>-->
+<!--                        <p class="mb-0 font-weight-light">The Spring Framework (Spring) is an open-source application framework that provides infrastructure support for developing Java applications. One of the most popular Java Enterprise Edition (Java EE) frameworks, Spring helps developers create high performing applications using plain old Java objects (POJOs). </p>-->
+<!--                        <strong><p class="mb-0 font-weight-light">University of Michigan is offering for students &nbsp;  <a href="https://umich.edu/" target="_blank">  Click here</a></p></strong>-->
+<!--                        <hr>-->
+<!--                        <div class="mb-0 flex-grow">-->
+<!--                          <h5 class="me-2 mb-2">Java programming </h5>-->
+<!--                          <p class="mb-0 font-weight-light">The Java programming language originated as part of a research project to develop advanced software for a wide variety of network devices and embedded systems. The goal was to develop a small, reliable, portable, distributed, real-time operating platform. When the project started, C++ was the language of choice. </p>-->
+<!--                          <strong><p class="mb-0 font-weight-light">University of toronto is offering for students &nbsp;  <a href="https://www.utoronto.ca/" target="_blank">  Click here</a> </p></strong>-->
+<!--                        </div>-->
+<!--                      </div>-->
+<!--                    -->
+<!--                  </div>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div> -->
+<!--          </div>-->
+          <!-- content-wrapper ends -->
+          <!-- partial:partials/_footer.html -->
+          <!-- <footer class="footer">
+            <div class="container-fluid d-flex justify-content-between">
+              <span class="text-muted d-block text-center text-sm-start d-sm-inline-block">Copyright © bootstrapdash.com 2021</span>
+              <span class="float-none float-sm-end mt-1 mt-sm-0 text-end"> Free <a href="https://www.bootstrapdash.com/bootstrap-admin-template/" target="_blank">Bootstrap admin template</a> from Bootstrapdash.com</span>
+            </div>
+          </footer> -->
+          <!-- partial -->
+        </div>
+        
+        <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+<!-- plugins:js -->
+<script src="../../../static/StudentDashboard/vendors/js/vendor.bundle.base.js" th:src="@{./StudentDashboard/vendors/js/vendor.bundle.base.js}"></script>
+<!-- endinject -->
+<!-- Plugin js for this page -->
+<script src="../../../static/StudentDashboard/vendors/chart.js/Chart.min.js" th:src="@{./StudentDashboard/vendors/chart.js/Chart.min.js}"></script>
+<script src="../../../static/StudentDashboard/vendor/js/jquery.cookie.js" th:src="@{./StudentDashboard/vendor/js/jquery.cookie.js}"type="text/javascript"></script>
+<!-- End plugin js for this page -->
+<!-- inject:js -->
+<script src="../../../static/StudentDashboard/vendor/js/off-canvas.js" th:src="@{./StudentDashboard/vendor/js/off-canvas.js}"></script>
+<script src="../../../static/StudentDashboard/vendor/js/hoverable-collapse.js" th:src="@{./StudentDashboard/vendor/js/hoverable-collapse.js}"></script>
+<script src="../../../static/StudentDashboard/vendor/js/misc.js" th:src="@{./StudentDashboard/vendor/js/misc.js}"></script>
+<!-- endinject -->
+<!-- Custom js for this page -->
+<script src="../../../static/StudentDashboard/vendor/js/chart.js" th:src="@{./StudentDashboard/vendor/js/chart.js}"></script>
+<script src="../../../static/StudentDashboard/vendor/js/dashboard.js" th:src="@{./StudentDashboard/vendor/js/dashboard.js}"></script>
+<script src="../../../static/StudentDashboard/vendor/js/todo.js" th:src="@{./StudentDashboard/vendor/js/todo.js}"></script>
+    <script src="../../../static/StudentDashboard/vendor/js/todolist.js" th:src="@{./StudentDashboard/vendor/js/todolist.js}"></script>
+<!-- End custom js for this page -->
+
+
+
+<!-- Custom js for this page -->
+    <script src="../../assets/js/chart.js"></script>
+<!-- End custom js for this page -->
+  </body>
+</html>

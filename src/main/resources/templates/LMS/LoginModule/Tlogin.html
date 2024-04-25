@@ -1,0 +1,141 @@
+<! DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title> Teacher Login
+ </title>
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+<!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">-->
+<script type = "text/javascript">
+   function myFunction() {
+  
+  if (document.myForm.password.type == "password") {
+     document.myForm.password.type = "text";
+  } else {
+     document.myForm.password.type = "password";
+  }
+}
+   function validate() {
+      if(document.myForm.password.value == "") {
+        alert( "Please provide your password" ); 
+        return false;
+      } 
+      if(document.myForm.password.value.length <= 8) {
+        alert( "Password length must be greater than 8" );
+        return false;
+      }
+      if(document.myForm.password.value.length >= 18) {
+        alert( "Password length can't be greater than 18" );
+        return false;
+      }
+      if(document.myForm.password.value.search(/[0-9]/) == -10) {
+        alert( "Password must include Numbers" );
+        return false;
+      }
+      if(document.myForm.password.value.search(/[a-z]/) == -1) {
+        alert( "Please enter atleast lowercase value" );
+        return false;
+      }
+      if(document.myForm.password.value.search(/[A-Z]/) == -1) {
+        alert( "Please enter atleast uppercase value" );
+        return false;
+      }
+      if(document.myForm.password.value.search(/[!\@\#\$\%\^\&]/) == -1) {
+        alert( "Please enter special character between!-@-#-$-%-^-&" );
+        return false;
+      }
+   }
+</script>
+</head>
+<style>
+   
+   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+   *{
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     font-family: 'Poppins',sans-serif;
+   }
+   
+   html{ 
+      height: 100%; 
+      scroll-behavior: auto;
+   }
+   body{ 
+      height: 100%; 
+   }
+   
+   .global-container {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #262931, #EEE9E9);
+   }
+   form {
+      padding-top: 30px;
+      font-size: 14px;
+   }
+   .form-group{
+      padding-top: 10px;
+      padding-bottom: 10px;
+   }
+   .card-title { 
+   font-weight: 350;
+    }
+   .btn {
+      width: 100%;
+      font-size: 14px;
+      margin-top: 0px;
+      margin-bottom: 10px;
+   }
+   .login-form { 
+      width: 350px;
+      margin: 100px;
+      border-radius: 10px;
+   
+   }
+   .sign-up {
+      text-align: center;
+      padding: 10px 0 0;
+   }
+   .alert {
+      margin-bottom: -30px;
+      font-size: 13px;
+      margin-top: 100px;
+   }
+   </style>
+<body>
+<div class="abc">
+  <div class="global-container">
+   <div class="card" style="width: 22rem;">
+   <div class="card-body">
+      <h3 class="card-title text-center"> Teacher Login </h3>
+       <li style="" class="alert alert-danger" role="alert"
+           th:if="${!#strings.isEmpty(errorMessage)}" th:text="${errorMessage}"/>
+      <div class="card-text">
+          <form id="form" name="myForm" th:action="@{/LoginT}" action="/LoginT" method="POST">
+            <div class="form-group">
+               <label for="exampleInputEmail1"> Enter TeacherID </label>
+               <input type="text" name="username" class="form-control form-control-sm" id="exampleInputEmail1" aria-describedby="emailHelp" required maxlength="10" minlength="2">
+            </div>
+            <div class="form-group">
+               <label for="exampleInputPassword1">Enter Password </label>
+               
+               <input type="password" name="password" class="form-control form-control-sm" id="exampleInputPassword1" required maxlength="" minlength="8">
+            </div>
+            <p style="float:inherit;font-size:10px;padding: 10px 0 0px;">&nbsp;<input type="checkbox" onclick="myFunction()">Show Password<br><br>&nbsp;&#x2022; Must have a minimum of 8 characters<br>&nbsp;&#x2022; Must include at least 1 <br>&nbsp;&nbsp;&nbsp;(Numeric,Uppercase,Lowercase & Special Character)<br>&nbsp;&#x2022; Special characters [!~@~#~$~%~^~&]</p></center>            <center><button type="submit" onclick="return validate()" class="btn btn-primary btn-block">Sign in </button></center>
+             <center><a href="" th:href="@{/ForgotPswd}"> Forgot password? </a></center>
+            <div class="sign-up">
+               
+               Don't have an account? <a href="" th:href="@{/RegistrationT}"> Register </a>
+            </div>
+         </form>
+      </div>
+   </div>
+</div>
+</div>
+</div>
+</body>
+</html>

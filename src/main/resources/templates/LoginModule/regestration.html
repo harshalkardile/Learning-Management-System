@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"  xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8">
+    <title>Registration </title>
+    <link rel="stylesheet" href="" th:href="@{/style.css}">
+<!--    th:href="@{./style.css}"-->
+    <script type = "text/javascript">
+      function myFunction() {
+      if (document.myForm.rp.type == "password") {
+          document.myForm.rp.type = "text";
+        } else {
+          document.myForm.rp.type = "password";
+        }
+    }
+    function validate() {
+      if(document.myForm.rp.value.length <= 8) {
+        alert( "Password length must be greater than 8");
+        return false;
+      }
+      if(document.myForm.rp.value.length >= 18) {
+        alert( "Password length must be less than 18 "); 
+        return false;
+      }
+      if(document.myForm.rp.value.search(/[0-9]/) == -1) {
+        alert( "Password must include at least on Number");
+        return false;
+      }
+      if(document.myForm.rp.value.search(/[a-z]/) == -1) {
+        alert( "Please enter the least lowercase value");
+        return false;
+      }
+      if(document.myForm.rp.value.search(/[A-Z]/) == -1) {
+        alert( "Please enter the least uppercase value");
+        return false;
+      }
+      if(document.myForm.rp.value.search(/[!\@\#\$\%\^\&]/) == -1) {
+        alert( "Please enter special character between!-@-#-$-%-^-&");
+        return false;
+      }
+      if(document.myForm.rp.value != document.myForm.pr.value) {
+        alert( "Password does no match!");
+        return false;
+      }
+   }
+</script>
+   </head>
+  <!-- <style>
+    .btn {
+   width: 100%;
+   font-size: 14px;
+   margin-top: 20px;
+   margin-bottom: 10px;
+}
+   </style>-->
+<body>
+  <div class="container">
+    <div style="padding: 0px 0 10px;" class="title">Student Registration</div>
+    <div class="content">
+      <ul>
+        <li style="font-size:11px;padding: 0px 0 0px;" class="alert alert-danger" role="alert"
+            th:each="error : ${#fields.errors('registerst.*')}" th:text="${error}"/>
+      </ul>
+
+      <form th:action="@{/saveMsg}" id="form" name="myForm" method="POST" action="#" th:object="${registerst}" >
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">First Name</span>
+            <input type="text"  th:field="*{fname}"  placeholder="Enter your first name" >
+          </div>
+          <div class="input-box">
+            <span class="details">Last Name</span>
+            <input type="text"  th:field="*{lname}"  placeholder="Enter your last name" >
+          </div>
+          <div class="input-box">
+            <span class="details">Student ID</span>
+            <input type="text" th:field="*{id}"  placeholder="4561213" >
+          </div>
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="text" th:field="*{email}"  placeholder="Enter your email" >
+          </div>
+          <div class="input-box">
+            <span class="details">Password</span>
+            <input type="password" name="rp" placeholder="Enter password" >
+          </div>
+          <div class="input-box">
+            <span class="details">Phone Number</span>
+            <input type="number" th:field="*{mob}" name="mob" placeholder="Enter your mobile number" >
+          </div>
+          <p style="float:inherit;font-size:11px;padding: 10px 0 0px;">&nbsp;<input type="checkbox" onclick="myFunction()">Show Password<br><br>&nbsp;&#x2022; Must have a minimum of 8 characters<br>&nbsp;&#x2022; Must include at least 1 <br>&nbsp;&nbsp;&nbsp;(Numeric,Uppercase,Lowercase)<br>&nbsp;&#x2022; Special characters [!~@~#~$~%~^~&]</p></center>
+          <!--<p style="float:inherit;font-size:11px;padding: 10px 0 0px;">&nbsp;<input type="checkbox" onclick="myFunction()">Show Password<br><br>&nbsp;&#x2022; Must have a minimum of 8 characters<br>&nbsp;&#x2022; Must include at least 1 numeric<br>&nbsp;&#x2022; Must include at least 1 uppercase<br>&nbsp;&#x2022; Must include at least 1 lowercase <br>&nbsp;&#x2022; Special characters [!~@~#~$~%~^~&]</p></center>-->
+          <div class="input-box">
+            <span class="details">Confirm Password</span>
+            <input type="password" name="pr" placeholder="Confirm your password" required>
+          </div>
+        </div>
+        <div class="gender-details">
+          <input type="radio" th:field="*{gender}"  value="M" id="dot-1">
+          <input type="radio" th:field="*{gender}"  value="F" id="dot-2">
+          <input type="radio" th:field="*{gender}"  value="O" id="dot-3">
+          <span class="gender-title">Gender</span>
+          <div class="category">
+            <label for="dot-1">
+            <span class="dot one"></span>
+            <span class="gender">Male</span>
+          </label>
+          <label for="dot-2">
+            <span class="dot two"></span>
+            <span class="gender">Female</span>
+          </label>
+          <label for="dot-3">
+            <span class="dot three"></span>
+            <span class="gender">Prefer not to say</span>
+            </label>
+          </div>
+        </div>
+        <!--<center><button type="submit" onclick="return validate()" class="btn btn-primary btn-block">Submit </button></center>-->
+        <div class="button">
+          <input type="submit" onclick="return validate()" value="Register">
+        </div>
+        <div class="sign-up">
+           Already have an account? <a href="" th:href="@{/Login}"> login </a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>

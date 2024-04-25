@@ -1,0 +1,5253 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" /> -->
+    <!-- <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>course detail</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link
+      src="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css"
+      integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm"
+      crossorigin="anonymous"
+    />
+    <!-- Latest compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- Font Awesome -->
+    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" /> -->
+    <!-- Google Fonts -->
+    <!-- <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" /> -->
+    <!-- MDB -->
+    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css" rel="stylesheet" /> -->
+    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.js"></script> -->
+
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        font-family: "Poppins", "Times New Roman", Times, serif;
+        color: #0f3460;
+      }
+      html {
+        font-size: 62.5%;
+      }
+      @media (max-width: 992px) {
+        html {
+          font-size: 55%;
+        }
+      }
+      @media (max-width: 750px) {
+        html {
+          font-size: 40%;
+        }
+      }
+
+      .nav-link {
+        display: flex;
+        align-items: center;
+        padding-left: 30px;
+        margin: 20px 30px;
+        font-size: 20px;
+      }
+
+      /* .container-fluid1 {
+        height: 2px;
+      } */
+
+      /* .overlays {
+              width: 100%;
+              background: rgba(0, 0, 0, 0.5);
+              height: 100vh;
+              position: fixed;
+              z-index: -1;
+              opacity: 1;
+
+
+          } */
+
+      .container1 {
+        overflow: hidden;
+        /* scroll-behavior: smooth; */
+
+        height: 72rem;
+        background: #eff0f4;
+        width: 159rem;
+      }
+
+      .container2 {
+        /* overflow-y: scroll; */
+        height: 145rem;
+        background: #eff0f4;
+        width: 159rem;
+        block-size: 20%;
+      }
+
+      .viewc {
+        width: 300px;
+        padding: 30px 20px;
+        background-color: white;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .viewc button {
+        background-color: black;
+        color: antiquewhite;
+        padding: 10px 15px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .top h1 {
+        position: relative;
+        top: 0;
+        left: 50%;
+        transform: translate(-17%, -10%);
+        font-size: 35px;
+        /* margin-left: 110px; */
+      }
+
+      .top2 h1 {
+            font-size: 30px;
+    position: relative;
+    left: 50px;
+    top: 40px;
+      }
+
+      .top22 label {
+        position: absolute;
+    font-size: 20px;
+    top: 220px;
+    left: 90px;
+      }
+
+      .top23 label {
+       position: absolute;
+    font-size: 20px;
+    top: 279px;
+    left: 84px;
+    padding-right: 50%;
+    float: right;
+      }
+
+      .top2 .callmain {
+        background: whitesmoke;
+        /* box-sizing: content-box; */
+        width: 370px;
+        border-radius: 19px;
+
+        text-transform: capitalize;
+        position: relative;
+        left: 850px;
+        top: 60px;
+        font-size: medium;
+        height: 395px;
+
+        font-size: larger;
+
+        shape-outside: margin-box;
+
+        margin-right: 190px;
+
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        /* background: #0F3460; */
+      }
+
+      .top2 .callmain .col2 {
+        padding-bottom: 20px;
+        text-align: center;
+        /* background: #0F3460; */
+      }
+
+      .top2 .callmain .col2 i {
+        position: relative;
+        top: 20px;
+        left: 2%;
+        bottom: 20px;
+        font-size: 15px;
+        color: #364f6b;
+      }
+
+      .top2 .callmain .col2 .col22 {
+        /* background: #364F6B; */
+        margin: 20px;
+        border-radius: 10px;
+      }
+
+      .top2 .callmain .col2 .col22 span {
+        position: relative;
+        left: 0;
+        align-items: baseline;
+      }
+
+      .top2 .callmain .col .col2 span {
+        font-size: 19px;
+
+        position: relative;
+        top: 20px;
+      }
+
+      .top2 .callmain .col2 .col22 span {
+        font-size: large;
+        font-weight: bolder;
+
+        margin-right: 170px;
+        top: 5px;
+      }
+
+      .top2 .callmain .col2 .col22:hover,
+      .top2 .callmain .col2 i:hover,
+      .top2 .callmain .col .col2 span:hover {
+        background-color: rgba(0, 0, 0, 0.2);
+      }
+
+      .top2 .callmain .col2 .col22 p {
+        font-size: large;
+        margin-top: 10px;
+        align-items: flex-start;
+        text-align: left;
+        margin-left: 20px;
+      }
+
+      .top2 .callmain .col2 button {
+        font-size: larger;
+        padding: 6px;
+        padding-left: 112px;
+        padding-right: 130px;
+        background-color: #398ab9;
+        border-radius: 5px;
+        margin-bottom: 30px;
+        text-transform: capitalize;
+        font-weight: bold;
+        font-size: medium;
+      }
+
+      .top2 .callmain .col2 button:hover {
+        background-color: #e7f0c3;
+        animation: shake3856 0.3s linear infinite both;
+        transform: translateY(-4px) translateX(-2px);
+        -webkit-transform: translateY(-4px) translateX(-2px);
+        -ms-transform: translateY(-4px) translateX(-2px);
+        transform: translateY(-4px) translateX(-2px);
+        -webkit-box-shadow: 2px 5px 0 0 black;
+        box-shadow: 2px 5px 0 0 black;
+        box-shadow: 2px 5px 0 0 black;
+      }
+
+      .top2 .callmain .col2 button:active {
+        -webkit-transform: translateY(2px) translateX(1px);
+        -ms-transform: translateY(2px) translateX(1px);
+        transform: translateY(2px) translateX(1px);
+        -webkit-box-shadow: 0 0 0 0 black;
+        box-shadow: 0 0 0 0 black;
+        animation: shake3856 0.3s linear infinite both;
+      }
+
+      .detailbar {
+        display: grid;
+        position: fixed;
+        top: 650px;
+        color: #0f3460;
+      }
+
+      .carusel1 {
+        margin-right: 57%;
+        margin-left: 5%;
+        margin-bottom: 25px;
+        border-radius: 10px;
+        display: grid;
+        grid-auto-flow: column;
+      }
+
+      .carusel1 .carousel .carousel-indicators button {
+        color: #364f6b;
+      }
+
+      #con4 p {
+        padding-left: 30%;
+        text-align: center;
+        font-size: 30px;
+      }
+
+      #con4 img {
+        padding-left: 15%;
+      }
+      div {
+        display: block;
+      }
+
+      #carouselExampleIndicators .carousel-indicators button {
+        height: 7px;
+        background-color: rgb(216, 213, 213);
+      }
+      /* #carouselExampleIndicators button span {
+      height: ;
+            } */
+
+      .container3 .back {
+        padding: 3%;
+        background: #f1f3f8;
+      }
+      .container3 .back label {
+        padding-left: 13%;
+        font-size: x-large;
+        font-weight: bold;
+      }
+      .container3 .back label h1 {
+        font-size: xx-large;
+        font-weight: bold;
+      }
+
+      #syllabuscard {
+        max-width: 120rem;
+        height: 30rem;
+        margin: auto;
+        size: 110px;
+        font-size: 170%;
+        margin-bottom: 2%;
+      }
+
+      #syllabuscard1 {
+        max-width: 120rem;
+        height: 30rem;
+        margin: auto;
+        size: 110px;
+        font-size: 170%;
+        margin-bottom: 2%;
+      }
+
+      #syllabuscard2 {
+        max-width: 120rem;
+        height: 30rem;
+        margin: auto;
+        size: 110px;
+        font-size: 170%;
+        margin-bottom: 2%;
+      }
+      #syllabuscard div span {
+        display: inline;
+        align-items: center;
+        text-align: justify;
+        padding-left: 3%;
+        text-shadow: #364f6b;
+        color: #133d55;
+
+        /* font-weight: bold; */
+        font-size: 20px;
+        position: absolute;
+      }
+
+      #syllabuscard1 div span {
+        display: inline;
+        align-items: center;
+        text-align: justify;
+        padding-left: 3%;
+        text-shadow: #364f6b;
+        color: #133d55;
+
+        /* font-weight: bold; */
+        font-size: 20px;
+        position: absolute;
+      }
+
+      #syllabuscard2 div span {
+        display: inline;
+        align-items: center;
+        text-align: justify;
+        padding-left: 3%;
+        text-shadow: #364f6b;
+        color: #133d55;
+
+        /* font-weight: bold; */
+        font-size: 20px;
+        position: absolute;
+      }
+
+      #syllabuscard div h5 {
+        margin-right: 10%;
+        margin-left: 950px;
+        text-align: center;
+
+        text-transform: uppercase;
+        font-family: Arial, Helvetica, sans-serif;
+        left: 20px;
+        block-size: 20px;
+        font-size: 10px;
+        vertical-align: middle;
+        align-items: center;
+        text-align: center;
+      }
+
+      #syllabuscard1 div h5 {
+        margin-right: 10%;
+        margin-left: 950px;
+        text-align: center;
+
+        text-transform: uppercase;
+        font-family: Arial, Helvetica, sans-serif;
+        left: 20px;
+        block-size: 20px;
+        font-size: 10px;
+        vertical-align: middle;
+        align-items: center;
+        text-align: center;
+      }
+
+      #syllabuscard2 div h5 {
+        margin-right: 10%;
+        margin-left: 950px;
+        text-align: center;
+
+        text-transform: uppercase;
+        font-family: Arial, Helvetica, sans-serif;
+        left: 20px;
+        block-size: 20px;
+        font-size: 10px;
+        vertical-align: middle;
+        align-items: center;
+        text-align: center;
+      }
+
+      #check {
+        display: none;
+        position: absolute;
+      }
+
+      #check1 {
+        display: none;
+        position: absolute;
+      }
+      #check2 {
+        display: none;
+        position: absolute;
+      }
+      .content {
+        display: none;
+      }
+      .content1 {
+        display: none;
+      }
+      .content2 {
+        display: none;
+      }
+
+      #syllabuscard div .readMore {
+        display: inline-block;
+
+        margin-right: 40px;
+        font-weight: normal;
+        color: #0076ff;
+        cursor: pointer;
+        font-size: 20px;
+      }
+      #syllabuscard1 div .readMore1 {
+        display: inline-block;
+
+        margin-right: 40px;
+        font-weight: normal;
+        color: #0076ff;
+        cursor: pointer;
+        font-size: 20px;
+      }
+      #syllabuscard2 div .readMore2 {
+        display: inline-block;
+
+        margin-right: 40px;
+        font-weight: normal;
+        color: #0076ff;
+        cursor: pointer;
+        font-size: 20px;
+      }
+
+      #check:checked ~ .content {
+        display: block;
+      }
+
+      #check:checked ~ .readMore {
+        visibility: hidden;
+      }
+      #check:checked ~ .readMore::after {
+        content: "..Show Less";
+        position: absolute;
+        top: 18rem;
+
+        font-size: 2rem;
+        display: block;
+        visibility: visible;
+      }
+
+      #check1:checked ~ .content1 {
+        display: block;
+      }
+
+      #check1:checked ~ .readMore1 {
+        visibility: hidden;
+      }
+      #check1:checked ~ .readMore1::after {
+        content: "..Show Less";
+        position: absolute;
+        top: 18rem;
+
+        font-size: 2rem;
+        display: block;
+        visibility: visible;
+      }
+
+      #check2:checked ~ .content2 {
+        display: block;
+      }
+
+      #check2:checked ~ .readMore2 {
+        visibility: hidden;
+      }
+      #check2:checked ~ .readMore2::after {
+        content: "..Show Less";
+        position: absolute;
+        top: 18rem;
+
+        font-size: 2rem;
+        display: block;
+        visibility: visible;
+      }
+
+      /* div .container4 {
+        padding: 15rem 15rem;
+
+        /* padding-bottom: 30rem; 
+        backgro
+        
+      } */
+
+      /* div .container4 .back1 label {
+        display: grid;
+        grid-auto-flow: column;
+      } */
+
+      /* div .container4 .back1 label h1 {
+        padding-left: 20%;
+      } */
+
+      /* div .container4 .back1 label .back12 {
+        height: 300px;
+        width: 660px;
+        background-color: #919da1;
+        border-bottom-right-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 30px;
+        border-top-left-radius: 30px;
+      }
+      div .container4 .back1 label .back13 {
+        height: 300px;
+        width: 660px;
+        background-color: #c2c9cc;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 30px;
+        border-top-right-radius: 30px;
+      }
+      div .container4 .back1 div {
+        padding: 2%;
+      }
+      div .container4 .back1 div h1 {
+        font-size: 40px;
+      } */
+
+      .mlp_course_fee_info {
+        background-image: linear-gradient(to right, #4a90e2, #2a387b);
+        padding-bottom: 100px;
+      }
+      div.r1 {
+        display: flex;
+        gap: 0px;
+      }
+      div.r1 p {
+        font-size: 40px;
+        padding-left: 25%;
+        padding-top: 2%;
+        display: flex;
+        /* gap: 20px; */
+      }
+      div.r1 p svg {
+        margin-top: 10%;
+      }
+
+      .back1 label.back12 div .r1 .r2 {
+        gap: 10px;
+        color: #2e8aa8;
+      }
+      .r14 {
+        font-size: 15px;
+        margin-left: 200px;
+        text-align: start;
+        border-color: #0076ff;
+      }
+      * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+      .left_right_fee_info {
+        background: #ffffff;
+        border-radius: 10px;
+        min-height: 100px;
+
+        padding: 0;
+      }
+      @media (min-width: 992px) {
+        .col-md-12 {
+          width: 100%;
+        }
+      }
+
+      @media (min-width: 992px) {
+        .col-md-1,
+        .col-md-10,
+        .col-md-11,
+        .col-md-12,
+        .col-md-2,
+        .col-md-3,
+        .col-md-4,
+        .col-md-5,
+        .col-md-6,
+        .col-md-7,
+        .col-md-8,
+        .col-md-9 {
+          float: left;
+        }
+      }
+      div {
+        display: block;
+      }
+      @media (min-width: 992px) {
+        .col-md-1,
+        .col-md-10,
+        .col-md-11,
+        .col-md-12,
+        .col-md-2,
+        .col-md-3,
+        .col-md-4,
+        .col-md-5,
+        .col-md-6,
+        .col-md-7,
+        .col-md-8,
+        .col-md-9 {
+          float: left;
+        }
+      }
+      .left_right_fee_info .left_fee_info {
+        background: #fbfbfb;
+        text-align: center;
+        padding: 35px;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        position: relative;
+      }
+      @media (min-width: 992px) {
+        .col-md-6 {
+          width: 50%;
+        }
+      }
+
+      .left_right_fee_info .left_fee_info::before {
+        content: "";
+        width: 1px;
+        opacity: 0.15;
+        height: 80%;
+        position: absolute;
+        top: 10%;
+        right: 0;
+        background: #979797;
+      }
+
+      .col-xs-1,
+      .col-xs-10,
+      .col-xs-11,
+      .col-xs-12,
+      .col-xs-2,
+      .col-xs-3,
+      .col-xs-4,
+      .col-xs-5,
+      .col-xs-6,
+      .col-xs-7,
+      .col-xs-8,
+      .col-xs-9 {
+        float: left;
+      }
+      @media (min-width: 992px) {
+        .col-md-1,
+        .col-md-10,
+        .col-md-11,
+        .col-md-12,
+        .col-md-2,
+        .col-md-3,
+        .col-md-4,
+        .col-md-5,
+        .col-md-6,
+        .col-md-7,
+        .col-md-8,
+        .col-md-9 {
+          float: left;
+        }
+      }
+      @media (min-width: 992px) {
+        .col-md-6 {
+          width: 50%;
+        }
+      }
+      .mlp_course_price_bx {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 10px;
+      }
+      html {
+        font-size: 10px;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      }
+      :after,
+      :before {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+      .mlp_course_price_bx .after_discount {
+        font-size: 42px;
+        font-weight: 600;
+        color: rgba(0, 0, 0, 0.87);
+      }
+      .fa {
+        display: inline-block;
+        font: normal normal normal 14px/1 FontAwesome;
+        font-size: inherit;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      .mlp_course_price_bx .before_discount::before {
+        content: "";
+        width: 100%;
+        height: 2px;
+        background: #9b9b9b;
+        position: absolute;
+        top: 50%;
+      }
+      .mlp_course_price_bx .before_discount {
+        font-size: 22px;
+        font-weight: 600;
+        color: #9b9b9b;
+        position: relative;
+        margin-left: 20px;
+      }
+      .fa-rupee:before,
+      .fa-inr:before {
+        content: "\f156";
+      }
+
+      .mlp_total_saving {
+        display: inline-block;
+        height: 26px;
+        border-radius: 14px;
+        border: solid 1px rgba(0, 153, 142, 0.3);
+        background-color: rgba(0, 153, 142, 0.05);
+        font-size: 14px;
+        font-weight: 600;
+        text-align: center;
+        color: #04776e;
+        padding: 0 15px;
+        line-height: 24px;
+        margin-bottom: 15px;
+      }
+      * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+      .emi_view_bx {
+        font-size: 14px;
+        color: #000000;
+        margin-bottom: 12px;
+        position: relative;
+        display: inline-block;
+      }
+
+      .emi_view_bx .no_cost {
+        color: #1a5599;
+        text-decoration: underline !important;
+        cursor: pointer;
+      }
+      .emi_view_bx .emi_starts {
+        font-weight: 600;
+        display: inline-block;
+      }
+      .bundle_course_mlp {
+        font-size: 13px;
+        font-weight: 600;
+        color: #0575b3;
+        cursor: pointer;
+        text-decoration: underline !important;
+        margin-bottom: 12px;
+        position: relative;
+        display: inline-block;
+      }
+      .list_brk_vw {
+        position: absolute;
+        box-shadow: 0 2px 12px 0 rgba(12, 7, 7, 0.1);
+        background-color: #ffffff;
+        width: 274px;
+        top: -100px;
+        left: 135px;
+        border-radius: 5px;
+        padding: 10px 15px 15px 15px;
+        text-align: initial;
+        z-index: 2;
+        cursor: auto;
+        display: none;
+      }
+      .list_brk_vw::before {
+        content: "";
+        width: 22px;
+        height: 22px;
+        transform: rotate(45deg);
+        background-color: #ffffff;
+        left: -10px;
+        position: absolute;
+        top: 98px;
+        box-shadow: -4px 4px 4px -3px rgba(0, 0, 0, 0.09);
+      }
+      .list_brk_vw ul li {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid rgba(151, 151, 151, 0.15);
+        padding: 8px 0px;
+      }
+      li {
+        display: list-item;
+        text-align: -webkit-match-parent;
+      }
+      .list_brk_vw ul {
+        list-style: none;
+        padding: 0;
+      }
+      ol,
+      ul {
+        margin-top: 0;
+        margin-bottom: 10px;
+      }
+      li {
+        text-align: -webkit-match-parent;
+      }
+      user agent stylesheet ul {
+        list-style-type: disc;
+      }
+
+      element.style {
+      }
+      .list_brk_vw ul {
+        list-style: none;
+        padding: 0;
+      }
+      ol,
+      ul {
+        margin-top: 0;
+        margin-bottom: 10px;
+      }
+      ul {
+        list-style-type: disc;
+      }
+
+      * {
+        outline: none !important;
+      }
+      * {
+        font-family: "Open Sans";
+      }
+      *,
+      a {
+        text-decoration: none !important;
+        outline: none;
+      }
+
+
+
+
+      #movetop {
+        position: fixed;
+        bottom: 148px;
+        right: 53px;
+        z-index: 32;
+        font-size: 21px;
+        border: none;
+        outline: none;
+        cursor: pointer;
+
+        width: 40px;
+        height: 40px;
+
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -o-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        padding: 0px;
+      }
+
+      #movetop:hover {
+        opacity: 0.8;
+      }
+
+
+
+
+      * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+      user agent stylesheet ul {
+        display: block;
+        list-style-type: disc;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        padding-inline-start: 40px;
+      }
+      .list_brk_vw ul li {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid rgba(151, 151, 151, 0.15);
+        padding: 8px 0px;
+      }
+      .list_brk_vw ul li .title {
+        font-size: 13px;
+        color: #444444;
+        width: 65%;
+        text-align: left;
+        position: relative;
+        text-overflow: ellipsis;
+        white-space: normal;
+        max-height: 2.8em;
+        overflow: hidden;
+        overflow-wrap: break-word;
+      }
+
+      .list_brk_vw ul li .title::before {
+        content: "…";
+        right: 0px;
+        background-color: inherit;
+        position: absolute;
+        bottom: 0px;
+      }
+
+      .list_brk_vw ul li .title::after {
+        background-color: #ffffff;
+        content: "";
+        height: 100%;
+        position: absolute;
+        right: 0;
+        width: 10%;
+      }
+      div {
+        display: block;
+      }
+      :after,
+      :before {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+
+      .list_brk_vw ul li .price {
+        font-size: 14px;
+        color: #444444;
+        width: 30%;
+        text-align: right;
+      }
+      .bundle_course_mlp:hover .list_brk_vw {
+        display: block;
+      }
+      .list_brk_vw .elec_cur_mlp {
+        font-size: 12px;
+        color: #444444;
+        text-align: center;
+        margin-top: 11px;
+      }
+
+      .btn_mlp_fee_enroll {
+        width: 329px;
+        height: 55px;
+        border-radius: 5px;
+        border: solid 2px #f7951e;
+        font-size: 24px;
+        font-weight: bold;
+        color: #f7951e;
+        padding: 0;
+        margin-bottom: 20px;
+        background: #fff;
+      }
+
+      button,
+      input,
+      select,
+      textarea {
+        font-family: inherit;
+        font-size: inherit;
+        line-height: inherit;
+      }
+      button,
+      html input[type="button"],
+      input[type="reset"],
+      input[type="submit"] {
+        -webkit-appearance: button;
+        cursor: pointer;
+      }
+
+      button,
+      select {
+        text-transform: none;
+      }
+      button {
+        overflow: visible;
+      }
+      button,
+      input,
+      optgroup,
+      select,
+      textarea {
+        margin: 0;
+        font: inherit;
+        color: inherit;
+      }
+      * {
+        outline: none !important;
+      }
+      * {
+        font-family: "Open Sans";
+      }
+      *,
+      a {
+        text-decoration: none !important;
+        outline: none;
+      }
+      * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+      button {
+        appearance: auto;
+        writing-mode: horizontal-tb !important;
+        font-style: ;
+        font-variant-ligatures: ;
+        font-variant-caps: ;
+        font-variant-numeric: ;
+        font-variant-east-asian: ;
+        font-variant-alternates: ;
+        font-weight: ;
+        font-stretch: ;
+        font-size: ;
+        font-family: ;
+        font-optical-sizing: ;
+        font-kerning: ;
+        font-feature-settings: ;
+        font-variation-settings: ;
+        text-rendering: auto;
+        color: buttontext;
+        letter-spacing: normal;
+        word-spacing: normal;
+        line-height: normal;
+        text-transform: none;
+        text-indent: 0px;
+        text-shadow: none;
+        display: inline-block;
+        text-align: center;
+        align-items: flex-start;
+        cursor: default;
+        box-sizing: border-box;
+        background-color: buttonface;
+        margin: 0em;
+        padding: 1px 6px;
+        border-width: 2px;
+        border-style: outset;
+        border-color: buttonborder;
+        border-image: initial;
+      }
+      */ .more_financing_info {
+        font-size: 16px;
+        font-weight: 600;
+        color: #4a4a4a;
+        display: inline-block;
+      }
+
+      .more_financing_info i {
+        cursor: pointer;
+        color: #0c5397;
+        position: relative;
+      }
+
+      [class^="icon-"],
+      [class*=" icon-"] {
+        font-family: "icomoon" !important;
+        speak: never;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      .icon-lms_information:before {
+        content: "\ec55";
+      }
+      .financing_option {
+        border-radius: 2px;
+        box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.2);
+        background-color: rgba(0, 0, 0, 0.85);
+        padding: 20px;
+        width: 320px;
+        position: absolute;
+        text-align: left;
+        z-index: 1;
+        top: 29px;
+        display: none;
+      }
+      .financing_option .title {
+        font-size: 12px;
+        font-weight: 900;
+        color: #ffffff;
+      }
+      .financing_option .sub {
+        font-size: 12px;
+        color: #ffffff;
+        line-height: 16px;
+        font-weight: 600;
+      }
+      p {
+        margin: 0 0 10px;
+      }
+      .more_financing_info .view_more_finance_option {
+        color: #1a5599;
+        text-decoration: underline !important;
+        cursor: pointer;
+        display: inline-block;
+      }
+      .more_financing_info i:hover .financing_option {
+        display: block;
+      }
+      .btn_mlp_fee_enroll {
+        width: 329px;
+        height: 55px;
+        border-radius: 5px;
+        border: solid 2px #f7951e;
+        font-size: 24px;
+        font-weight: bold;
+        color: #f7951e;
+        padding: 0;
+        margin-bottom: 20px;
+        background: #fff;
+      }
+      .other_cur_bx p {
+        font-size: 15px;
+        font-weight: 600;
+        color: #4a4a4a;
+      }
+      p {
+        display: block;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+      }
+      p {
+        display: block;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+      }
+
+      @media (min-width: 992px) {
+        .col-md-6 {
+          width: 50%;
+        }
+      }
+
+      @media (min-width: 992px) {
+        .col-md-1,
+        .col-md-10,
+        .col-md-11,
+        .col-md-12,
+        .col-md-2,
+        .col-md-3,
+        .col-md-4,
+        .col-md-5,
+        .col-md-6,
+        .col-md-7,
+        .col-md-8,
+        .col-md-9 {
+          float: left;
+        }
+      }
+
+      @media (min-width: 768px) {
+        .col-sm-1,
+        .col-sm-10,
+        .col-sm-11,
+        .col-sm-12,
+        .col-sm-2,
+        .col-sm-3,
+        .col-sm-4,
+        .col-sm-5,
+        .col-sm-6,
+        .col-sm-7,
+        .col-sm-8,
+        .col-sm-9 {
+          float: left;
+        }
+      }
+
+      .title_GIT {
+        font-size: 22px;
+        font-weight: bold;
+        color: #525f78;
+        margin-bottom: 40px;
+      }
+      .GIT_form {
+        padding: 0 38px;
+      }
+      .btn-group-vertical > .btn-group:after,
+      .btn-toolbar:after,
+      .clearfix:after,
+      .container-fluid:after,
+      .container:after,
+      .dl-horizontal dd:after,
+      .form-horizontal .form-group:after,
+      .modal-footer:after,
+      .modal-header:after,
+      .nav:after,
+      .navbar-collapse:after,
+      .navbar-header:after,
+      .navbar:after,
+      .pager:after,
+      .panel-body:after,
+      .row:after {
+        clear: both;
+      }
+
+      .btn-group-vertical > .btn-group:after,
+      .btn-group-vertical > .btn-group:before,
+      .btn-toolbar:after,
+      .btn-toolbar:before,
+      .clearfix:after,
+      .clearfix:before,
+      .container-fluid:after,
+      .container-fluid:before,
+      .container:after,
+      .container:before,
+      .dl-horizontal dd:after,
+      .dl-horizontal dd:before,
+      .form-horizontal .form-group:after,
+      .form-horizontal .form-group:before,
+      .modal-footer:after,
+      .modal-footer:before,
+      .modal-header:after,
+      .modal-header:before,
+      .nav:after,
+      .nav:before,
+      .navbar-collapse:after,
+      .navbar-collapse:before,
+      .navbar-header:after,
+      .navbar-header:before,
+      .navbar:after,
+      .navbar:before,
+      .panel-body:after,
+      .panel-body:before,
+      .row:after,
+      .row:before {
+        display: table;
+        content: " ";
+      }
+
+      form {
+        display: block;
+        margin-top: 0em;
+      }
+
+      .GIT_form .from_mlp_infofill .form-group input {
+        height: 35px;
+        border-radius: 3px;
+        border: solid 1px #cbd6e2;
+        background-color: #ffffff;
+        font-size: 12px;
+        color: #444444;
+      }
+      .GIT_form .from_mlp_infofill .form-group:first-child {
+        margin-right: 20px;
+      }
+
+      label {
+        display: inline-block;
+        max-width: 100%;
+        margin-bottom: 5px;
+        font-weight: 700;
+      }
+      label {
+        cursor: default;
+      }
+
+      .GIT_form .from_mlp_infofill .form-group {
+        text-align: left;
+        float: left;
+        width: 47%;
+      }
+      .GIT_form .from_mlp_infofill .form-group .error_msg {
+        margin: 3px 0 0 0;
+        color: #ed1f24;
+        font-size: 11px;
+        display: none;
+      }
+      .GIT_form .from_mlp_infofill .form-group input {
+        height: 35px;
+        border-radius: 3px;
+        border: solid 1px #cbd6e2;
+        background-color: #ffffff;
+        font-size: 12px;
+        color: #444444;
+      }
+      .form-control {
+        display: block;
+        width: 200%;
+        height: 34px;
+        padding: 6px 12px;
+        font-size: 14px;
+        line-height: 1.42857143;
+        color: #555;
+        background-color: #fff;
+        background-image: none;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+        -webkit-transition: border-color ease-in-out 0.15s,
+          -webkit-box-shadow ease-in-out 0.15s;
+        -o-transition: border-color ease-in-out 0.15s,
+          box-shadow ease-in-out 0.15s;
+        transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+      }
+      .intl-tel-input .flag-container {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        padding: 1px;
+      }
+
+      .intl-tel-input * {
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+      }
+
+      .intl-tel-input .selected-flag .iti-arrow {
+        position: absolute;
+        top: 50%;
+        margin-top: -2px;
+        right: 6px;
+        width: 0;
+        height: 0;
+        border-left: 3px solid transparent;
+        border-right: 3px solid transparent;
+        border-top: 4px solid #555;
+      }
+      .intl-tel-input.allow-dropdown .flag-container,
+      .intl-tel-input.separate-dial-code .flag-container {
+        right: auto;
+        left: 0;
+      }
+      .intl-tel-input {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+      }
+
+      @media only screen and (min-width: 992px) and (max-width: 1199px) {
+        .GIT_form .GIT_mlp_fee_enroll {
+          width: 100%;
+        }
+      }
+      .GIT_mlp_fee_enroll {
+        width: 320px;
+        height: 55px;
+        border-radius: 3px;
+        background-color: #068ed9;
+        font-size: 20px;
+        font-weight: bold;
+        padding: 0;
+        border: none;
+        line-height: 1.05;
+        color: #ffffff;
+        margin-top: 10px;
+      }
+      .intl-tel-input.separate-dial-code.allow-dropdown.iti-sdc-3 input,
+      .intl-tel-input.separate-dial-code.allow-dropdown.iti-sdc-3
+        input[type="text"],
+      .intl-tel-input.separate-dial-code.allow-dropdown.iti-sdc-3
+        input[type="tel"] {
+        padding-left: 84px;
+      }
+
+      .intl-tel-input.separate-dial-code.iti-sdc-3 input,
+      .intl-tel-input.separate-dial-code.iti-sdc-3 input[type="text"],
+      .intl-tel-input.separate-dial-code.iti-sdc-3 input[type="tel"] {
+        padding-left: 74px;
+      }
+      .intl-tel-input.allow-dropdown input,
+      .intl-tel-input.allow-dropdown input[type="text"],
+      .intl-tel-input.allow-dropdown input[type="tel"],
+      .intl-tel-input.separate-dial-code input,
+      .intl-tel-input.separate-dial-code input[type="text"],
+      .intl-tel-input.separate-dial-code input[type="tel"] {
+        padding-right: 6px;
+        padding-left: 52px;
+        margin-left: 0;
+      }
+      .intl-tel-input input,
+      .intl-tel-input input[type="text"],
+      .intl-tel-input input[type="tel"] {
+        position: relative;
+        z-index: 0;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+        padding-right: 36px;
+        margin-right: 0;
+      }
+
+      .intl-tel-input * {
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+      }
+      .intl-tel-input.separate-dial-code .selected-dial-code {
+        display: table-cell;
+        vertical-align: middle;
+        padding-left: 28px;
+      }
+      GIT_form
+        .from_mlp_infofill
+        .form-group
+        .selected-flag
+        .selected-dial-code {
+        font-size: 12px;
+        padding-left: 23px;
+      }
+      button,
+      input,
+      select,
+      textarea {
+        font-family: inherit;
+        font-size: inherit;
+        line-height: inherit;
+      }
+      input {
+        line-height: normal;
+      }
+      button,
+      input,
+      optgroup,
+      select,
+      textarea {
+        margin: 0;
+        font: inherit;
+        color: inherit;
+      }
+      input[type="text" i] {
+        padding: 1px 2px;
+      }
+
+      user agent stylesheet input {
+        writing-mode: horizontal-tb !important;
+        font-style: ;
+        font-variant-ligatures: ;
+        font-variant-caps: ;
+        font-variant-numeric: ;
+        font-variant-east-asian: ;
+        font-variant-alternates: ;
+        font-weight: ;
+        font-stretch: ;
+        font-size: ;
+        font-family: ;
+        font-optical-sizing: ;
+        font-kerning: ;
+        font-feature-settings: ;
+        font-variation-settings: ;
+        text-rendering: auto;
+        color: fieldtext;
+        letter-spacing: normal;
+        word-spacing: normal;
+        line-height: normal;
+        text-transform: none;
+        text-indent: 0px;
+        text-shadow: none;
+        display: inline-block;
+        text-align: start;
+        appearance: auto;
+        -webkit-rtl-ordering: logical;
+        cursor: text;
+        background-color: field;
+        margin: 0em;
+        padding: 1px 2px;
+        border-width: 2px;
+        border-style: inset;
+        border-color: -internal-light-dark(
+          rgb(118, 118, 118),
+          rgb(133, 133, 133)
+        );
+        border-image: initial;
+      }
+      .GIT_form .from_mlp_infofill .form-group {
+        text-align: left;
+        float: left;
+        width: 47%;
+      }
+
+      .loginerrortextemail {
+        color: #ed1f24;
+        font-size: 11px;
+        margin-top: 5px;
+        margin-bottom: -10px;
+        display: none;
+        float: left;
+      }
+
+      .loginerrortextemail {
+        color: #f14950;
+        display: block;
+        font-size: 11px;
+      }
+      .GIT_form .from_mlp_infofill .form-group.mob_num_pl {
+        position: relative;
+      }
+
+      @media only screen and (min-width: 992px) and (max-width: 1199px) {
+        .GIT_form .from_mlp_infofill .form-group {
+          width: 100%;
+        }
+      }
+      .GIT_form .from_mlp_infofill .form-group {
+        text-align: left;
+        float: left;
+        width: 47%;
+      }
+
+      .GIT_form .from_mlp_infofill .form-group.mob_num_pl .country_mob_prefix {
+        position: absolute;
+        top: 20px;
+        left: 0;
+        height: 32px;
+        width: 92px;
+      }
+
+      .country_mob_prefix {
+        display: flex;
+        align-items: center;
+        /* width: 108px; */
+        height: 53px;
+        background: #fff;
+        border-radius: 5px;
+
+        border-right: 1px solid #b2b2b2;
+        width: 76px !important;
+      }
+
+      .GIT_form
+        .from_mlp_infofill
+        .form-group.mob_num_pl
+        .country_mob_prefix
+        .select-fancy {
+        width: 36px;
+        min-width: 36px;
+      }
+
+      .country_mob_prefix .select-fancy {
+        display: inline-block;
+        position: relative;
+        width: 46px;
+        min-width: 46px;
+        overflow: hidden;
+        cursor: pointer;
+      }
+      .GIT_form
+        .from_mlp_infofill
+        .form-group.mob_num_pl
+        .country_mob_prefix
+        .prefix_code {
+        font-size: 12px;
+        width: 46px;
+        min-width: 46px;
+      }
+
+      .country_mob_prefix .prefix_code {
+        font-size: 16px;
+        margin-left: 7px;
+        width: 54px;
+        border-left: 1px solid #ddd;
+        border-right: 1px solid #ddd;
+        height: 100%;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        min-width: 54px;
+      }
+      input[type="hidden" i] {
+        appearance: none;
+        background-color: initial;
+        cursor: default;
+        display: none !important;
+        padding: initial;
+        border: initial;
+        border-color: initial;
+        border-radius: initial;
+      }
+      .from_mlp_infofill_thnk {
+        text-align: center;
+        padding: 15px 40px;
+      }
+
+      button {
+        appearance: auto;
+        writing-mode: horizontal-tb !important;
+
+        text-rendering: auto;
+        color: buttontext;
+        letter-spacing: normal;
+        word-spacing: normal;
+        line-height: normal;
+        text-transform: none;
+        text-indent: 0px;
+        text-shadow: none;
+        display: inline-block;
+        text-align: center;
+        align-items: flex-start;
+        cursor: default;
+        box-sizing: border-box;
+        background-color: buttonface;
+        margin: 0em;
+        padding: 1px 6px;
+        border-width: 2px;
+        border-style: outset;
+        border-color: buttonborder;
+        border-image: initial;
+      }
+      button,
+      html input[type="button"],
+      input[type="reset"],
+      input[type="submit"] {
+        -webkit-appearance: button;
+        cursor: pointer;
+      }
+      /* .GIT_mlp_fee_enroll {
+        width: 420px;
+        height: 55px;
+        border-radius: 3px;
+        background-color: #068ed9;
+        font-size: 20px;
+        font-weight: bold;
+        padding: 0;
+        border: none;
+        line-height: 1.05;
+        color: #ffffff;
+        margin-top: 10px;
+      } */
+      d.r2 {
+        margin: 100%;
+      }
+
+      .container,
+      .container-fluid,
+      .container-lg,
+      .container-md,
+      .container-sm,
+      .container-xl,
+      .container-xxl {
+        --bs-gutter-x: 1.5rem;
+        --bs-gutter-y: 0;
+        width: 100%;
+        padding-right: calc(var(--bs-gutter-x) * 0.5);
+        padding-left: calc(var(--bs-gutter-x) * 0.5);
+        margin-right: auto;
+        margin-left: auto;
+      }
+      @media (min-width: 992px) {
+        .container {
+          width: 50px;
+        }
+      }
+
+      .container-fluid {
+        height: 20px;
+      }
+      .col-xs-1,
+      .col-xs-10,
+      .col-xs-11,
+      .col-xs-12,
+      .col-xs-2,
+      .col-xs-3,
+      .col-xs-4,
+      .col-xs-5,
+      .col-xs-6,
+      .col-xs-7,
+      .col-xs-8,
+      .col-xs-9 {
+        float: left;
+      }
+      .mlp_course_fee_info .container .title_mlp_bx {
+        color: #ffffff !important;
+      }
+      .container,
+      .container-fluid,
+      .container-lg,
+      .container-md,
+      .container-sm,
+      .container-xl,
+      .container-xxl {
+        --bs-gutter-x: 1.5rem;
+        --bs-gutter-y: 0;
+        width: 100%;
+        padding-right: calc(var(--bs-gutter-x) * 0.5);
+        padding-left: calc(var(--bs-gutter-x) * 0.5);
+        margin-right: auto;
+        margin-left: auto;
+      }
+
+      .mlp_course_fee_info {
+        background-image: linear-gradient(to right, #4a90e2, #2a387b);
+        padding-bottom: 100px;
+      }
+      .container-fluid {
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+      }
+      .container-fluid {
+        height: auto;
+      }
+      *,
+      ::before,
+      ::after {
+        --tw-border-spacing-x: 0;
+        --tw-border-spacing-y: 0;
+        --tw-translate-x: 0;
+        --tw-translate-y: 0;
+        --tw-rotate: 0;
+        --tw-skew-x: 0;
+        --tw-skew-y: 0;
+        --tw-scale-x: 1;
+        --tw-scale-y: 1;
+        --tw-pan-x: ;
+        --tw-pan-y: ;
+        --tw-pinch-zoom: ;
+        --tw-scroll-snap-strictness: proximity;
+        --tw-ordinal: ;
+        --tw-slashed-zero: ;
+        --tw-numeric-figure: ;
+        --tw-numeric-spacing: ;
+        --tw-numeric-fraction: ;
+        --tw-ring-inset: ;
+        --tw-ring-offset-width: 0px;
+        --tw-ring-offset-color: #fff;
+        --tw-ring-color: rgb(59 130 246 / 0.5);
+        --tw-ring-offset-shadow: 0 0 #0000;
+        --tw-ring-shadow: 0 0 #0000;
+        --tw-shadow: 0 0 #0000;
+        --tw-shadow-colored: 0 0 #0000;
+        --tw-blur: ;
+        --tw-brightness: ;
+        --tw-contrast: ;
+        --tw-grayscale: ;
+        --tw-hue-rotate: ;
+        --tw-invert: ;
+        --tw-saturate: ;
+        --tw-sepia: ;
+        --tw-drop-shadow: ;
+        --tw-backdrop-blur: ;
+        --tw-backdrop-brightness: ;
+        --tw-backdrop-contrast: ;
+        --tw-backdrop-grayscale: ;
+        --tw-backdrop-hue-rotate: ;
+        --tw-backdrop-invert: ;
+        --tw-backdrop-opacity: ;
+        --tw-backdrop-saturate: ;
+        --tw-backdrop-sepia: ;
+      }
+
+      :after,
+      :before {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+
+      *,
+      ::before,
+      ::after {
+        --tw-border-spacing-x: 0;
+        --tw-border-spacing-y: 0;
+        --tw-translate-x: 0;
+        --tw-translate-y: 0;
+        --tw-rotate: 0;
+        --tw-skew-x: 0;
+        --tw-skew-y: 0;
+        --tw-scale-x: 1;
+        --tw-scale-y: 1;
+        --tw-pan-x: ;
+        --tw-pan-y: ;
+        --tw-pinch-zoom: ;
+        --tw-scroll-snap-strictness: proximity;
+        --tw-ordinal: ;
+        --tw-slashed-zero: ;
+        --tw-numeric-figure: ;
+        --tw-numeric-spacing: ;
+        --tw-numeric-fraction: ;
+        --tw-ring-inset: ;
+        --tw-ring-offset-width: 0px;
+        --tw-ring-offset-color: #fff;
+        --tw-ring-color: rgb(59 130 246 / 0.5);
+        --tw-ring-offset-shadow: 0 0 #0000;
+        --tw-ring-shadow: 0 0 #0000;
+        --tw-shadow: 0 0 #0000;
+        --tw-shadow-colored: 0 0 #0000;
+        --tw-blur: ;
+        --tw-brightness: ;
+        --tw-contrast: ;
+        --tw-grayscale: ;
+        --tw-hue-rotate: ;
+        --tw-invert: ;
+        --tw-saturate: ;
+        --tw-sepia: ;
+        --tw-drop-shadow: ;
+        --tw-backdrop-blur: ;
+        --tw-backdrop-brightness: ;
+        --tw-backdrop-contrast: ;
+        --tw-backdrop-grayscale: ;
+        --tw-backdrop-hue-rotate: ;
+        --tw-backdrop-invert: ;
+        --tw-backdrop-opacity: ;
+        --tw-backdrop-saturate: ;
+        --tw-backdrop-sepia: ;
+      }
+      @media (min-width: 992px) {
+        .container {
+          width: 970px;
+        }
+      }
+
+      /* @media (min-width: 992px) {
+        .container {
+          width: 50px;
+        }
+      } */
+      .left_right_fee_info .right_get_in_touch {
+        background: #ffffff;
+        text-align: center;
+        padding: 35px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+      }
+
+      /* .mlp_course_fee_info .container .title_mlp_bx {
+        color: #ffffff !important;
+      } */
+      .title_mlp_bx {
+        font-size: 30px;
+        font-weight: 600;
+        line-height: 1.4;
+        margin: 30px 0;
+        color: #000000;
+      }
+      @media (min-width: 992px) {
+        .col-md-9 {
+          width: 75%;
+        }
+      }
+      @media (min-width: 992px) {
+        .col-md-1,
+        .col-md-10,
+        .col-md-11,
+        .col-md-12,
+        .col-md-2,
+        .col-md-3,
+        .col-md-4,
+        .col-md-5,
+        .col-md-6,
+        .col-md-7,
+        .col-md-8,
+        .col-md-9 {
+          float: left;
+        }
+      }
+      @media (min-width: 768px) {
+        .col-sm-7 {
+          width: 58.33333333%;
+        }
+      }
+      @media (min-width: 768px) {
+        .col-sm-1,
+        .col-sm-10,
+        .col-sm-11,
+        .col-sm-12,
+        .col-sm-2,
+        .col-sm-3,
+        .col-sm-4,
+        .col-sm-5,
+        .col-sm-6,
+        .col-sm-7,
+        .col-sm-8,
+        .col-sm-9 {
+          float: left;
+        }
+      }
+      /* .col-xs-12 {
+        width: 100%;
+      }*/
+      .col-xs-1,
+      .col-xs-10,
+      .col-xs-11,
+      .col-xs-12,
+      .col-xs-2,
+      .col-xs-3,
+      .col-xs-4,
+      .col-xs-5,
+      .col-xs-6,
+      .col-xs-7,
+      .col-xs-8,
+      .col-xs-9 {
+        float: left;
+      }
+      .col-lg-1,
+      .col-lg-10,
+      .col-lg-11,
+      .col-lg-12,
+      .col-lg-2,
+      .col-lg-3,
+      .col-lg-4,
+      .col-lg-5,
+      .col-lg-6,
+      .col-lg-7,
+      .col-lg-8,
+      .col-lg-9,
+      .col-md-1,
+      .col-md-10,
+      .col-md-11,
+      .col-md-12,
+      .col-md-2,
+      .col-md-3,
+      .col-md-4,
+      .col-md-5,
+      .col-md-6,
+      .col-md-7,
+      .col-md-8,
+      .col-md-9,
+      .col-sm-1,
+      .col-sm-10,
+      .col-sm-11,
+      .col-sm-12,
+      .col-sm-2,
+      .col-sm-3,
+      .col-sm-4,
+      .col-sm-5,
+      .col-sm-6,
+      .col-sm-7,
+      .col-sm-8,
+      .col-sm-9,
+      .col-xs-1,
+      .col-xs-10,
+      .col-xs-11,
+      .col-xs-12,
+      .col-xs-2,
+      .col-xs-3,
+      .col-xs-4,
+      .col-xs-5,
+      .col-xs-6,
+      .col-xs-7,
+      .col-xs-8,
+      .col-xs-9 {
+        position: relative;
+        min-height: 1px;
+        padding-right: 15px;
+        padding-left: 15px;
+      }
+
+      .h2,
+      h2 {
+        font-size: 30px;
+      }
+      .mlp_course_fee_info .btn-sec-innernav {
+        margin: 39px 0 15px;
+      }
+      select:not(:-internal-list-box) {
+        overflow: visible !important;
+      }
+      user agent stylesheet select {
+        writing-mode: horizontal-tb !important;
+        font-style: ;
+        font-variant-ligatures: ;
+        font-variant-caps: ;
+        font-variant-numeric: ;
+        font-variant-east-asian: ;
+        font-variant-alternates: ;
+        font-weight: ;
+        font-stretch: ;
+        font-size: ;
+        font-family: ;
+        font-optical-sizing: ;
+        font-kerning: ;
+        font-feature-settings: ;
+        font-variation-settings: ;
+        text-rendering: auto;
+        color: fieldtext;
+        letter-spacing: normal;
+        word-spacing: normal;
+        line-height: normal;
+        text-transform: none;
+        text-indent: 0px;
+        text-shadow: none;
+        display: inline-block;
+        text-align: start;
+        appearance: auto;
+        box-sizing: border-box;
+        align-items: center;
+        white-space: pre;
+        -webkit-rtl-ordering: logical;
+        background-color: field;
+        cursor: default;
+        margin: 0em;
+        border-width: 1px;
+        border-style: solid;
+        border-color: -internal-light-dark(
+          rgb(118, 118, 118),
+          rgb(133, 133, 133)
+        );
+        border-image: initial;
+        border-radius: 0px;
+      }
+      .select_country {
+        display: inline-block;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        background: #fff;
+        margin-right: 15px;
+        padding-right: 20px;
+      }
+      .select_country select {
+        -moz-box-sizing: content-box;
+        -webkit-box-sizing: content-box;
+        box-sizing: content-box;
+        background: transparent;
+        border: 0;
+        outline: 0;
+        text-shadow: 1px 1px rgba(255, 255, 255, 0.7);
+        padding: 0px 0 0px 8px;
+        font-size: 13px;
+        width: 105%;
+        height: 25px;
+        -webkit-user-select: none;
+        -moz-user-select: -moz-none;
+        -ms-user-select: none;
+        user-select: none;
+        -webkit-appearance: none;
+        -moz-appearance: radio-container;
+        appearance: none;
+        cursor: pointer;
+      }
+      option {
+        font-weight: normal;
+        display: block;
+        white-space: nowrap;
+        min-height: 1.2em;
+        padding: 0px 2px 1px;
+      }
+
+      @media only screen and (min-width: 992px) and (max-width: 1199px) {
+        .rightbreadsec.btn-sec-innernav {
+          padding-left: 0;
+        }
+      }
+
+      .pull-right {
+        float: right;
+      }
+      .country_currency_prefix {
+        display: flex;
+        align-items: center;
+      }
+      .pull-right {
+        float: right !important;
+      }
+
+      .select_country:after {
+        content: "";
+        width: 0;
+        position: absolute;
+        right: 8px;
+        top: 46%;
+        margin-top: -2px;
+        border-width: 6px 4px;
+        border-style: solid;
+        pointer-events: none;
+        border-color: #656565 transparent transparent transparent;
+      }
+      .vid{
+          height: 31rem;
+    position: absolute;
+    top: 13rem;
+    left: 69rem;
+
+
+
+
+      }
+
+
+
+
+      .h1,
+      .h2,
+      .h3,
+      h1,
+      h2,
+      h3 {
+        margin-top: 20px;
+        margin-bottom: 10px;
+      }
+      .h1,
+      .h2,
+      .h3,
+      .h4,
+      .h5,
+      .h6,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: inherit;
+        font-weight: 500;
+        line-height: 1.1;
+        color: inherit;
+      }
+      h2 {
+        display: block;
+        font-size: 1.5em;
+        margin-block-start: 0.83em;
+        margin-block-end: 0.83em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        font-weight: bold;
+      }
+      /* div .r1 .r2 svg  {
+        padding-bottom: 40%;
+      } */
+
+      /* #syllabuscard div p .readLess {
+        display: none;
+      } */
+    </style>
+    <script type="text/javascript">
+      // document.("#time").onclick = function () {
+      //   document.myform.style.display = "none";
+      // };
+
+      // document.getElementsByName("connect2").onclick = function () {
+      //   document.getElementsByName("contact3").style.display = "block";
+      // };
+
+      function myFunctionon() {
+        document.getElementById("ContactModal").style.visibility = "visible";
+        // document.getElementsByTagName("body").style.background =
+        //   "rgba(0, 0, 0, 0.3)";
+      }
+
+      // document.getElementById("square").onclick = function () {
+      //   document.getElementById("square").style.display = "none";
+      // };
+    </script>
+    <!-- MDB -->
+  </head>
+
+  <body>
+    <div class="container1">
+      <div class="top row-2">
+        <h1>Take some time for you ALL Courses</h1>
+<!--        <form th:action="@{/uploaded}" method="POST" class="btn btn-secondary" enctype="multipart/form-data" style="-->
+<!--    display: grid;-->
+<!--    align-content: stretch;-->
+<!--    justify-content: center;-->
+<!--">-->
+<!--          <input type="file" name="videoFile" accept="video/*" sec:authorize="hasRole('ROLE_ADMIN')">-->
+<!--          <button type="submit"  sec:authorize="hasRole('ROLE_ADMIN')" >Upload</button >-->
+<!--        </form>-->
+      </div>
+
+      <div class="top2">
+
+
+        <div class="top21">
+          <i class="bi bi-bag-heart-fill"></i>
+          <h1>DevOps Engineer Masters Program</h1>
+        </div>
+        <div class="top22">
+          <label >
+            200+ Hours Of Interactive Learning Capstone Project</label>
+        </div>
+
+        <div class="top23" th:object = "${card}" >
+          <label
+            >DevOps Engineer Masters Program will make you proficient in DevOps
+            principles like CI/CD, Continuous Monitoring, and Continuous
+            Delivery, using tools like Puppet, Nagios, Chef, Docker, Git &
+            Jenkins. It includes training on Linux, Python, Docker, AWS DevOps,
+            and Splunk. DevOps Engineer certification training course curriculum
+            created by extensive research on 5000+ job descriptions across the
+            globe to make you a certified DevOps expert.</label
+          >
+<!--          <iframe width="560" height="315" class="vid" src="https://www.youtube.com/embed/1EuBgM_R3zw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>        </div>-->
+          <iframe width="560" height="315" class="vid" th:src="${card.videolink}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>        </div>
+<!--        <div class="callmain">-->
+<!--          <div class="col">-->
+<!--            <div class="col2">-->
+<!--              <span-->
+<!--                >Avg. salary earned by DevOps Engineer is around $123,354 per-->
+<!--                annum.</span-->
+<!--              >-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="col2">-->
+<!--            <i> It’s time to change your career story</i>-->
+<!--          </div>-->
+
+<!--          <div class="col2">-->
+<!--            <div class="col22">-->
+<!--              <span>You Will Learn</span>-->
+<!--              <p>-->
+<!--                Security Administration, Shell Scripting, Virtualization, User-->
+<!--                Administration, OOPs Concepts, Script Debugging, CRUD-->
+<!--                Operations, Python IDE, Git, Chef 20 More Skills.-->
+<!--              </p>-->
+<!--            </div>-->
+
+<!--            <button id="connect1" name="connect2" onclick="myFunctionon()">-->
+<!--              connect-->
+<!--            </button>-->
+
+<!--            <div-->
+<!--              id="ContactModal"-->
+<!--              class="modal2 show"-->
+<!--              name="contact3"-->
+<!--              tabindex="-1"-->
+<!--              role="dialog"-->
+<!--              aria-hidden="true"-->
+<!--              style="-->
+<!--                position: fixed;-->
+<!--                visibility: hidden;-->
+<!--                z-index: 1;-->
+<!--                padding: 164rem 114rem;-->
+
+<!--                left: 0rem;-->
+<!--                top: 0rem;-->
+<!--                background: linear-gradient(-->
+<!--                  to right,-->
+<!--                  rgba(0, 0, 0, 0.7),-->
+<!--                  rgba(0, 0, 0, 0.7)-->
+<!--                );-->
+<!--              "-->
+<!--            >-->
+<!--              <div-->
+<!--                class="modal-dialog"-->
+<!--                id="era"-->
+<!--                style="-->
+<!--                  display: block;-->
+<!--                  z-index: 2;-->
+<!--                  position: fixed;-->
+<!--                  left: 55rem;-->
+<!--                  top: 22rem;-->
+<!--                  background: linear-gradient(-->
+<!--                    to right,-->
+<!--                    rgb(110, 154, 192),-->
+<!--                    rgb(198, 201, 236)-->
+<!--                  );-->
+<!--                  border-radius: 3%;-->
+<!--                  transform: rotate3d(18, 1, 8, 8deg);-->
+<!--                "-->
+<!--              >-->
+<!--                <div-->
+<!--                  class="modal-content"-->
+<!--                  style="-->
+<!--                    display: flex;-->
+
+<!--                    background: linear-gradient(-->
+<!--                      to right,-->
+<!--                      rgb(110, 154, 192),-->
+<!--                      rgb(230, 231, 243)-->
+<!--                    );-->
+<!--                    border-radius: 3%;-->
+<!--                    transform: rotate3d(24, 0, -8, 10deg);-->
+<!--                  "-->
+<!--                >-->
+<!--                  <p style="margin-left: 94%; cursor: pointer">-->
+<!--                    <a-->
+<!--                      id="time"-->
+<!--                      onclick="document.getElementById('ContactModal').style.visibility='hidden'"-->
+<!--                    >-->
+<!--                      &times;-->
+<!--                    </a>-->
+<!--                  </p>-->
+<!--                  <div-->
+<!--                    class="text-start"-->
+<!--                    style="-->
+<!--                      position: relative;-->
+<!--                      top: -18px;-->
+<!--                      left: -44px;-->
+<!--                      font-size: 40px;-->
+<!--                      display: flex;-->
+<!--                      padding-left: 40%;-->
+<!--                    "-->
+<!--                  >-->
+<!--                    Get in Touch-->
+<!--                  </div>-->
+<!--                  <div class="modal-body">-->
+<!--                    <form class="form col-md-12 center-block" name="myform">-->
+<!--                      <div-->
+<!--                        class="form-group"-->
+<!--                        style="width: 17rem; margin: 0 0 30px"-->
+<!--                      >-->
+<!--                        <input-->
+<!--                          type="text"-->
+<!--                          class="form-control input"-->
+<!--                          placeholder="Email"-->
+<!--                        />-->
+<!--                      </div>-->
+
+<!--                      <div-->
+<!--                        class="form-group"-->
+<!--                        style="width: 17rem; margin-bottom: 26px"-->
+<!--                      >-->
+<!--                        <input-->
+<!--                          type="tel"-->
+<!--                          class="form-control input-lg"-->
+<!--                          placeholder="Mobile No"-->
+<!--                          maxlength="10"-->
+<!--                        />-->
+<!--                      </div>-->
+<!--                      <div class="form-group">-->
+<!--                        <button-->
+<!--                          class="btn btn-primary btn-lg btn-block"-->
+<!--                          aria-haspopup="true"-->
+<!--                        >-->
+<!--                          connect to admin-->
+<!--                        </button>-->
+<!--                        &lt;!&ndash; <span class="pull-right"><a href="#">Register</a></span-->
+<!--                ><span><a href="#">Need help?</a></span> &ndash;&gt;-->
+<!--                      </div>-->
+<!--                      <div-->
+<!--                        class="col-md-1accordion2"-->
+<!--                        style="-->
+<!--                          position: relative;-->
+<!--                          top: -14px;-->
+<!--                          margin-bottom: -20px;-->
+<!--                        "-->
+<!--                      >-->
+<!--                        <button-->
+<!--                          class="btn"-->
+<!--                          data-dismiss="modal"-->
+<!--                          aria-hidden="true"-->
+<!--                          onclick="document.getElementById('ContactModal').style.visibility='hidden'"-->
+<!--                        >-->
+<!--                          Cancel-->
+<!--                        </button>-->
+<!--                      </div>-->
+<!--                    </form>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+      </div>
+
+      <div class="top3"></div>
+    </div>
+
+
+
+    <button
+            onclick="topFunction()"
+            id="movetop"
+            class="btn btn-danger btn-floating btn-lg"
+            title="Go to top"
+    >
+      <span class="fas fa-arrow-up" aria-hidden="true"></span>
+    </button>
+    <script>
+      // When the user scrolls down 20px from the top of the document, show the button
+      window.onscroll = function () {
+        scrollFunction();
+      };
+
+      function scrollFunction() {
+        if (
+          document.body.scrollTop > 20 ||
+          document.documentElement.scrollTop > 20
+        ) {
+          document.getElementById("movetop").style.display = "block";
+        } else {
+          document.getElementById("movetop").style.display = "none";
+        }
+      }
+
+      // When the user clicks on the button, scroll to the top of the document
+      function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      }
+    </script>
+
+
+
+    <div class="container2" id="con2">
+      <!--Main Navigation-->
+      <nav
+        class="navbar navbar-expand-lg navbar-dark bg-dark"
+        style="height: 20px"
+      >
+        <div class="container-fluid1">
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link active" aria-current="page" href="#con2"
+                >Review-info</a
+              >
+              <a class="nav-link" href="#con5">Syllabus</a>
+<!--              <a class="nav-link" href="#con6">Fees</a>-->
+<!--              <a class="nav-link"  href="#Certificate">Certification</a>-->
+            </div>
+          </div>
+        </div>
+      </nav>
+      <!--Main Navigation-->
+      <div class="carusel1">
+        <div id="carouselExampleIndicators" class="carousel slider">
+          <div class="carousel-indicators">
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="0"
+              class="active dot"
+              aria-current="true"
+              aria-label="Slide 1"
+              style="
+                height: 15px;
+                width: 15px;
+                background-color: #bbb;
+                border-radius: 50%;
+                display: inline-block;
+              "
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"
+              style="
+                height: 15px;
+                width: 15px;
+                background-color: #bbb;
+                border-radius: 50%;
+                display: inline-block;
+              "
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="2"
+              aria-label="Slide 3"
+              style="
+                height: 15px;
+                width: 15px;
+                background-color: #bbb;
+                border-radius: 50%;
+                display: inline-block;
+              "
+            ></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="../img/c1.png" class="d-block w-70" alt="..." />
+            </div>
+            <div class="carousel-item">
+              <img src="../img/c2.png" class="d-block w-70" alt="..." />
+            </div>
+            <div class="carousel-item">
+              <img src="../img/c3.png" class="d-block w-70" alt="..." />
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+        <div id="con4">
+          <p>
+            Our DevOps Engineer Masters Course Alumni work for amazing companies
+          </p>
+          <img src="../img/c4.png" alt="" />
+        </div>
+      </div>
+
+      <div class="container3" id="con5">
+        <div class="back">
+          <label>
+            <h1>Syllabus Programs</h1>
+          </label>
+
+          <div class="card border-success mb-lg-10" id="syllabuscard">
+            <div class="card-header bg-transparent border-success">
+              <span>Linux Fundamentals Certification Training</span>
+              <h5 class="card-title alert alert-success">self paced</h5>
+            </div>
+            <div class="card-body text-success">
+              <input type="checkbox" id="check" />
+              <p class="addReadMore showmorecontent">
+                Edureka's Linux Fundamentals Certification Course will help you
+                gain a strong foundation in Linux from scratch.
+              </p>
+              <div class="content">
+                <p>
+                  This course will help you master important Linux concepts such
+                  as Linux installations, Packages, Architecture, File System,
+                  User Management, Scripting Data &amp;various useful commands
+                  and utilities with sufficient hands-on. This Linux
+                  Fundamentals certification course is also a gateway towards
+                  Linux Kernel, Linux Administration and Linux programming.
+                </p>
+              </div>
+              <label
+                for="check"
+                class="readMore mt-5"
+                style="justify-content: baseline"
+                >...Read More</label
+              >
+              <!-- <p class="readless" title="Click to Show Less">ReadlLess</p> -->
+            </div>
+            <div class="card-footer bg-transparent border-success">Footer</div>
+          </div>
+
+          <div class="card border-success mb-lg-10" id="syllabuscard1">
+            <div class="card-header bg-transparent border-success">
+              <span>Linux Fundamentals Certification Training</span>
+              <h5 class="card-title alert alert-success">self paced</h5>
+            </div>
+            <div class="card-body text-success">
+              <input type="checkbox" id="check1" />
+              <p class="addReadMore1 showmorecontent">
+                Edureka's Linux Fundamentals Certification Course will help you
+                gain a strong foundation in Linux from scratch.
+              </p>
+              <div class="content1">
+                <p>
+                  This course will help you master important Linux concepts such
+                  as Linux installations, Packages, Architecture, File System,
+                  User Management, Scripting Data &amp;various useful commands
+                  and utilities with sufficient hands-on. This Linux
+                  Fundamentals certification course is also a gateway towards
+                  Linux Kernel, Linux Administration and Linux programming.
+                </p>
+              </div>
+              <label
+                for="check1"
+                class="readMore1"
+                style="justify-content: baseline"
+                >...Read More</label
+              >
+              <!-- <p class="readless" title="Click to Show Less">ReadlLess</p> -->
+            </div>
+            <div class="card-footer bg-transparent border-success">Footer</div>
+          </div>
+
+          <div class="card border-success mb-lg-10" id="syllabuscard2">
+            <div class="card-header bg-transparent border-success">
+              <span>Linux Fundamentals Certification Training</span>
+              <h5 class="card-title alert alert-success">self paced</h5>
+            </div>
+            <div class="card-body text-success">
+              <input type="checkbox" id="check2" />
+              <p class="addReadMore2 showmorecontent">
+                Edureka's Linux Fundamentals Certification Course will help you
+                gain a strong foundation in Linux from scratch.
+              </p>
+              <div class="content2">
+                <p>
+                  This course will help you master important Linux concepts such
+                  as Linux installations, Packages, Architecture, File System,
+                  User Management, Scripting Data &amp;various useful commands
+                  and utilities with sufficient hands-on. This Linux
+                  Fundamentals certification course is also a gateway towards
+                  Linux Kernel, Linux Administration and Linux programming.
+                </p>
+              </div>
+              <label
+                for="check2"
+                class="readMore2"
+                style="justify-content: baseline"
+                >...Read More</label
+              >
+              <!-- <p class="readless" title="Click to Show Less">ReadlLess</p> -->
+            </div>
+            <div class="card-footer bg-transparent border-success">Footer</div>
+          </div>
+        </div>
+      </div>
+
+
+      <section id="certificate">
+       <img src="">
+
+
+
+
+
+
+
+
+      </section>
+
+
+
+
+      </div>
+
+      <!-- <div class="container4" id="con6"> -->
+<!--      <div class="container-fluid mlp_course_fee_info" id="Fees_Section">-->
+<!--        <div class="container">-->
+<!--          <div class="title_mlp_bx col-lg-9 col-md-9 col-sm-7 col-xs-12">-->
+<!--            <h2>Program Fees</h2>-->
+<!--          </div>-->
+<!--          <div-->
+<!--            class="col-lg-3 col-md-3 col-sm-5 col-xs-12 padding-right rightbreadsec btn-sec-innernav font-14 clpnavcus sm-pad-0"-->
+<!--          >-->
+<!--            - -->
+<!--            <div class="country_currency_prefix pull-right">-->
+<!--              <div class="select select_country">-->
+<!--                <select-->
+<!--                  name="country"-->
+<!--                  aria-label="countryprefix"-->
+<!--                  class="country ga-click"-->
+<!--                  data-category="CLP"-->
+<!--                  data-action="Country_Dropdown_Clicked"-->
+<!--                >-->
+<!--                  <option-->
+<!--                    value="2"-->
+<!--                    data-index="0"-->
+<!--                    data-phone-code="+1"-->
+<!--                    data-country-id="2"-->
+<!--                    data-country-name="US (CST)"-->
+<!--                  >-->
+<!--                    US - US (CST)-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="1"-->
+<!--                    data-index="1"-->
+<!--                    data-phone-code="+1"-->
+<!--                    data-country-id="1"-->
+<!--                    data-country-name="US (EST)"-->
+<!--                  >-->
+<!--                    US - US (EST)-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="3"-->
+<!--                    data-index="2"-->
+<!--                    data-phone-code="+1"-->
+<!--                    data-country-id="3"-->
+<!--                    data-country-name="US (MST)"-->
+<!--                  >-->
+<!--                    US - US (MST)-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="5"-->
+<!--                    data-index="3"-->
+<!--                    data-phone-code="+1"-->
+<!--                    data-country-id="5"-->
+<!--                    data-country-name="US (PST)"-->
+<!--                  >-->
+<!--                    US - US (PST)-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="149"-->
+<!--                    data-index="4"-->
+<!--                    data-phone-code="+44"-->
+<!--                    data-country-id="149"-->
+<!--                    data-country-name="United Kingdom"-->
+<!--                  >-->
+<!--                    GB - United Kingdom-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="10"-->
+<!--                    data-index="5"-->
+<!--                    data-phone-code="+65"-->
+<!--                    data-country-id="10"-->
+<!--                    data-country-name="Singapore"-->
+<!--                  >-->
+<!--                    SG - Singapore-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="258"-->
+<!--                    data-index="6"-->
+<!--                    data-phone-code="+1"-->
+<!--                    data-country-id="258"-->
+<!--                    data-country-name="Canada (AST)"-->
+<!--                  >-->
+<!--                    CA - Canada (AST)-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="260"-->
+<!--                    data-index="7"-->
+<!--                    data-phone-code="+1"-->
+<!--                    data-country-id="260"-->
+<!--                    data-country-name="Canada (CST)"-->
+<!--                  >-->
+<!--                    CA - Canada (CST)-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="259"-->
+<!--                    data-index="8"-->
+<!--                    data-phone-code="+1"-->
+<!--                    data-country-id="259"-->
+<!--                    data-country-name="Canada (EST)"-->
+<!--                  >-->
+<!--                    CA - Canada (EST)-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="261"-->
+<!--                    data-index="9"-->
+<!--                    data-phone-code="+1"-->
+<!--                    data-country-id="261"-->
+<!--                    data-country-name="Canada (MST)"-->
+<!--                  >-->
+<!--                    CA - Canada (MST)-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="11"-->
+<!--                    data-index="10"-->
+<!--                    data-phone-code="+1"-->
+<!--                    data-country-id="11"-->
+<!--                    data-country-name="Canada (NST)"-->
+<!--                  >-->
+<!--                    CA - Canada (NST)-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="262"-->
+<!--                    data-index="11"-->
+<!--                    data-phone-code="+1"-->
+<!--                    data-country-id="262"-->
+<!--                    data-country-name="Canada (PST)"-->
+<!--                  >-->
+<!--                    CA - Canada (PST)-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="12"-->
+<!--                    data-index="12"-->
+<!--                    data-phone-code="+91"-->
+<!--                    data-country-id="12"-->
+<!--                    data-country-name="India"-->
+<!--                    selected="selected"-->
+<!--                  >-->
+<!--                    IN - India-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="80"-->
+<!--                    data-index="13"-->
+<!--                    data-phone-code="+971"-->
+<!--                    data-country-id="80"-->
+<!--                    data-country-name="United Arab Emirates"-->
+<!--                  >-->
+<!--                    AE - United Arab Emirates-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="257"-->
+<!--                    data-index="14"-->
+<!--                    data-phone-code="+61"-->
+<!--                    data-country-id="257"-->
+<!--                    data-country-name="Australia (ACST)"-->
+<!--                  >-->
+<!--                    AU - Australia (ACST)-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="256"-->
+<!--                    data-index="15"-->
+<!--                    data-phone-code="+61"-->
+<!--                    data-country-id="256"-->
+<!--                    data-country-name="Australia (AEST)"-->
+<!--                  >-->
+<!--                    AU - Australia (AEST)-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="255"-->
+<!--                    data-index="16"-->
+<!--                    data-phone-code="+61"-->
+<!--                    data-country-id="255"-->
+<!--                    data-country-name="Australia (AWST)"-->
+<!--                  >-->
+<!--                    AU - Australia (AWST)-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="13"-->
+<!--                    data-index="17"-->
+<!--                    data-phone-code="+61"-->
+<!--                    data-country-id="13"-->
+<!--                    data-country-name="Australia (LHST)"-->
+<!--                  >-->
+<!--                    AU - Australia (LHST)-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="77"-->
+<!--                    data-index="18"-->
+<!--                    data-phone-code="+93"-->
+<!--                    data-country-id="77"-->
+<!--                    data-country-name="Afghanistan"-->
+<!--                  >-->
+<!--                    AF - Afghanistan-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="94"-->
+<!--                    data-index="19"-->
+<!--                    data-phone-code="+358"-->
+<!--                    data-country-id="94"-->
+<!--                    data-country-name="Aland Islands"-->
+<!--                  >-->
+<!--                    AX - Aland Islands-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="101"-->
+<!--                    data-index="20"-->
+<!--                    data-phone-code="+355"-->
+<!--                    data-country-id="101"-->
+<!--                    data-country-name="Albania"-->
+<!--                  >-->
+<!--                    AL - Albania-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="106"-->
+<!--                    data-index="21"-->
+<!--                    data-phone-code="+213"-->
+<!--                    data-country-id="106"-->
+<!--                    data-country-name="Algeria"-->
+<!--                  >-->
+<!--                    DZ - Algeria-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="98"-->
+<!--                    data-index="22"-->
+<!--                    data-phone-code="+1684"-->
+<!--                    data-country-id="98"-->
+<!--                    data-country-name="American Samoa"-->
+<!--                  >-->
+<!--                    AS - American Samoa-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="79"-->
+<!--                    data-index="23"-->
+<!--                    data-phone-code="+376"-->
+<!--                    data-country-id="79"-->
+<!--                    data-country-name="Andorra"-->
+<!--                  >-->
+<!--                    AD - Andorra-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="100"-->
+<!--                    data-index="24"-->
+<!--                    data-phone-code="+244"-->
+<!--                    data-country-id="100"-->
+<!--                    data-country-name="Angola"-->
+<!--                  >-->
+<!--                    AO - Angola-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="76"-->
+<!--                    data-index="25"-->
+<!--                    data-phone-code="+1264"-->
+<!--                    data-country-id="76"-->
+<!--                    data-country-name="Anguilla"-->
+<!--                  >-->
+<!--                    AI - Anguilla-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="99"-->
+<!--                    data-index="26"-->
+<!--                    data-phone-code="+672"-->
+<!--                    data-country-id="99"-->
+<!--                    data-country-name="Antarctica"-->
+<!--                  >-->
+<!--                    AQ - Antarctica-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="78"-->
+<!--                    data-index="27"-->
+<!--                    data-phone-code="+1268"-->
+<!--                    data-country-id="78"-->
+<!--                    data-country-name="Antigua and Barbuda"-->
+<!--                  >-->
+<!--                    AG - Antigua and Barbuda-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="97"-->
+<!--                    data-index="28"-->
+<!--                    data-phone-code="+54"-->
+<!--                    data-country-id="97"-->
+<!--                    data-country-name="Argentina"-->
+<!--                  >-->
+<!--                    AR - Argentina-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="88"-->
+<!--                    data-index="29"-->
+<!--                    data-phone-code="+374"-->
+<!--                    data-country-id="88"-->
+<!--                    data-country-name="Armenia"-->
+<!--                  >-->
+<!--                    AM - Armenia-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="95"-->
+<!--                    data-index="30"-->
+<!--                    data-phone-code="+297"-->
+<!--                    data-country-id="95"-->
+<!--                    data-country-name="Aruba"-->
+<!--                  >-->
+<!--                    AW - Aruba-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="96"-->
+<!--                    data-index="31"-->
+<!--                    data-phone-code="+43"-->
+<!--                    data-country-id="96"-->
+<!--                    data-country-name="Austria"-->
+<!--                  >-->
+<!--                    AT - Austria-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="93"-->
+<!--                    data-index="32"-->
+<!--                    data-phone-code="+994"-->
+<!--                    data-country-id="93"-->
+<!--                    data-country-name="Azerbaijan"-->
+<!--                  >-->
+<!--                    AZ - Azerbaijan-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="188"-->
+<!--                    data-index="33"-->
+<!--                    data-phone-code="+1242"-->
+<!--                    data-country-id="188"-->
+<!--                    data-country-name="Bahamas"-->
+<!--                  >-->
+<!--                    BS - Bahamas-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="167"-->
+<!--                    data-index="34"-->
+<!--                    data-phone-code="+973"-->
+<!--                    data-country-id="167"-->
+<!--                    data-country-name="Bahrain"-->
+<!--                  >-->
+<!--                    BH - Bahrain-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="193"-->
+<!--                    data-index="35"-->
+<!--                    data-phone-code="+880"-->
+<!--                    data-country-id="193"-->
+<!--                    data-country-name="Bangladesh"-->
+<!--                  >-->
+<!--                    BD - Bangladesh-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="173"-->
+<!--                    data-index="36"-->
+<!--                    data-phone-code="+1-246"-->
+<!--                    data-country-id="173"-->
+<!--                    data-country-name="Barbados"-->
+<!--                  >-->
+<!--                    BB - Barbados-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="186"-->
+<!--                    data-index="37"-->
+<!--                    data-phone-code="+375"-->
+<!--                    data-country-id="186"-->
+<!--                    data-country-name="Belarus"-->
+<!--                  >-->
+<!--                    BY - Belarus-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="177"-->
+<!--                    data-index="38"-->
+<!--                    data-phone-code="+32"-->
+<!--                    data-country-id="177"-->
+<!--                    data-country-name="Belgium"-->
+<!--                  >-->
+<!--                    BE - Belgium-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="185"-->
+<!--                    data-index="39"-->
+<!--                    data-phone-code="+501"-->
+<!--                    data-country-id="185"-->
+<!--                    data-country-name="Belize"-->
+<!--                  >-->
+<!--                    BZ - Belize-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="165"-->
+<!--                    data-index="40"-->
+<!--                    data-phone-code="+229"-->
+<!--                    data-country-id="165"-->
+<!--                    data-country-name="Benin"-->
+<!--                  >-->
+<!--                    BJ - Benin-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="170"-->
+<!--                    data-index="41"-->
+<!--                    data-phone-code="+1441"-->
+<!--                    data-country-id="170"-->
+<!--                    data-country-name="Bermuda"-->
+<!--                  >-->
+<!--                    BM - Bermuda-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="178"-->
+<!--                    data-index="42"-->
+<!--                    data-phone-code="+975"-->
+<!--                    data-country-id="178"-->
+<!--                    data-country-name="Bhutan"-->
+<!--                  >-->
+<!--                    BT - Bhutan-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="168"-->
+<!--                    data-index="43"-->
+<!--                    data-phone-code="+591"-->
+<!--                    data-country-id="168"-->
+<!--                    data-country-name="Bolivia"-->
+<!--                  >-->
+<!--                    BO - Bolivia-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="192"-->
+<!--                    data-index="44"-->
+<!--                    data-phone-code="+267"-->
+<!--                    data-country-id="192"-->
+<!--                    data-country-name="Botswana"-->
+<!--                  >-->
+<!--                    BW - Botswana-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="189"-->
+<!--                    data-index="45"-->
+<!--                    data-phone-code="+55"-->
+<!--                    data-country-id="189"-->
+<!--                    data-country-name="Brazil"-->
+<!--                  >-->
+<!--                    BR - Brazil-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="109"-->
+<!--                    data-index="46"-->
+<!--                    data-phone-code="+1284"-->
+<!--                    data-country-id="109"-->
+<!--                    data-country-name="British Virgin Islands"-->
+<!--                  >-->
+<!--                    VG - British Virgin Islands-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="169"-->
+<!--                    data-index="47"-->
+<!--                    data-phone-code="+673"-->
+<!--                    data-country-id="169"-->
+<!--                    data-country-name="Brunei"-->
+<!--                  >-->
+<!--                    BN - Brunei-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="175"-->
+<!--                    data-index="48"-->
+<!--                    data-phone-code="+359"-->
+<!--                    data-country-id="175"-->
+<!--                    data-country-name="Bulgaria"-->
+<!--                  >-->
+<!--                    BG - Bulgaria-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="176"-->
+<!--                    data-index="49"-->
+<!--                    data-phone-code="+226"-->
+<!--                    data-country-id="176"-->
+<!--                    data-country-name="Burkina Faso"-->
+<!--                  >-->
+<!--                    BF - Burkina Faso-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="166"-->
+<!--                    data-index="50"-->
+<!--                    data-phone-code="+257"-->
+<!--                    data-country-id="166"-->
+<!--                    data-country-name="Burundi"-->
+<!--                  >-->
+<!--                    BI - Burundi-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="39"-->
+<!--                    data-index="51"-->
+<!--                    data-phone-code="+855"-->
+<!--                    data-country-id="39"-->
+<!--                    data-country-name="Cambodia"-->
+<!--                  >-->
+<!--                    KH - Cambodia-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="62"-->
+<!--                    data-index="52"-->
+<!--                    data-phone-code="+237"-->
+<!--                    data-country-id="62"-->
+<!--                    data-country-name="Cameroon"-->
+<!--                  >-->
+<!--                    CM - Cameroon-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="21"-->
+<!--                    data-index="53"-->
+<!--                    data-phone-code="+238"-->
+<!--                    data-country-id="21"-->
+<!--                    data-country-name="Cape Verde"-->
+<!--                  >-->
+<!--                    CV - Cape Verde-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="132"-->
+<!--                    data-index="54"-->
+<!--                    data-phone-code="+1345"-->
+<!--                    data-country-id="132"-->
+<!--                    data-country-name="Cayman Islands"-->
+<!--                  >-->
+<!--                    KY - Cayman Islands-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="43"-->
+<!--                    data-index="55"-->
+<!--                    data-phone-code="+236"-->
+<!--                    data-country-id="43"-->
+<!--                    data-country-name="Central African Republic"-->
+<!--                  >-->
+<!--                    CF - Central African Republic-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="85"-->
+<!--                    data-index="56"-->
+<!--                    data-phone-code="+235"-->
+<!--                    data-country-id="85"-->
+<!--                    data-country-name="Chad"-->
+<!--                  >-->
+<!--                    TD - Chad-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="61"-->
+<!--                    data-index="57"-->
+<!--                    data-phone-code="+56"-->
+<!--                    data-country-id="61"-->
+<!--                    data-country-name="Chile"-->
+<!--                  >-->
+<!--                    CL - Chile-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="63"-->
+<!--                    data-index="58"-->
+<!--                    data-phone-code="+86"-->
+<!--                    data-country-id="63"-->
+<!--                    data-country-name="China"-->
+<!--                  >-->
+<!--                    CN - China-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="60"-->
+<!--                    data-index="59"-->
+<!--                    data-phone-code="+61"-->
+<!--                    data-country-id="60"-->
+<!--                    data-country-name="Cocos Islands"-->
+<!--                  >-->
+<!--                    CC - Cocos Islands-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="64"-->
+<!--                    data-index="60"-->
+<!--                    data-phone-code="+57"-->
+<!--                    data-country-id="64"-->
+<!--                    data-country-name="Colombia"-->
+<!--                  >-->
+<!--                    CO - Colombia-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="37"-->
+<!--                    data-index="61"-->
+<!--                    data-phone-code="+269"-->
+<!--                    data-country-id="37"-->
+<!--                    data-country-name="Comoros"-->
+<!--                  >-->
+<!--                    KM - Comoros-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="67"-->
+<!--                    data-index="62"-->
+<!--                    data-phone-code="+682"-->
+<!--                    data-country-id="67"-->
+<!--                    data-country-name="Cook Islands"-->
+<!--                  >-->
+<!--                    CK - Cook Islands-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="23"-->
+<!--                    data-index="63"-->
+<!--                    data-phone-code="+506"-->
+<!--                    data-country-id="23"-->
+<!--                    data-country-name="Costa Rica"-->
+<!--                  >-->
+<!--                    CR - Costa Rica-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="152"-->
+<!--                    data-index="64"-->
+<!--                    data-phone-code="+385"-->
+<!--                    data-country-id="152"-->
+<!--                    data-country-name="Croatia"-->
+<!--                  >-->
+<!--                    HR - Croatia-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="20"-->
+<!--                    data-index="65"-->
+<!--                    data-phone-code="+53"-->
+<!--                    data-country-id="20"-->
+<!--                    data-country-name="Cuba"-->
+<!--                  >-->
+<!--                    CU - Cuba-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="22"-->
+<!--                    data-index="66"-->
+<!--                    data-phone-code="+599"-->
+<!--                    data-country-id="22"-->
+<!--                    data-country-name="Curacao"-->
+<!--                  >-->
+<!--                    CW - Curacao-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="25"-->
+<!--                    data-index="67"-->
+<!--                    data-phone-code="+357"-->
+<!--                    data-country-id="25"-->
+<!--                    data-country-name="Cyprus"-->
+<!--                  >-->
+<!--                    CY - Cyprus-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="41"-->
+<!--                    data-index="68"-->
+<!--                    data-phone-code="+420"-->
+<!--                    data-country-id="41"-->
+<!--                    data-country-name="Czech Republic"-->
+<!--                  >-->
+<!--                    CZ - Czech Republic-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="110"-->
+<!--                    data-index="69"-->
+<!--                    data-phone-code="+45"-->
+<!--                    data-country-id="110"-->
+<!--                    data-country-name="Denmark"-->
+<!--                  >-->
+<!--                    DK - Denmark-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="111"-->
+<!--                    data-index="70"-->
+<!--                    data-phone-code="+253"-->
+<!--                    data-country-id="111"-->
+<!--                    data-country-name="Djibouti"-->
+<!--                  >-->
+<!--                    DJ - Djibouti-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="112"-->
+<!--                    data-index="71"-->
+<!--                    data-phone-code="+1767"-->
+<!--                    data-country-id="112"-->
+<!--                    data-country-name="Dominica"-->
+<!--                  >-->
+<!--                    DM - Dominica-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="113"-->
+<!--                    data-index="72"-->
+<!--                    data-phone-code="+1849"-->
+<!--                    data-country-id="113"-->
+<!--                    data-country-name="Dominican Republic"-->
+<!--                  >-->
+<!--                    DO - Dominican Republic-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="181"-->
+<!--                    data-index="73"-->
+<!--                    data-phone-code="+670"-->
+<!--                    data-country-id="181"-->
+<!--                    data-country-name="East Timor"-->
+<!--                  >-->
+<!--                    TL - East Timor-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="249"-->
+<!--                    data-index="74"-->
+<!--                    data-phone-code="+593"-->
+<!--                    data-country-id="249"-->
+<!--                    data-country-name="Ecuador"-->
+<!--                  >-->
+<!--                    EC - Ecuador-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="251"-->
+<!--                    data-index="75"-->
+<!--                    data-phone-code="+20"-->
+<!--                    data-country-id="251"-->
+<!--                    data-country-name="Egypt"-->
+<!--                  >-->
+<!--                    EG - Egypt-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="161"-->
+<!--                    data-index="76"-->
+<!--                    data-phone-code="+503"-->
+<!--                    data-country-id="161"-->
+<!--                    data-country-name="El Salvador"-->
+<!--                  >-->
+<!--                    SV - El Salvador-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="139"-->
+<!--                    data-index="77"-->
+<!--                    data-phone-code="+240"-->
+<!--                    data-country-id="139"-->
+<!--                    data-country-name="Equatorial Guinea"-->
+<!--                  >-->
+<!--                    GQ - Equatorial Guinea-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="208"-->
+<!--                    data-index="78"-->
+<!--                    data-phone-code="+291"-->
+<!--                    data-country-id="208"-->
+<!--                    data-country-name="Eritrea"-->
+<!--                  >-->
+<!--                    ER - Eritrea-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="252"-->
+<!--                    data-index="79"-->
+<!--                    data-phone-code="+372"-->
+<!--                    data-country-id="252"-->
+<!--                    data-country-name="Estonia"-->
+<!--                  >-->
+<!--                    EE - Estonia-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="245"-->
+<!--                    data-index="80"-->
+<!--                    data-phone-code="+251"-->
+<!--                    data-country-id="245"-->
+<!--                    data-country-name="Ethiopia"-->
+<!--                  >-->
+<!--                    ET - Ethiopia-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="54"-->
+<!--                    data-index="81"-->
+<!--                    data-phone-code="+500"-->
+<!--                    data-country-id="54"-->
+<!--                    data-country-name="Falkland Islands"-->
+<!--                  >-->
+<!--                    FK - Falkland Islands-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="52"-->
+<!--                    data-index="82"-->
+<!--                    data-phone-code="+298"-->
+<!--                    data-country-id="52"-->
+<!--                    data-country-name="Faroe Islands"-->
+<!--                  >-->
+<!--                    FO - Faroe Islands-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="55"-->
+<!--                    data-index="83"-->
+<!--                    data-phone-code="+679"-->
+<!--                    data-country-id="55"-->
+<!--                    data-country-name="Fiji"-->
+<!--                  >-->
+<!--                    FJ - Fiji-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="56"-->
+<!--                    data-index="84"-->
+<!--                    data-phone-code="+358"-->
+<!--                    data-country-id="56"-->
+<!--                    data-country-name="Finland"-->
+<!--                  >-->
+<!--                    FI - Finland-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="212"-->
+<!--                    data-index="85"-->
+<!--                    data-phone-code="+33"-->
+<!--                    data-country-id="212"-->
+<!--                    data-country-name="France"-->
+<!--                  >-->
+<!--                    FR - France-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="134"-->
+<!--                    data-index="86"-->
+<!--                    data-phone-code="+594"-->
+<!--                    data-country-id="134"-->
+<!--                    data-country-name="French Guiana"-->
+<!--                  >-->
+<!--                    GF - French Guiana-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="230"-->
+<!--                    data-index="87"-->
+<!--                    data-phone-code="+689"-->
+<!--                    data-country-id="230"-->
+<!--                    data-country-name="French Polynesia"-->
+<!--                  >-->
+<!--                    PF - French Polynesia-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="162"-->
+<!--                    data-index="88"-->
+<!--                    data-phone-code="+241"-->
+<!--                    data-country-id="162"-->
+<!--                    data-country-name="Gabon"-->
+<!--                  >-->
+<!--                    GA - Gabon-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="159"-->
+<!--                    data-index="89"-->
+<!--                    data-phone-code="+220"-->
+<!--                    data-country-id="159"-->
+<!--                    data-country-name="Gambia"-->
+<!--                  >-->
+<!--                    GM - Gambia-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="147"-->
+<!--                    data-index="90"-->
+<!--                    data-phone-code="+995"-->
+<!--                    data-country-id="147"-->
+<!--                    data-country-name="Georgia"-->
+<!--                  >-->
+<!--                    GE - Georgia-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="108"-->
+<!--                    data-index="91"-->
+<!--                    data-phone-code="+49"-->
+<!--                    data-country-id="108"-->
+<!--                    data-country-name="Germany"-->
+<!--                  >-->
+<!--                    DE - Germany-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="156"-->
+<!--                    data-index="92"-->
+<!--                    data-phone-code="+233"-->
+<!--                    data-country-id="156"-->
+<!--                    data-country-name="Ghana"-->
+<!--                  >-->
+<!--                    GH - Ghana-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="157"-->
+<!--                    data-index="93"-->
+<!--                    data-phone-code="+350"-->
+<!--                    data-country-id="157"-->
+<!--                    data-country-name="Gibraltar"-->
+<!--                  >-->
+<!--                    GI - Gibraltar-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="140"-->
+<!--                    data-index="94"-->
+<!--                    data-phone-code="+30"-->
+<!--                    data-country-id="140"-->
+<!--                    data-country-name="Greece"-->
+<!--                  >-->
+<!--                    GR - Greece-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="158"-->
+<!--                    data-index="95"-->
+<!--                    data-phone-code="+299"-->
+<!--                    data-country-id="158"-->
+<!--                    data-country-name="Greenland"-->
+<!--                  >-->
+<!--                    GL - Greenland-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="148"-->
+<!--                    data-index="96"-->
+<!--                    data-phone-code="+1473"-->
+<!--                    data-country-id="148"-->
+<!--                    data-country-name="Grenada"-->
+<!--                  >-->
+<!--                    GD - Grenada-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="138"-->
+<!--                    data-index="97"-->
+<!--                    data-phone-code="+590"-->
+<!--                    data-country-id="138"-->
+<!--                    data-country-name="Guadeloupe"-->
+<!--                  >-->
+<!--                    GP - Guadeloupe-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="143"-->
+<!--                    data-index="98"-->
+<!--                    data-phone-code="+1671"-->
+<!--                    data-country-id="143"-->
+<!--                    data-country-name="Guam"-->
+<!--                  >-->
+<!--                    GU - Guam-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="142"-->
+<!--                    data-index="99"-->
+<!--                    data-phone-code="+502"-->
+<!--                    data-country-id="142"-->
+<!--                    data-country-name="Guatemala"-->
+<!--                  >-->
+<!--                    GT - Guatemala-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="135"-->
+<!--                    data-index="100"-->
+<!--                    data-phone-code="+44"-->
+<!--                    data-country-id="135"-->
+<!--                    data-country-name="Guernsey"-->
+<!--                  >-->
+<!--                    GG - Guernsey-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="160"-->
+<!--                    data-index="101"-->
+<!--                    data-phone-code="+224"-->
+<!--                    data-country-id="160"-->
+<!--                    data-country-name="Guinea"-->
+<!--                  >-->
+<!--                    GN - Guinea-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="144"-->
+<!--                    data-index="102"-->
+<!--                    data-phone-code="+245"-->
+<!--                    data-country-id="144"-->
+<!--                    data-country-name="Guinea-Bissau"-->
+<!--                  >-->
+<!--                    GW - Guinea-Bissau-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="136"-->
+<!--                    data-index="103"-->
+<!--                    data-phone-code="+592"-->
+<!--                    data-country-id="136"-->
+<!--                    data-country-name="Guyana"-->
+<!--                  >-->
+<!--                    GY - Guyana-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="151"-->
+<!--                    data-index="104"-->
+<!--                    data-phone-code="+509"-->
+<!--                    data-country-id="151"-->
+<!--                    data-country-name="Haiti"-->
+<!--                  >-->
+<!--                    HT - Haiti-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="194"-->
+<!--                    data-index="105"-->
+<!--                    data-phone-code="+504"-->
+<!--                    data-country-id="194"-->
+<!--                    data-country-name="Honduras"-->
+<!--                  >-->
+<!--                    HN - Honduras-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="133"-->
+<!--                    data-index="106"-->
+<!--                    data-phone-code="+852"-->
+<!--                    data-country-id="133"-->
+<!--                    data-country-name="Hong Kong"-->
+<!--                  >-->
+<!--                    HK - Hong Kong-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="150"-->
+<!--                    data-index="107"-->
+<!--                    data-phone-code="+36"-->
+<!--                    data-country-id="150"-->
+<!--                    data-country-name="Hungary"-->
+<!--                  >-->
+<!--                    HU - Hungary-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="74"-->
+<!--                    data-index="108"-->
+<!--                    data-phone-code="+354"-->
+<!--                    data-country-id="74"-->
+<!--                    data-country-name="Iceland"-->
+<!--                  >-->
+<!--                    IS - Iceland-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="91"-->
+<!--                    data-index="109"-->
+<!--                    data-phone-code="+62"-->
+<!--                    data-country-id="91"-->
+<!--                    data-country-name="Indonesia"-->
+<!--                  >-->
+<!--                    ID - Indonesia-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="87"-->
+<!--                    data-index="110"-->
+<!--                    data-phone-code="+98"-->
+<!--                    data-country-id="87"-->
+<!--                    data-country-name="Iran"-->
+<!--                  >-->
+<!--                    IR - Iran-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="232"-->
+<!--                    data-index="111"-->
+<!--                    data-phone-code="+964"-->
+<!--                    data-country-id="232"-->
+<!--                    data-country-name="Iraq"-->
+<!--                  >-->
+<!--                    IQ - Iraq-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="92"-->
+<!--                    data-index="112"-->
+<!--                    data-phone-code="+353"-->
+<!--                    data-country-id="92"-->
+<!--                    data-country-name="Ireland"-->
+<!--                  >-->
+<!--                    IE - Ireland-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="218"-->
+<!--                    data-index="113"-->
+<!--                    data-phone-code="+44"-->
+<!--                    data-country-id="218"-->
+<!--                    data-country-name="Isle of Man"-->
+<!--                  >-->
+<!--                    IM - Isle of Man-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="213"-->
+<!--                    data-index="114"-->
+<!--                    data-phone-code="+972"-->
+<!--                    data-country-id="213"-->
+<!--                    data-country-name="Israel"-->
+<!--                  >-->
+<!--                    IL - Israel-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="248"-->
+<!--                    data-index="115"-->
+<!--                    data-phone-code="+39"-->
+<!--                    data-country-id="248"-->
+<!--                    data-country-name="Italy"-->
+<!--                  >-->
+<!--                    IT - Italy-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="66"-->
+<!--                    data-index="116"-->
+<!--                    data-phone-code="+225"-->
+<!--                    data-country-id="66"-->
+<!--                    data-country-name="Ivory Coast"-->
+<!--                  >-->
+<!--                    CI - Ivory Coast-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="179"-->
+<!--                    data-index="117"-->
+<!--                    data-phone-code="+1876"-->
+<!--                    data-country-id="179"-->
+<!--                    data-country-name="Jamaica"-->
+<!--                  >-->
+<!--                    JM - Jamaica-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="137"-->
+<!--                    data-index="118"-->
+<!--                    data-phone-code="+81"-->
+<!--                    data-country-id="137"-->
+<!--                    data-country-name="Japan"-->
+<!--                  >-->
+<!--                    JP - Japan-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="187"-->
+<!--                    data-index="119"-->
+<!--                    data-phone-code="+44"-->
+<!--                    data-country-id="187"-->
+<!--                    data-country-name="Jersey"-->
+<!--                  >-->
+<!--                    JE - Jersey-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="153"-->
+<!--                    data-index="120"-->
+<!--                    data-phone-code="+962"-->
+<!--                    data-country-id="153"-->
+<!--                    data-country-name="Jordan"-->
+<!--                  >-->
+<!--                    JO - Jordan-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="72"-->
+<!--                    data-index="121"-->
+<!--                    data-phone-code="+7"-->
+<!--                    data-country-id="72"-->
+<!--                    data-country-name="Kazakhstan"-->
+<!--                  >-->
+<!--                    KZ - Kazakhstan-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="14"-->
+<!--                    data-index="122"-->
+<!--                    data-phone-code="+254"-->
+<!--                    data-country-id="14"-->
+<!--                    data-country-name="Kenya"-->
+<!--                  >-->
+<!--                    KE - Kenya-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="40"-->
+<!--                    data-index="123"-->
+<!--                    data-phone-code="+686"-->
+<!--                    data-country-id="40"-->
+<!--                    data-country-name="Kiribati"-->
+<!--                  >-->
+<!--                    KI - Kiribati-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="31"-->
+<!--                    data-index="124"-->
+<!--                    data-phone-code="+965"-->
+<!--                    data-country-id="31"-->
+<!--                    data-country-name="Kuwait"-->
+<!--                  >-->
+<!--                    KW - Kuwait-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="18"-->
+<!--                    data-index="125"-->
+<!--                    data-phone-code="+996"-->
+<!--                    data-country-id="18"-->
+<!--                    data-country-name="Kyrgyzstan"-->
+<!--                  >-->
+<!--                    KG - Kyrgyzstan-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="131"-->
+<!--                    data-index="126"-->
+<!--                    data-phone-code="+856"-->
+<!--                    data-country-id="131"-->
+<!--                    data-country-name="Laos"-->
+<!--                  >-->
+<!--                    LA - Laos-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="124"-->
+<!--                    data-index="127"-->
+<!--                    data-phone-code="+371"-->
+<!--                    data-country-id="124"-->
+<!--                    data-country-name="Latvia"-->
+<!--                  >-->
+<!--                    LV - Latvia-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="116"-->
+<!--                    data-index="128"-->
+<!--                    data-phone-code="+961"-->
+<!--                    data-country-id="116"-->
+<!--                    data-country-name="Lebanon"-->
+<!--                  >-->
+<!--                    LB - Lebanon-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="119"-->
+<!--                    data-index="129"-->
+<!--                    data-phone-code="+266"-->
+<!--                    data-country-id="119"-->
+<!--                    data-country-name="Lesotho"-->
+<!--                  >-->
+<!--                    LS - Lesotho-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="120"-->
+<!--                    data-index="130"-->
+<!--                    data-phone-code="+231"-->
+<!--                    data-country-id="120"-->
+<!--                    data-country-name="Liberia"-->
+<!--                  >-->
+<!--                    LR - Liberia-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="83"-->
+<!--                    data-index="131"-->
+<!--                    data-phone-code="+218"-->
+<!--                    data-country-id="83"-->
+<!--                    data-country-name="Libya"-->
+<!--                  >-->
+<!--                    LY - Libya-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="125"-->
+<!--                    data-index="132"-->
+<!--                    data-phone-code="+423"-->
+<!--                    data-country-id="125"-->
+<!--                    data-country-name="Liechtenstein"-->
+<!--                  >-->
+<!--                    LI - Liechtenstein-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="122"-->
+<!--                    data-index="133"-->
+<!--                    data-phone-code="+370"-->
+<!--                    data-country-id="122"-->
+<!--                    data-country-name="Lithuania"-->
+<!--                  >-->
+<!--                    LT - Lithuania-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="121"-->
+<!--                    data-index="134"-->
+<!--                    data-phone-code="+352"-->
+<!--                    data-country-id="121"-->
+<!--                    data-country-name="Luxembourg"-->
+<!--                  >-->
+<!--                    LU - Luxembourg-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="198"-->
+<!--                    data-index="135"-->
+<!--                    data-phone-code="+853"-->
+<!--                    data-country-id="198"-->
+<!--                    data-country-name="Macao"-->
+<!--                  >-->
+<!--                    MO - Macao-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="209"-->
+<!--                    data-index="136"-->
+<!--                    data-phone-code="+389"-->
+<!--                    data-country-id="209"-->
+<!--                    data-country-name="Macedonia"-->
+<!--                  >-->
+<!--                    MK - Macedonia-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="205"-->
+<!--                    data-index="137"-->
+<!--                    data-phone-code="+261"-->
+<!--                    data-country-id="205"-->
+<!--                    data-country-name="Madagascar"-->
+<!--                  >-->
+<!--                    MG - Madagascar-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="224"-->
+<!--                    data-index="138"-->
+<!--                    data-phone-code="+265"-->
+<!--                    data-country-id="224"-->
+<!--                    data-country-name="Malawi"-->
+<!--                  >-->
+<!--                    MW - Malawi-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="215"-->
+<!--                    data-index="139"-->
+<!--                    data-phone-code="+60"-->
+<!--                    data-country-id="215"-->
+<!--                    data-country-name="Malaysia"-->
+<!--                  >-->
+<!--                    MY - Malaysia-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="223"-->
+<!--                    data-index="140"-->
+<!--                    data-phone-code="+960"-->
+<!--                    data-country-id="223"-->
+<!--                    data-country-name="Maldives"-->
+<!--                  >-->
+<!--                    MV - Maldives-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="199"-->
+<!--                    data-index="141"-->
+<!--                    data-phone-code="+223"-->
+<!--                    data-country-id="199"-->
+<!--                    data-country-name="Mali"-->
+<!--                  >-->
+<!--                    ML - Mali-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="211"-->
+<!--                    data-index="142"-->
+<!--                    data-phone-code="+356"-->
+<!--                    data-country-id="211"-->
+<!--                    data-country-name="Malta"-->
+<!--                  >-->
+<!--                    MT - Malta-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="196"-->
+<!--                    data-index="143"-->
+<!--                    data-phone-code="+692"-->
+<!--                    data-country-id="196"-->
+<!--                    data-country-name="Marshall Islands"-->
+<!--                  >-->
+<!--                    MH - Marshall Islands-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="222"-->
+<!--                    data-index="144"-->
+<!--                    data-phone-code="+596"-->
+<!--                    data-country-id="222"-->
+<!--                    data-country-name="Martinique"-->
+<!--                  >-->
+<!--                    MQ - Martinique-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="219"-->
+<!--                    data-index="145"-->
+<!--                    data-phone-code="+222"-->
+<!--                    data-country-id="219"-->
+<!--                    data-country-name="Mauritania"-->
+<!--                  >-->
+<!--                    MR - Mauritania-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="210"-->
+<!--                    data-index="146"-->
+<!--                    data-phone-code="+230"-->
+<!--                    data-country-id="210"-->
+<!--                    data-country-name="Mauritius"-->
+<!--                  >-->
+<!--                    MU - Mauritius-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="104"-->
+<!--                    data-index="147"-->
+<!--                    data-phone-code="+262"-->
+<!--                    data-country-id="104"-->
+<!--                    data-country-name="Mayotte"-->
+<!--                  >-->
+<!--                    YT - Mayotte-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="214"-->
+<!--                    data-index="148"-->
+<!--                    data-phone-code="+52"-->
+<!--                    data-country-id="214"-->
+<!--                    data-country-name="Mexico"-->
+<!--                  >-->
+<!--                    MX - Mexico-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="53"-->
+<!--                    data-index="149"-->
+<!--                    data-phone-code="+691"-->
+<!--                    data-country-id="53"-->
+<!--                    data-country-name="Micronesia"-->
+<!--                  >-->
+<!--                    FM - Micronesia-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="206"-->
+<!--                    data-index="150"-->
+<!--                    data-phone-code="+373"-->
+<!--                    data-country-id="206"-->
+<!--                    data-country-name="Moldova"-->
+<!--                  >-->
+<!--                    MD - Moldova-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="202"-->
+<!--                    data-index="151"-->
+<!--                    data-phone-code="+377"-->
+<!--                    data-country-id="202"-->
+<!--                    data-country-name="Monaco"-->
+<!--                  >-->
+<!--                    MC - Monaco-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="197"-->
+<!--                    data-index="152"-->
+<!--                    data-phone-code="+976"-->
+<!--                    data-country-id="197"-->
+<!--                    data-country-name="Mongolia"-->
+<!--                  >-->
+<!--                    MN - Mongolia-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="207"-->
+<!--                    data-index="153"-->
+<!--                    data-phone-code="+382"-->
+<!--                    data-country-id="207"-->
+<!--                    data-country-name="Montenegro"-->
+<!--                  >-->
+<!--                    ME - Montenegro-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="220"-->
+<!--                    data-index="154"-->
+<!--                    data-phone-code="+1"-->
+<!--                    data-country-id="220"-->
+<!--                    data-country-name="Montserrat"-->
+<!--                  >-->
+<!--                    MS - Montserrat-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="203"-->
+<!--                    data-index="155"-->
+<!--                    data-phone-code="+212"-->
+<!--                    data-country-id="203"-->
+<!--                    data-country-name="Morocco"-->
+<!--                  >-->
+<!--                    MA - Morocco-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="73"-->
+<!--                    data-index="156"-->
+<!--                    data-phone-code="+258"-->
+<!--                    data-country-id="73"-->
+<!--                    data-country-name="Mozambique"-->
+<!--                  >-->
+<!--                    MZ - Mozambique-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="200"-->
+<!--                    data-index="157"-->
+<!--                    data-phone-code="+95"-->
+<!--                    data-country-id="200"-->
+<!--                    data-country-name="Myanmar"-->
+<!--                  >-->
+<!--                    MM - Myanmar-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="48"-->
+<!--                    data-index="158"-->
+<!--                    data-phone-code="+264"-->
+<!--                    data-country-id="48"-->
+<!--                    data-country-name="Namibia"-->
+<!--                  >-->
+<!--                    NA - Namibia-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="69"-->
+<!--                    data-index="159"-->
+<!--                    data-phone-code="+674"-->
+<!--                    data-country-id="69"-->
+<!--                    data-country-name="Nauru"-->
+<!--                  >-->
+<!--                    NR - Nauru-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="70"-->
+<!--                    data-index="160"-->
+<!--                    data-phone-code="+977"-->
+<!--                    data-country-id="70"-->
+<!--                    data-country-name="Nepal"-->
+<!--                  >-->
+<!--                    NP - Nepal-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="50"-->
+<!--                    data-index="161"-->
+<!--                    data-phone-code="+31"-->
+<!--                    data-country-id="50"-->
+<!--                    data-country-name="Netherlands"-->
+<!--                  >-->
+<!--                    NL - Netherlands-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="46"-->
+<!--                    data-index="162"-->
+<!--                    data-phone-code="+687"-->
+<!--                    data-country-id="46"-->
+<!--                    data-country-name="New Caledonia"-->
+<!--                  >-->
+<!--                    NC - New Caledonia-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="58"-->
+<!--                    data-index="163"-->
+<!--                    data-phone-code="+64"-->
+<!--                    data-country-id="58"-->
+<!--                    data-country-name="New Zealand"-->
+<!--                  >-->
+<!--                    NZ - New Zealand-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="51"-->
+<!--                    data-index="164"-->
+<!--                    data-phone-code="+505"-->
+<!--                    data-country-id="51"-->
+<!--                    data-country-name="Nicaragua"-->
+<!--                  >-->
+<!--                    NI - Nicaragua-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="45"-->
+<!--                    data-index="165"-->
+<!--                    data-phone-code="+227"-->
+<!--                    data-country-id="45"-->
+<!--                    data-country-name="Niger"-->
+<!--                  >-->
+<!--                    NE - Niger-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="57"-->
+<!--                    data-index="166"-->
+<!--                    data-phone-code="+234"-->
+<!--                    data-country-id="57"-->
+<!--                    data-country-name="Nigeria"-->
+<!--                  >-->
+<!--                    NG - Nigeria-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="68"-->
+<!--                    data-index="167"-->
+<!--                    data-phone-code="+683"-->
+<!--                    data-country-id="68"-->
+<!--                    data-country-name="Niue"-->
+<!--                  >-->
+<!--                    NU - Niue-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="44"-->
+<!--                    data-index="168"-->
+<!--                    data-phone-code="+672"-->
+<!--                    data-country-id="44"-->
+<!--                    data-country-name="Norfolk Island"-->
+<!--                  >-->
+<!--                    NF - Norfolk Island-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="32"-->
+<!--                    data-index="169"-->
+<!--                    data-phone-code="+850"-->
+<!--                    data-country-id="32"-->
+<!--                    data-country-name="North Korea"-->
+<!--                  >-->
+<!--                    KP - North Korea-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="49"-->
+<!--                    data-index="170"-->
+<!--                    data-phone-code="+47"-->
+<!--                    data-country-id="49"-->
+<!--                    data-country-name="Norway"-->
+<!--                  >-->
+<!--                    NO - Norway-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="155"-->
+<!--                    data-index="171"-->
+<!--                    data-phone-code="+968"-->
+<!--                    data-country-id="155"-->
+<!--                    data-country-name="Oman"-->
+<!--                  >-->
+<!--                    OM - Oman-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="227"-->
+<!--                    data-index="172"-->
+<!--                    data-phone-code="+92"-->
+<!--                    data-country-id="227"-->
+<!--                    data-country-name="Pakistan"-->
+<!--                  >-->
+<!--                    PK - Pakistan-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="236"-->
+<!--                    data-index="173"-->
+<!--                    data-phone-code="+680"-->
+<!--                    data-country-id="236"-->
+<!--                    data-country-name="Palau"-->
+<!--                  >-->
+<!--                    PW - Palau-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="237"-->
+<!--                    data-index="174"-->
+<!--                    data-phone-code="+970"-->
+<!--                    data-country-id="237"-->
+<!--                    data-country-name="Palestinian Territory"-->
+<!--                  >-->
+<!--                    PS - Palestinian Territory-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="231"-->
+<!--                    data-index="175"-->
+<!--                    data-phone-code="+507"-->
+<!--                    data-country-id="231"-->
+<!--                    data-country-name="Panama"-->
+<!--                  >-->
+<!--                    PA - Panama-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="229"-->
+<!--                    data-index="176"-->
+<!--                    data-phone-code="+675"-->
+<!--                    data-country-id="229"-->
+<!--                    data-country-name="Papua New Guinea"-->
+<!--                  >-->
+<!--                    PG - Papua New Guinea-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="233"-->
+<!--                    data-index="177"-->
+<!--                    data-phone-code="+595"-->
+<!--                    data-country-id="233"-->
+<!--                    data-country-name="Paraguay"-->
+<!--                  >-->
+<!--                    PY - Paraguay-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="228"-->
+<!--                    data-index="178"-->
+<!--                    data-phone-code="+51"-->
+<!--                    data-country-id="228"-->
+<!--                    data-country-name="Peru"-->
+<!--                  >-->
+<!--                    PE - Peru-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="240"-->
+<!--                    data-index="179"-->
+<!--                    data-phone-code="+63"-->
+<!--                    data-country-id="240"-->
+<!--                    data-country-name="Philippines"-->
+<!--                  >-->
+<!--                    PH - Philippines-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="241"-->
+<!--                    data-index="180"-->
+<!--                    data-phone-code="+64"-->
+<!--                    data-country-id="241"-->
+<!--                    data-country-name="Pitcairn"-->
+<!--                  >-->
+<!--                    PN - Pitcairn-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="242"-->
+<!--                    data-index="181"-->
+<!--                    data-phone-code="+48"-->
+<!--                    data-country-id="242"-->
+<!--                    data-country-name="Poland"-->
+<!--                  >-->
+<!--                    PL - Poland-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="235"-->
+<!--                    data-index="182"-->
+<!--                    data-phone-code="+351"-->
+<!--                    data-country-id="235"-->
+<!--                    data-country-name="Portugal"-->
+<!--                  >-->
+<!--                    PT - Portugal-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="238"-->
+<!--                    data-index="183"-->
+<!--                    data-phone-code="+1"-->
+<!--                    data-country-id="238"-->
+<!--                    data-country-name="Puerto Rico"-->
+<!--                  >-->
+<!--                    PR - Puerto Rico-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="89"-->
+<!--                    data-index="184"-->
+<!--                    data-phone-code="+974"-->
+<!--                    data-country-id="89"-->
+<!--                    data-country-name="Qatar"-->
+<!--                  >-->
+<!--                    QA - Qatar-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="59"-->
+<!--                    data-index="185"-->
+<!--                    data-phone-code="+242"-->
+<!--                    data-country-id="59"-->
+<!--                    data-country-name="Republic of the Congo"-->
+<!--                  >-->
+<!--                    CG - Republic of the Congo-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="180"-->
+<!--                    data-index="186"-->
+<!--                    data-phone-code="+262"-->
+<!--                    data-country-id="180"-->
+<!--                    data-country-name="Reunion"-->
+<!--                  >-->
+<!--                    RE - Reunion-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="146"-->
+<!--                    data-index="187"-->
+<!--                    data-phone-code="+40"-->
+<!--                    data-country-id="146"-->
+<!--                    data-country-name="Romania"-->
+<!--                  >-->
+<!--                    RO - Romania-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="184"-->
+<!--                    data-index="188"-->
+<!--                    data-phone-code="+7"-->
+<!--                    data-country-id="184"-->
+<!--                    data-country-name="Russia"-->
+<!--                  >-->
+<!--                    RU - Russia-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="183"-->
+<!--                    data-index="189"-->
+<!--                    data-phone-code="+250"-->
+<!--                    data-country-id="183"-->
+<!--                    data-country-name="Rwanda"-->
+<!--                  >-->
+<!--                    RW - Rwanda-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="171"-->
+<!--                    data-index="190"-->
+<!--                    data-phone-code="+590"-->
+<!--                    data-country-id="171"-->
+<!--                    data-country-name="Saint Barthelemy"-->
+<!--                  >-->
+<!--                    BL - Saint Barthelemy-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="71"-->
+<!--                    data-index="191"-->
+<!--                    data-phone-code="+290"-->
+<!--                    data-country-id="71"-->
+<!--                    data-country-name="Saint Helena"-->
+<!--                  >-->
+<!--                    SH - Saint Helena-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="118"-->
+<!--                    data-index="192"-->
+<!--                    data-phone-code="+1"-->
+<!--                    data-country-id="118"-->
+<!--                    data-country-name="Saint Lucia"-->
+<!--                  >-->
+<!--                    LC - Saint Lucia-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="204"-->
+<!--                    data-index="193"-->
+<!--                    data-phone-code="+590"-->
+<!--                    data-country-id="204"-->
+<!--                    data-country-name="Saint Martin"-->
+<!--                  >-->
+<!--                    MF - Saint Martin-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="191"-->
+<!--                    data-index="194"-->
+<!--                    data-phone-code="+685"-->
+<!--                    data-country-id="191"-->
+<!--                    data-country-name="Samoa"-->
+<!--                  >-->
+<!--                    WS - Samoa-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="29"-->
+<!--                    data-index="195"-->
+<!--                    data-phone-code="+378"-->
+<!--                    data-country-id="29"-->
+<!--                    data-country-name="San Marino"-->
+<!--                  >-->
+<!--                    SM - San Marino-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="226"-->
+<!--                    data-index="196"-->
+<!--                    data-phone-code="+966"-->
+<!--                    data-country-id="226"-->
+<!--                    data-country-name="Saudi Arabia"-->
+<!--                  >-->
+<!--                    SA - Saudi Arabia-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="30"-->
+<!--                    data-index="197"-->
+<!--                    data-phone-code="+221"-->
+<!--                    data-country-id="30"-->
+<!--                    data-country-name="Senegal"-->
+<!--                  >-->
+<!--                    SN - Senegal-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="182"-->
+<!--                    data-index="198"-->
+<!--                    data-phone-code="+381"-->
+<!--                    data-country-id="182"-->
+<!--                    data-country-name="Serbia"-->
+<!--                  >-->
+<!--                    RS - Serbia-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="26"-->
+<!--                    data-index="199"-->
+<!--                    data-phone-code="+248"-->
+<!--                    data-country-id="26"-->
+<!--                    data-country-name="Seychelles"-->
+<!--                  >-->
+<!--                    SC - Seychelles-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="28"-->
+<!--                    data-index="200"-->
+<!--                    data-phone-code="+232"-->
+<!--                    data-country-id="28"-->
+<!--                    data-country-name="Sierra Leone"-->
+<!--                  >-->
+<!--                    SL - Sierra Leone-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="15"-->
+<!--                    data-index="201"-->
+<!--                    data-phone-code="+1721"-->
+<!--                    data-country-id="15"-->
+<!--                    data-country-name="Sint Maarten"-->
+<!--                  >-->
+<!--                    SX - Sint Maarten-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="35"-->
+<!--                    data-index="202"-->
+<!--                    data-phone-code="+421"-->
+<!--                    data-country-id="35"-->
+<!--                    data-country-name="Slovakia"-->
+<!--                  >-->
+<!--                    SK - Slovakia-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="33"-->
+<!--                    data-index="203"-->
+<!--                    data-phone-code="+386"-->
+<!--                    data-country-id="33"-->
+<!--                    data-country-name="Slovenia"-->
+<!--                  >-->
+<!--                    SI - Slovenia-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="246"-->
+<!--                    data-index="204"-->
+<!--                    data-phone-code="+677"-->
+<!--                    data-country-id="246"-->
+<!--                    data-country-name="Solomon Islands"-->
+<!--                  >-->
+<!--                    SB - Solomon Islands-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="244"-->
+<!--                    data-index="205"-->
+<!--                    data-phone-code="+252"-->
+<!--                    data-country-id="244"-->
+<!--                    data-country-name="Somalia"-->
+<!--                  >-->
+<!--                    SO - Somalia-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="250"-->
+<!--                    data-index="206"-->
+<!--                    data-phone-code="+27"-->
+<!--                    data-country-id="250"-->
+<!--                    data-country-name="South Africa"-->
+<!--                  >-->
+<!--                    ZA - South Africa-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="34"-->
+<!--                    data-index="207"-->
+<!--                    data-phone-code="+82"-->
+<!--                    data-country-id="34"-->
+<!--                    data-country-name="South Korea"-->
+<!--                  >-->
+<!--                    KR - South Korea-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="16"-->
+<!--                    data-index="208"-->
+<!--                    data-phone-code="+211"-->
+<!--                    data-country-id="16"-->
+<!--                    data-country-name="South Sudan"-->
+<!--                  >-->
+<!--                    SS - South Sudan-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="225"-->
+<!--                    data-index="209"-->
+<!--                    data-phone-code="+34"-->
+<!--                    data-country-id="225"-->
+<!--                    data-country-name="Spain"-->
+<!--                  >-->
+<!--                    ES - Spain-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="126"-->
+<!--                    data-index="210"-->
+<!--                    data-phone-code="+94"-->
+<!--                    data-country-id="126"-->
+<!--                    data-country-name="Sri Lanka"-->
+<!--                  >-->
+<!--                    LK - Sri Lanka-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="114"-->
+<!--                    data-index="211"-->
+<!--                    data-phone-code="+249"-->
+<!--                    data-country-id="114"-->
+<!--                    data-country-name="Sudan"-->
+<!--                  >-->
+<!--                    SD - Sudan-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="27"-->
+<!--                    data-index="212"-->
+<!--                    data-phone-code="+597"-->
+<!--                    data-country-id="27"-->
+<!--                    data-country-name="Suriname"-->
+<!--                  >-->
+<!--                    SR - Suriname-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="234"-->
+<!--                    data-index="213"-->
+<!--                    data-phone-code="+47"-->
+<!--                    data-country-id="234"-->
+<!--                    data-country-name="Svalbard and Jan Mayen"-->
+<!--                  >-->
+<!--                    SJ - Svalbard and Jan Mayen-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="19"-->
+<!--                    data-index="214"-->
+<!--                    data-phone-code="+268"-->
+<!--                    data-country-id="19"-->
+<!--                    data-country-name="Swaziland"-->
+<!--                  >-->
+<!--                    SZ - Swaziland-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="115"-->
+<!--                    data-index="215"-->
+<!--                    data-phone-code="+46"-->
+<!--                    data-country-id="115"-->
+<!--                    data-country-name="Sweden"-->
+<!--                  >-->
+<!--                    SE - Sweden-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="65"-->
+<!--                    data-index="216"-->
+<!--                    data-phone-code="+41"-->
+<!--                    data-country-id="65"-->
+<!--                    data-country-name="Switzerland"-->
+<!--                  >-->
+<!--                    CH - Switzerland-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="17"-->
+<!--                    data-index="217"-->
+<!--                    data-phone-code="+963"-->
+<!--                    data-country-id="17"-->
+<!--                    data-country-name="Syria"-->
+<!--                  >-->
+<!--                    SY - Syria-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="129"-->
+<!--                    data-index="218"-->
+<!--                    data-phone-code="+886"-->
+<!--                    data-country-id="129"-->
+<!--                    data-country-name="Taiwan"-->
+<!--                  >-->
+<!--                    TW - Taiwan-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="163"-->
+<!--                    data-index="219"-->
+<!--                    data-phone-code="+992"-->
+<!--                    data-country-id="163"-->
+<!--                    data-country-name="Tajikistan"-->
+<!--                  >-->
+<!--                    TJ - Tajikistan-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="216"-->
+<!--                    data-index="220"-->
+<!--                    data-phone-code="+255"-->
+<!--                    data-country-id="216"-->
+<!--                    data-country-name="Tanzania"-->
+<!--                  >-->
+<!--                    TZ - Tanzania-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="103"-->
+<!--                    data-index="221"-->
+<!--                    data-phone-code="+66"-->
+<!--                    data-country-id="103"-->
+<!--                    data-country-name="Thailand"-->
+<!--                  >-->
+<!--                    TH - Thailand-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="86"-->
+<!--                    data-index="222"-->
+<!--                    data-phone-code="+228"-->
+<!--                    data-country-id="86"-->
+<!--                    data-country-name="Togo"-->
+<!--                  >-->
+<!--                    TG - Togo-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="145"-->
+<!--                    data-index="223"-->
+<!--                    data-phone-code="+690"-->
+<!--                    data-country-id="145"-->
+<!--                    data-country-name="Tokelau"-->
+<!--                  >-->
+<!--                    TK - Tokelau-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="123"-->
+<!--                    data-index="224"-->
+<!--                    data-phone-code="+676"-->
+<!--                    data-country-id="123"-->
+<!--                    data-country-name="Tonga"-->
+<!--                  >-->
+<!--                    TO - Tonga-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="128"-->
+<!--                    data-index="225"-->
+<!--                    data-phone-code="+1868"-->
+<!--                    data-country-id="128"-->
+<!--                    data-country-name="Trinidad and Tobago"-->
+<!--                  >-->
+<!--                    TT - Trinidad and Tobago-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="154"-->
+<!--                    data-index="226"-->
+<!--                    data-phone-code="+216"-->
+<!--                    data-country-id="154"-->
+<!--                    data-country-name="Tunisia"-->
+<!--                  >-->
+<!--                    TN - Tunisia-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="127"-->
+<!--                    data-index="227"-->
+<!--                    data-phone-code="+90"-->
+<!--                    data-country-id="127"-->
+<!--                    data-country-name="Turkey"-->
+<!--                  >-->
+<!--                    TR - Turkey-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="164"-->
+<!--                    data-index="228"-->
+<!--                    data-phone-code="+993"-->
+<!--                    data-country-id="164"-->
+<!--                    data-country-name="Turkmenistan"-->
+<!--                  >-->
+<!--                    TM - Turkmenistan-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="130"-->
+<!--                    data-index="229"-->
+<!--                    data-phone-code="+688"-->
+<!--                    data-country-id="130"-->
+<!--                    data-country-name="Tuvalu"-->
+<!--                  >-->
+<!--                    TV - Tuvalu-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="75"-->
+<!--                    data-index="230"-->
+<!--                    data-phone-code="+1"-->
+<!--                    data-country-id="75"-->
+<!--                    data-country-name="U.S. Virgin Islands"-->
+<!--                  >-->
+<!--                    VI - U.S. Virgin Islands-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="217"-->
+<!--                    data-index="231"-->
+<!--                    data-phone-code="+256"-->
+<!--                    data-country-id="217"-->
+<!--                    data-country-name="Uganda"-->
+<!--                  >-->
+<!--                    UG - Uganda-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="90"-->
+<!--                    data-index="232"-->
+<!--                    data-phone-code="+380"-->
+<!--                    data-country-id="90"-->
+<!--                    data-country-name="Ukraine"-->
+<!--                  >-->
+<!--                    UA - Ukraine-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="105"-->
+<!--                    data-index="233"-->
+<!--                    data-phone-code="+598"-->
+<!--                    data-country-id="105"-->
+<!--                    data-country-name="Uruguay"-->
+<!--                  >-->
+<!--                    UY - Uruguay-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="201"-->
+<!--                    data-index="234"-->
+<!--                    data-phone-code="+998"-->
+<!--                    data-country-id="201"-->
+<!--                    data-country-name="Uzbekistan"-->
+<!--                  >-->
+<!--                    UZ - Uzbekistan-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="47"-->
+<!--                    data-index="235"-->
+<!--                    data-phone-code="+678"-->
+<!--                    data-country-id="47"-->
+<!--                    data-country-name="Vanuatu"-->
+<!--                  >-->
+<!--                    VU - Vanuatu-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="82"-->
+<!--                    data-index="236"-->
+<!--                    data-phone-code="+379"-->
+<!--                    data-country-id="82"-->
+<!--                    data-country-name="Vatican"-->
+<!--                  >-->
+<!--                    VA - Vatican-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="239"-->
+<!--                    data-index="237"-->
+<!--                    data-phone-code="+58"-->
+<!--                    data-country-id="239"-->
+<!--                    data-country-name="Venezuela"-->
+<!--                  >-->
+<!--                    VE - Venezuela-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="247"-->
+<!--                    data-index="238"-->
+<!--                    data-phone-code="+84"-->
+<!--                    data-country-id="247"-->
+<!--                    data-country-name="Vietnam"-->
+<!--                  >-->
+<!--                    VN - Vietnam-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="172"-->
+<!--                    data-index="239"-->
+<!--                    data-phone-code="+681"-->
+<!--                    data-country-id="172"-->
+<!--                    data-country-name="Wallis and Futuna"-->
+<!--                  >-->
+<!--                    WF - Wallis and Futuna-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="253"-->
+<!--                    data-index="240"-->
+<!--                    data-phone-code="+212"-->
+<!--                    data-country-id="253"-->
+<!--                    data-country-name="Western Sahara"-->
+<!--                  >-->
+<!--                    EH - Western Sahara-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="107"-->
+<!--                    data-index="241"-->
+<!--                    data-phone-code="+967"-->
+<!--                    data-country-id="107"-->
+<!--                    data-country-name="Yemen"-->
+<!--                  >-->
+<!--                    YE - Yemen-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="254"-->
+<!--                    data-index="242"-->
+<!--                    data-phone-code="+260"-->
+<!--                    data-country-id="254"-->
+<!--                    data-country-name="Zambia"-->
+<!--                  >-->
+<!--                    ZM - Zambia-->
+<!--                  </option>-->
+<!--                  <option-->
+<!--                    value="243"-->
+<!--                    data-index="243"-->
+<!--                    data-phone-code="+263"-->
+<!--                    data-country-id="243"-->
+<!--                    data-country-name="Zimbabwe"-->
+<!--                  >-->
+<!--                    ZW - Zimbabwe-->
+<!--                  </option>-->
+<!--                </select>-->
+<!--              </div>-->
+<!--              <div class="select select_currency">-->
+<!--                <div-->
+<!--                  class="dropdown dropdown_currency ga-click"-->
+<!--                  data-category="CLP"-->
+<!--                  data-action="Currency_Dropdown_Clicked"-->
+<!--                >-->
+<!--                  <button-->
+<!--                    class="btn_currency dropdown-toggle"-->
+<!--                    type="button"-->
+<!--                    id="dropdownMenu1"-->
+<!--                    data-toggle="dropdown"-->
+<!--                    aria-haspopup="true"-->
+<!--                    aria-expanded="true"-->
+<!--                  >-->
+<!--                    INR-->
+<!--                  </button>-->
+<!--                  <ul-->
+<!--                    class="dropdown-menu menu_currency"-->
+<!--                    aria-labelledby="dropdownMenu1"-->
+<!--                  >-->
+<!--                    <li value="usd">$ USD</li>-->
+<!--                    <li value="inr">₹ INR</li>-->
+<!--                    <li value="eur">€ EUR</li>-->
+<!--                    <li value="gbp">£ GBP</li>-->
+<!--                    <li value="cad">$ CAD</li>-->
+<!--                    <li value="sgd">$ SGD</li>-->
+<!--                    <li value="aud">$ AUD</li>-->
+<!--                  </ul>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            - -->
+<!--          </div>-->
+<!--          <div-->
+<!--            class="col-lg-12 col-md-12 col-sm-12 col-xs-12 left_right_fee_info"-->
+<!--          >-->
+<!--            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 left_fee_info">-->
+<!--              <div class="mlp_course_price_bx">-->
+<!--                <span-->
+<!--                  class="after_discount changeable_pirce"-->
+<!--                  data-key="totalMaterCoursePrice"-->
+<!--                  ><i class="fa fa-inr" aria-hidden="true"></i> 44,999</span-->
+<!--                >-->
+<!--                <span class="before_discount changeable_pirce" data-key="total"-->
+<!--                  ><i class="fa fa-inr" aria-hidden="true"></i> 109,528</span-->
+<!--                >-->
+<!--              </div>-->
+<!--              <div class="mlp_total_saving">-->
+<!--                <span>Your total savings:</span>-->
+<!--                <span class="changeable_pirce" data-key="discountsOffered"-->
+<!--                  ><i class="fa fa-inr" aria-hidden="true"></i> 64,529</span-->
+<!--                >-->
+<!--              </div>-->
+<!--              <div class="emi_view_bx">-->
+<!--                <span class="no_cost">No Cost EMI</span> Available, Starting-->
+<!--                from-->
+<!--                <span class="emi_starts changeable_pirce" data-key="emiPrice"-->
+<!--                  ><i class="fa fa-inr" aria-hidden="true"></i> 5,000</span-->
+<!--                ><span>/mo</span>.-->
+<!--                <div class="emihoverbox hide">-->
+<!--                  <div class="close_emihoverbox">×</div>-->
+<!--                  <h5>To make this a No Cost EMI offer</h5>-->
+<!--                  <span-->
+<!--                    >The interest amount will be discounted from the price of-->
+<!--                    your order. You will be charged for the item price minus the-->
+<!--                    discounted interest.</span-->
+<!--                  >-->
+<!--                </div>-->
+<!--              </div>-->
+<!--              <div class="bundle_course_mlp_bx">-->
+<!--                <div class="bundle_course_mlp">-->
+<!--                  See Course Bundle-->
+<!--                  <div class="list_brk_vw">-->
+<!--                    <ul>-->
+<!--                      <li>-->
+<!--                        <div class="title">-->
+<!--                          Web Development Certification Training-->
+<!--                        </div>-->
+<!--                        <div class="price">-->
+<!--                          <div-->
+<!--                            class="mast_price changeable_pirce"-->
+<!--                            data-key="466"-->
+<!--                          >-->
+<!--                            <i class="fa fa-inr" aria-hidden="true"></i>-->
+<!--                            8,475-->
+<!--                          </div>-->
+<!--                        </div>-->
+<!--                      </li>-->
+<!--                      <li>-->
+<!--                        <div class="title">jQuery UI Development</div>-->
+<!--                        <div class="price">-->
+<!--                          <div-->
+<!--                            class="mast_price changeable_pirce"-->
+<!--                            data-key="566"-->
+<!--                          >-->
+<!--                            <i class="fa fa-inr" aria-hidden="true"></i>-->
+<!--                            9,999-->
+<!--                          </div>-->
+<!--                        </div>-->
+<!--                      </li>-->
+<!--                      <li>-->
+<!--                        <div class="title">-->
+<!--                          Angular Certification Training Course-->
+<!--                        </div>-->
+<!--                        <div class="price">-->
+<!--                          <div-->
+<!--                            class="mast_price changeable_pirce"-->
+<!--                            data-key="1559"-->
+<!--                          >-->
+<!--                            <i class="fa fa-inr" aria-hidden="true"></i>-->
+<!--                            19,995-->
+<!--                          </div>-->
+<!--                        </div>-->
+<!--                      </li>-->
+<!--                      <li>-->
+<!--                        <div class="title">-->
+<!--                          React JS Certification Training Course-->
+<!--                        </div>-->
+<!--                        <div class="price">-->
+<!--                          <div-->
+<!--                            class="mast_price changeable_pirce"-->
+<!--                            data-key="884"-->
+<!--                          >-->
+<!--                            <i class="fa fa-inr" aria-hidden="true"></i>-->
+<!--                            17,795-->
+<!--                          </div>-->
+<!--                        </div>-->
+<!--                      </li>-->
+<!--                      <li>-->
+<!--                        <div class="title">-->
+<!--                          Node.js Certification Training Course-->
+<!--                        </div>-->
+<!--                        <div class="price">-->
+<!--                          <div-->
+<!--                            class="mast_price changeable_pirce"-->
+<!--                            data-key="1905"-->
+<!--                          >-->
+<!--                            <i class="fa fa-inr" aria-hidden="true"></i>-->
+<!--                            16,995-->
+<!--                          </div>-->
+<!--                        </div>-->
+<!--                      </li>-->
+<!--                      <li>-->
+<!--                        <div class="title">-->
+<!--                          MongoDB Certification Training Course-->
+<!--                        </div>-->
+<!--                        <div class="price">-->
+<!--                          <div-->
+<!--                            class="mast_price changeable_pirce"-->
+<!--                            data-key="515"-->
+<!--                          >-->
+<!--                            <i class="fa fa-inr" aria-hidden="true"></i>-->
+<!--                            17,795-->
+<!--                          </div>-->
+<!--                        </div>-->
+<!--                      </li>-->
+<!--                    </ul>-->
+<!--                    <div class="trackButton elec_cur_mlp">-->
+<!--                      <span>+2 Free Elective Courses</span>-->
+<!--                      <span-->
+<!--                        class="changeable_pirce"-->
+<!--                        data-key="totalElectiveCoursePrice"-->
+<!--                        ><i class="fa fa-inr" aria-hidden="true"></i>-->
+<!--                        18,474</span-->
+<!--                      >-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--              <div class="inr_cur_bx">-->
+<!--                <button class="btn_mlp_fee_enroll enroll-clp-btn-user">-->
+<!--                  ENROLL NOW-->
+<!--                </button>-->
+<!--                <div class="more_financing_info">-->
+<!--                  <i-->
+<!--                    class="icon-lms_information ga_event_new_mlp"-->
+<!--                    data-eventcategory="enroll-now pay later"-->
+<!--                    data-eventaction="tool_tip_click_masters"-->
+<!--                  >-->
+<!--                    <div class="financing_option">-->
+<!--                      <p class="title">Financing Options</p>-->
+<!--                      <p class="sub">-->
+<!--                        Financing options available without any credit/debit-->
+<!--                        card. The interest amount will be discounted from the-->
+<!--                        price of the course and will be borne by Edureka. You-->
+<!--                        will be charged the course price minus the interest.-->
+<!--                      </p>-->
+<!--                      <p class="sub">-->
+<!--                        Click on <b>View More</b> to avail. Conditions Apply.-->
+<!--                      </p>-->
+<!--                    </div>-->
+<!--                  </i>-->
+<!--                  Financing options available-->
+<!--                  <span-->
+<!--                    class="view_more_finance_option ga_event_new_mlp"-->
+<!--                    data-toggle="modal"-->
+<!--                    data-target="#fee_finance_popup_clp"-->
+<!--                    data-eventcategory="enroll-now pay later"-->
+<!--                    data-eventaction="view_more_click_masters"-->
+<!--                    >View More</span-->
+<!--                  >-->
+<!--                </div>-->
+<!--              </div>-->
+<!--              <div class="other_cur_bx" style="display: none">-->
+<!--                <button-->
+<!--                  class="enroll-clp-btn-user btn_mlp_fee_enroll"-->
+<!--                  data-eventcontext="Enroll Now Paylater"-->
+<!--                  data-enroll-location="Now_Pay_Later"-->
+<!--                >-->
+<!--                  ENROLL NOW PAY LATER-->
+<!--                </button>-->
+<!--                <p>-->
+<!--                  Part payment powered by-->
+<!--                  <img-->
+<!--                    class="lazyImages"-->
+<!--                    width="73"-->
+<!--                    height="19"-->
+<!--                    style="min-height: 10px"-->
+<!--                    data-src="clp_nwusd_opt.png"-->
+<!--                    fullbase="true"-->
+<!--                    alt="paypal icon"-->
+<!--                  />-->
+<!--                </p>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div-->
+<!--              class="col-lg-6 col-md-6 col-sm-12 col-xs-12 right_get_in_touch"-->
+<!--            >-->
+<!--              <div class="title_GIT">-->
+<!--                <img-->
+<!--                  class="lazyImages"-->
+<!--                  width="36"-->
+<!--                  height="36"-->
+<!--                  style="min-height: 10px"-->
+<!--                  fullbase="true"-->
+<!--                  alt="mlp get in touch user"-->
+<!--                  src="https://d1jnx9ba8s6j9r.cloudfront.net/imgver.1678167345/img/mlp_get_in_touch_ico.png"-->
+<!--                />-->
+<!--                Not sure? Talk to our advisors-->
+<!--              </div>-->
+<!--              <div class="GIT_form">-->
+<!--                <form-->
+<!--                  id="mlp-getintouch-form"-->
+<!--                  class="from_mlp_infofill"-->
+<!--                  data-formslug="duqform"-->
+<!--                >-->
+<!--                  <div class="form-group inputfld">-->
+<!--                    <label>Email</label>-->
+<!--                    <input-->
+<!--                      type="text"-->
+<!--                      name="data[Feedback][email]"-->
+<!--                      aria-label="email"-->
+<!--                      id="mlp_git_email"-->
+<!--                      class="form-control popusreml error"-->
+<!--                      placeholder="e.g. sara@gmail.com*"-->
+<!--                      onfocus="this.placeholder = 'e.g. sara@gmail.com*'"-->
+<!--                      onblur="this.placeholder = 'e.g. sara@gmail.com*'"-->
+<!--                      autocomplete="off"-->
+<!--                    />-->
+<!--                    <p-->
+<!--                      class="error_msg loginerrortextemail"-->
+<!--                      style="display: block"-->
+<!--                    >-->
+<!--                      Enter a valid Email address-->
+<!--                    </p>-->
+<!--                  </div>-->
+<!--                  <div class="form-group inputfld mob_num_pl">-->
+<!--                    <label>Mobile Number</label>-->
+
+<!--                    <input-->
+<!--                      type="text"-->
+<!--                      name="data[Feedback][phone_no]"-->
+<!--                      aria-label="number"-->
+<!--                      id="mlp_git_mobile"-->
+<!--                      class="form-control popusrphn error"-->
+<!--                      placeholder="Mobile Number*"-->
+<!--                      autocomplete="off"-->
+<!--                    />-->
+<!--                    <p-->
+<!--                      class="error_msg loginerrortextmob"-->
+<!--                      style="display: block"-->
+<!--                    >-->
+<!--                      Enter mobile number-->
+<!--                    </p>-->
+<!--                  </div>-->
+<!--                  <input-->
+<!--                    type="hidden"-->
+<!--                    name="data[Feedback][code]"-->
+<!--                    value=""-->
+<!--                    id="mlphiddencountrycodegit"-->
+<!--                  />-->
+<!--                  <input-->
+<!--                    type="hidden"-->
+<!--                    name="data[Feedback][query]"-->
+<!--                    value="MLP Get In Touch"-->
+<!--                    class="git_query"-->
+<!--                  />-->
+<!--                  <input-->
+<!--                    type="hidden"-->
+<!--                    name="data[Feedback][position]"-->
+<!--                    value="17"-->
+<!--                    class="git_above_fold_tracker"-->
+<!--                  />-->
+<!--                  <div id="mlp-getintouch-openform-error" style="display: none">-->
+<!--                    <p class="mlp-form-error" style="color: #cc2029"></p>-->
+<!--                  </div>-->
+<!--                  <button-->
+<!--                    onclick="document.getElementById('mlp-getintouch-openform-thankyou').style.display='block'"-->
+<!--                    class="GIT_mlp_fee_enroll"-->
+<!--                    type="submit"-->
+<!--                  >-->
+<!--                    GET IN TOUCH-->
+<!--                  </button>-->
+<!--                  <input-->
+<!--                    type="hidden"-->
+<!--                    name="edu_token"-->
+<!--                    value="duqform#060629a63ac8c0593be6dab6d45f3570#1679050132"-->
+<!--                  />-->
+<!--                </form>-->
+<!--                <div-->
+<!--                  class="from_mlp_infofill_thnk"-->
+<!--                  id="mlp-getintouch-openform-thankyou"-->
+<!--                  style="display: none"-->
+<!--                >-->
+<!--                  <i class="icon-Tick_mark_blue"></i>-->
+<!--                  <p>Our Experts will reach you out in the next 24 hours</p>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+    </div>
+    <!-- /* </div>  */ -->
+
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

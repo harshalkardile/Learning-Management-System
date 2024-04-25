@@ -1,0 +1,392 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+}
+.global-container {
+			
+			
+		
+			background: linear-gradient(135deg, #262931, #EEE9E9);
+		 }
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 15px 30px;
+	background: #23242b;
+	color: #fff;
+}
+
+.u-name {
+	font-size: 20px;
+	padding-left: 17px;
+}
+.u-name b {
+	color: #127b8e;
+}
+.header i {
+	font-size: 30px;
+	cursor: pointer;
+	color: #fff;
+}
+.header i:hover {
+	color: #127b8e;
+}
+.user-p {
+	text-align: center;
+	padding-left: 10px;
+	padding-top: 25px;
+}
+.user-p img {
+	width: 100px;
+	border-radius: 50%;
+}
+.user-p h4 {
+	color: #ccc;
+	padding: 5px 0;
+
+}
+.side-bar {
+	width: 250px;
+	background: #262931;
+	min-height: 100vh;
+	transition: 500ms width;
+}
+.body {
+	display: flex;
+}
+.section-1 {
+	width: 100%;
+	background: url("../img/bg.jpg");
+	background-size:cover;
+	background-position: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.section-1 h1 {
+	color: rgba(36, 58, 57, 0.829);
+	font-size: 60px;
+}
+.section-1 p {
+	color: #127b8e;
+	font-size: 20px;
+	background: #fff;
+	padding: 7px;
+	border-radius: 5px;
+}
+.side-bar ul {
+	margin-top: 20px;
+	list-style: none;
+}
+.side-bar ul li {
+	font-size: 16px;
+	padding: 15px 0px;
+	padding-right: 1.5px;
+	transition: 500ms background;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.side-bar ul li:hover {
+	background: #736d8d;
+}
+.side-bar ul li a {
+	text-decoration: none;
+	color: #eee;
+	cursor: pointer;
+	letter-spacing: 1px;
+}
+.side-bar ul li a i {
+	display: inline-block;
+	padding-right: 10px;
+	font-size: 23px;
+}
+#navbtn { 
+	left: 20px;
+	top: 17px;
+	padding-left: 10px;
+	display: inline-block;
+	margin-top: 2px; 
+	font-size: 20px;
+	transition: 10ms color;
+}
+#checkbox {
+	display: none;
+}
+#checkbox:checked ~ .body .side-bar {
+	width: 60px;
+}
+#checkbox:checked ~ .body .side-bar .user-p{
+	visibility: hidden;
+}
+#checkbox:checked ~ .body .side-bar a span{
+	display: none;
+}
+
+.dropdown li a i{
+
+	position: relative;
+
+}
+/*
+.dropdown li a i .dropdown-menu ul li a i{
+position: absolute;
+left: 0;
+background-color: white;
+padding: .75rem;
+border: .25rem;
+top: calc(100% + .25rem);
+box-shadow: 0 2px 5px 0 rgba(0, 0, 0,.1);
+opacity: .5;
+pointer-events: none;
+transition: opacity 150ms ease-in-out ,transform 150ms ease-in-out;
+
+
+}
+ .dropdown  li a i > .link:focus + .dropdown-menu ul li a i{ 
+		opacity: 1 ;
+		transform: translateY(0);
+		pointer-events: auto;
+ }-->*/
+ .button {
+	display: inline-block;
+	border-radius: 4px;
+	background-color: #f4511e;
+	border: none;
+	color: #FFFFFF;
+	text-align: center;
+	font-size: 28px;
+	padding: 20px;
+	width: 200px;
+	transition: all 0.5s;
+	cursor: pointer;
+	margin: 5px;
+  }
+  
+  .button span {
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	transition: 0.5s;
+  }
+  
+  .button span:after {
+	content: '\00bb';
+	position: absolute;
+	opacity: 0;
+	top: 0;
+	right: -20px;
+	transition: 0.5s;
+  }
+  
+  .button:hover span {
+	padding-right: 25px;
+  }
+  
+  .button:hover span:after {
+	opacity: 1;
+	right: 0;
+  }
+
+  body .table-responsive{
+	
+	border: 1px solid rgba(117, 67, 67, 0.103); 
+	width: 80%;
+	 margin-left: 180px;
+	margin-right: 100px;
+	align-items: center;
+	text-shadow: #102768;
+	text-decoration: wavy;
+	text-align: center;
+	text-decoration: double;
+	text-decoration-color: #127b8e;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	border-radius: 10px;
+	position: absolute;
+	height: 50%;
+	overflow-x: scroll;
+	overflow-y: scroll;
+    
+  }
+
+body .table-responsive table thead tr th .size
+{
+text-decoration-color: #dee0ec;
+text-shadow: #3f5db1;
+font-weight: 300;
+font-size: small;
+transform: none;
+
+}
+thead tr th{
+columns: 80px;
+height: 40%;
+
+
+
+}
+ 
+body .table-responsive table tbody tr .nine{
+text-align:middle;
+margin-left: auto;
+margin-right: auto;
+text-decoration: wavy;
+text-decoration-color: #f4511e;
+
+
+}
+
+
+.c1{ 
+	
+	text-align: left;
+	font-size: 14px;
+	line-height: 20px;
+	margin-bottom: 32px;
+	position: static;
+}
+
+body{
+
+	overflow: hidden;
+}
+
+
+.thead  th.tha{
+
+font-size: 22px;
+font-weight: 600;
+background: #c8d8f8;
+border: 1px solid #e4e4e4;
+position: relative;
+transition: all 0.3s linear 0s;
+min-width: 130px;
+}
+
+
+
+@media screen and (max-width: 575px) {
+	.thead  th.tha {
+	min-width: 120px;
+	}
+	}
+
+		.thead th.tha:size {
+		background: #86d4f5;
+		color: #fff;
+		border: 1px solid #86d4f5;
+		}
+
+		
+		.col{
+			margin-left: 6%;
+			justify-items: center;
+			block-size: 100%;
+			
+		
+		}
+	
+		.container{
+			margin-bottom:35%;
+align-items:unset;
+
+
+		}
+
+		.container .row-cols-xl-4{
+
+			align-self: center;
+		}
+
+.started{
+	align-items: initial;
+	margin-top: 10%;
+	margin-left: 50%;
+}
+
+
+body{
+margin-top:20px;
+background-color: #f7f7ff;
+}
+.radius-10 {
+    border-radius: 10px !important;
+}
+
+.border-info {
+    border-left: 5px solid  #0dcaf0 !important;
+}
+.border-danger {
+    border-left: 5px solid  #fd3550 !important;
+}
+.border-success {
+    border-left: 5px solid  #15ca20 !important;
+}
+
+
+
+
+.bg-gradient-scooter {
+    background: #17ead9;
+    background: -webkit-linear-gradient( 
+45deg
+ , #17ead9, #6078ea)!important;
+    background: linear-gradient( 
+45deg
+ , #17ead9, #6078ea)!important;
+}
+.widgets-icons-2 {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ededed;
+    font-size: 27px;
+    border-radius: 10px;
+}
+.rounded-circle {
+    border-radius: 50%!important;
+}
+.text-white {
+    color: #fff!important;
+}
+.ms-auto {
+    margin-left: auto!important;
+}
+.bg-gradient-bloody {
+    background: #f54ea2;
+    background: -webkit-linear-gradient( 
+45deg
+ , #f54ea2, #ff7676)!important;
+    background: linear-gradient( 
+45deg
+ , #f54ea2, #ff7676)!important;
+}
+
+.bg-gradient-ohhappiness {
+    background: #00b09b;
+    background: -webkit-linear-gradient( 
+45deg
+ , #00b09b, #96c93d)!important;
+    background: linear-gradient( 
+45deg
+ , #00b09b, #96c93d)!important;
+}
+
+.bg-gradient-blooker {
+    background: #ffdf40;
+    background: -webkit-linear-gradient( 
+45deg
+ , #ffdf40, #ff8359)!important;
+    background: linear-gradient( 
+45deg
+ , #ffdf40, #ff8359)!important;
+}

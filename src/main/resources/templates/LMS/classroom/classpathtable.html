@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" src="" th:href="@{/css/style.css}" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css"
+    />
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+    <script>
+      function name() {
+        var dtToday = new Date();
+        var month = dtToday.getMonth() + 1;
+        var day = dtToday.getDate();
+        var year = dtToday.getFullYear();
+        if (month < 0) month = "@" + month.toString();
+        if (day < 10) day = "Q" + day.toString();
+        var maxDate = year + "-" + month + "-" + day;
+        $("#datepicker").attr("max", maxDate);
+      }
+      document.getElementById("mont").valueAsDate = new Date();
+    </script>
+  </head>
+  <body  th:fragment="pathtable"  class="scroll"
+         style="background: #647e68; align-items: baseline; justify-items: center"
+  >
+    <div>
+      <div class="global-container">
+        <div
+          bis_skin_checked="1"
+          style="
+            color: antiquewhite;
+            position: relative;
+
+            margin-left: 32%;
+            margin-right: 20%;
+            text-shadow: 5px;
+            lighting-color: aqua;
+            margin-bottom: 0%;
+            align-content: center;
+          "
+        >
+          <h1>Classroom Schedule</h1>
+        </div>
+
+        <div
+          style="
+                margin-left: 8%;
+    margin-bottom: 1%;
+    margin-top: 5%;
+    block-size: 400%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+          "
+        >
+          <input
+            type="month"
+            class="btn btn-secondary btn-sm"
+            id="mont"
+            value="2023-04"
+          />
+
+          &nbsp;&nbsp;&nbsp;
+          <button type="button" id="week" readonly ondblclick="submitForm()" class="btn btn-secondary btn-sm" >Week</button
+          >
+          <script>
+            function submitForm() {
+            // Get the current date
+            const today = new Date();
+            // Get the week number (Sunday is the first day of the week)
+            const weekNumber = Math.ceil((((today - new Date(today.getFullYear(), 0, 1)) / 86400000) + 1) / 7);
+
+            // Set the value of the input field to the week number
+            document.getElementById("week").value = weekNumber;
+          }
+
+          </script>
+
+          &nbsp;&nbsp;&nbsp;
+          <a th:href="@{/calenderjava}" href="../../../static/animated-calendar-event-gc/index.html"
+            ><button type="button" class="btn btn-secondary btn-sm">
+              Month
+            </button></a
+          >
+            <a class="btn btn-secondary btn-sm ml-3" th:href="@{/addevent}"  href="../../../static/animated-calendar-event-gc/index.html"
+               sec:authorize="hasRole('ROLE_ADMIN')"
+            >
+                &plus; &nbsp;  EVENT
+            </a
+            > <a class="btn btn-secondary btn-sm ml-3" th:href="@{/holidays/all}"  href="../../../static/animated-calendar-event-gc/index.html"
+        >
+           HOLIDAYS
+        </a
+        >
+<!--          <a class="btn btn-secondary btn-sm ml-3" th:href="@{/holidays(festival='true' , federal='true')}"  href="../../../static/animated-calendar-event-gc/index.html"-->
+<!--          >-->
+<!--            HOLIDAYS-->
+<!--          </a-->
+<!--          >-->
+          <a class="btn btn-secondary btn-sm ml-3" th:href="@{/displayclass}"
+          >
+            Classes
+          </a>
+
+
+        </div>
+
+        <div class="table-responsive table-bordered" bis_skin_checked="1">
+          <table class="table table-striped table-sm">
+            <thead class="thead">
+              <tr class="tra">
+                <th scope="col" class="tha">
+                  Time
+                  <h6 class="size">24Hr Formet</h6>
+                </th>
+                <th scope="col" class="tha">
+                  Monday
+                  <h6 class="size">20/02/2023</h6>
+                </th>
+                <th scope="col" class="tha">
+                  Tuesday
+                  <h6 class="size">21/02/2023</h6>
+                </th>
+                <th scope="col" class="tha">
+                  Wednesday
+                  <h6 class="size">22/02/2023</h6>
+                </th>
+                <th scope="col" class="tha">
+                  Thursday
+                  <h6 class="size">23/02/2023</h6>
+                </th>
+                <th scope="col" class="tha">
+                  Friday
+                  <h6 class="size">24/02/2023</h6>
+                </th>
+                <th scope="col" class="tha">
+                  Saturday
+                  <h6 class="size">25/02/2023</h6>
+                </th>
+                <th scope="col" class="tha">
+                  Sunday
+                  <h6 class="size">26/02/2023</h6>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="nine">9:00 to 10:00</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                  <p class="c1">
+                    <b> Class 1</b><br />
+                    <b> Topic</b>:Apptitude <br />
+                    <b> Faculty </b>: Harish <br />
+                    <b> Duration </b>:40 Min<br />
+                    <b>Zoom </b
+                    ><a
+                      href="https://www.google.com/url?q=https://us06web.zoom.us/j/85780334304?pwd%3DeDFQS2NOMDQ3UmYxQzRlQzB1S1V1UT09&sa=D&source=calendar&usd=2&usg=AOvVaw1xNxy0oQUBPDUtOnUmEGKs"
+                      >click</a
+                    ><br />
+                  </p>
+                </td>
+                <td>
+                  <p class="c1">
+                    <b> Class 1</b><br />
+                    <b> Topic</b>:Apptitude <br />
+                    <b> Faculty </b>: Harish <br />
+                    <b> Duration </b>:40 Min<br />
+                    <b>Zoom </b
+                    ><a
+                      href="https://www.google.com/url?q=https://us06web.zoom.us/j/85780334304?pwd%3DeDFQS2NOMDQ3UmYxQzRlQzB1S1V1UT09&sa=D&source=calendar&usd=2&usg=AOvVaw1xNxy0oQUBPDUtOnUmEGKs"
+                      >click</a
+                    ><br />
+                  </p>
+                </td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>10:00 to 11:00</td>
+                <td>
+                  <p class="c1">
+                    <b> Class 1</b><br />
+                    <b> Topic</b>:Apptitude <br />
+                    <b> Faculty </b>: Harish <br />
+                    <b> Duration </b>:40 Min<br />
+                    <b>Zoom </b
+                    ><a
+                      href="https://www.google.com/url?q=https://us06web.zoom.us/j/85780334304?pwd%3DeDFQS2NOMDQ3UmYxQzRlQzB1S1V1UT09&sa=D&source=calendar&usd=2&usg=AOvVaw1xNxy0oQUBPDUtOnUmEGKs"
+                      >click</a
+                    ><br />
+                  </p>
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>11:00 to 12:00</td>
+                <td></td>
+                <td>
+                  <p class="c1">
+                    <b> Class 1</b><br />
+                    <b> Topic</b>:Apptitude <br />
+                    <b> Faculty </b>: Harish <br />
+                    <b> Duration </b>:40 Min<br />
+                    <b>Zoom </b
+                    ><a
+                      href="https://www.google.com/url?q=https://us06web.zoom.us/j/85780334304?pwd%3DeDFQS2NOMDQ3UmYxQzRlQzB1S1V1UT09&sa=D&source=calendar&usd=2&usg=AOvVaw1xNxy0oQUBPDUtOnUmEGKs"
+                      >click</a
+                    ><br />
+                  </p>
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                  <p class="c1">
+                    <b> Class 1</b><br />
+                    <b> Topic</b>:Apptitude <br />
+                    <b> Faculty </b>: Harish <br />
+                    <b> Duration </b>:40 Min<br />
+                    <b>Zoom </b
+                    ><a
+                      href="https://www.google.com/url?q=https://us06web.zoom.us/j/85780334304?pwd%3DeDFQS2NOMDQ3UmYxQzRlQzB1S1V1UT09&sa=D&source=calendar&usd=2&usg=AOvVaw1xNxy0oQUBPDUtOnUmEGKs"
+                      >click</a
+                    ><br />
+                  </p>
+                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>13:00 to 14:00</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                  <p class="c1">
+                    <b> Class 1</b><br />
+                    <b> Topic</b>:Apptitude <br />
+                    <b> Faculty </b>: Harish <br />
+                    <b> Duration </b>:40 Min<br />
+                    <b>Zoom </b
+                    ><a
+                      href="https://www.google.com/url?q=https://us06web.zoom.us/j/85780334304?pwd%3DeDFQS2NOMDQ3UmYxQzRlQzB1S1V1UT09&sa=D&source=calendar&usd=2&usg=AOvVaw1xNxy0oQUBPDUtOnUmEGKs"
+                      >click</a
+                    ><br />
+                  </p>
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>14:00 to 15:00</td>
+                <td></td>
+                <td>
+                  <p class="c1">
+                    <b> Class 1</b><br />
+                    <b> Topic</b>:Apptitude <br />
+                    <b> Faculty </b>: Harish <br />
+                    <b> Duration </b>:40 Min<br />
+                    <b>Zoom </b
+                    ><a
+                      href="https://www.google.com/url?q=https://us06web.zoom.us/j/85780334304?pwd%3DeDFQS2NOMDQ3UmYxQzRlQzB1S1V1UT09&sa=D&source=calendar&usd=2&usg=AOvVaw1xNxy0oQUBPDUtOnUmEGKs"
+                      >click</a
+                    ><br />
+                  </p>
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>15:00 to 16:00</td>
+                <td>
+                  <p class="c1">
+                    <b> Class 1</b><br />
+                    <b> Topic </b>:Apptitude <br />
+                    <b> Faculty </b>: Harish <br />
+                    <b> Duration </b>: 40 Min<br />
+                    <b>Zoom </b
+                    ><a
+                      href="https://www.google.com/url?q=https://us06web.zoom.us/j/85780334304?pwd%3DeDFQS2NOMDQ3UmYxQzRlQzB1S1V1UT09&sa=D&source=calendar&usd=2&usg=AOvVaw1xNxy0oQUBPDUtOnUmEGKs"
+                      >click</a
+                    ><br />
+                  </p>
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                  <p class="c1">
+                    <b> Class 1</b><br />
+                    <b> Topic</b>:Apptitude <br />
+                    <b> Faculty </b>: Harish <br />
+                    <b> Duration </b>:40 Min<br />
+                    <b>Zoom </b
+                    ><a
+                      href="https://www.google.com/url?q=https://us06web.zoom.us/j/85780334304?pwd%3DeDFQS2NOMDQ3UmYxQzRlQzB1S1V1UT09&sa=D&source=calendar&usd=2&usg=AOvVaw1xNxy0oQUBPDUtOnUmEGKs"
+                      >click</a
+                    ><br />
+                  </p>
+                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>16:00 to 17:00</td>
+                <td></td>
+                <td>
+                  <p class="c1">
+                    <b> Class 1</b><br />
+                    <b> Topic</b>:Apptitude <br />
+                    <b> Faculty </b>: Harish <br />
+                    <b> Duration </b>:40 Min<br />
+                    <b>Zoom </b
+                    ><a
+                      href="https://www.google.com/url?q=https://us06web.zoom.us/j/85780334304?pwd%3DeDFQS2NOMDQ3UmYxQzRlQzB1S1V1UT09&sa=D&source=calendar&usd=2&usg=AOvVaw1xNxy0oQUBPDUtOnUmEGKs"
+                      >click</a
+                    ><br />
+                  </p>
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>17:00 to 18:00</td>
+                <td></td>
+                <td></td>
+                <td>
+                  <p class="c1">
+                    <b> Class 1</b><br />
+                    <b> Topic</b>:Apptitude <br />
+                    <b> Faculty </b>: Harish <br />
+                    <b> Duration </b>:40 Min<br />
+                    <b>Zoom </b
+                    ><a
+                      href="https://www.google.com/url?q=https://us06web.zoom.us/j/85780334304?pwd%3DeDFQS2NOMDQ3UmYxQzRlQzB1S1V1UT09&sa=D&source=calendar&usd=2&usg=AOvVaw1xNxy0oQUBPDUtOnUmEGKs"
+                      >click</a
+                    ><br />
+                  </p>
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>18:00 to 19:00</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                  <p class="c1">
+                    <b> Class 1</b><br />
+                    <b> Topic</b>:Apptitude <br />
+                    <b> Faculty </b>: Harish <br />
+                    <b> Duration </b>:40 Min<br />
+                    <b>Zoom </b
+                    ><a
+                      href="https://www.google.com/url?q=https://us06web.zoom.us/j/85780334304?pwd%3DeDFQS2NOMDQ3UmYxQzRlQzB1S1V1UT09&sa=D&source=calendar&usd=2&usg=AOvVaw1xNxy0oQUBPDUtOnUmEGKs"
+                      >click</a
+                    ><br />
+                  </p>
+                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>19:00 to 20:00</td>
+                <td></td>
+                <td>
+                  <p class="c1">
+                    <b> Class 1</b><br />
+                    <b> Topic</b>:Apptitude <br />
+                    <b> Faculty </b>: Harish <br />
+                    <b> Duration </b>:40 Min<br />
+                    <b>Zoom </b
+                    ><a
+                      href="https://www.google.com/url?q=https://us06web.zoom.us/j/85780334304?pwd%3DeDFQS2NOMDQ3UmYxQzRlQzB1S1V1UT09&sa=D&source=calendar&usd=2&usg=AOvVaw1xNxy0oQUBPDUtOnUmEGKs"
+                      >click</a
+                    ><br />
+                  </p>
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>20:00 to 21:00</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                  <p class="c1">
+                    <b> Class 1</b><br />
+                    <b> Topic</b>:Apptitude <br />
+                    <b> Faculty </b>: Harish <br />
+                    <b> Duration </b>:40 Min<br />
+                    <b>Zoom </b
+                    ><a
+                      href="https://www.google.com/url?q=https://us06web.zoom.us/j/85780334304?pwd%3DeDFQS2NOMDQ3UmYxQzRlQzB1S1V1UT09&sa=D&source=calendar&usd=2&usg=AOvVaw1xNxy0oQUBPDUtOnUmEGKs"
+                      >click</a
+                    ><br />
+                  </p>
+                </td>
+                <td></td>
+                <td></td>
+                <td>
+                  <p class="c1">
+                    <b> Class 1</b><br />
+                    <b> Topic</b>:Apptitude <br />
+                    <b> Faculty </b>: Harish <br />
+                    <b> Duration </b>:40 Min<br />
+                    <b>Zoom </b
+                    ><a
+                      href="https://www.google.com/url?q=https://us06web.zoom.us/j/85780334304?pwd%3DeDFQS2NOMDQ3UmYxQzRlQzB1S1V1UT09&sa=D&source=calendar&usd=2&usg=AOvVaw1xNxy0oQUBPDUtOnUmEGKs"
+                      >click</a
+                    ><br />
+                  </p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="pages">
+          <nav aria-label="...">
+            <ul class="pagination">
+              <li class="page-item disabled">
+                <span class="page-link">Previous</span>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <li class="page-item active" aria-current="page">
+                <span class="page-link">2</span>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item">
+                <a class="page-link" href="#">Next</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <script src="../calendar.js"></script>
+  </body>
+</html>

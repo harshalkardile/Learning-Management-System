@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard</title>
+  <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+  <link rel="stylesheet" th:href="@{https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css}">
+  <link rel="stylesheet" th:href="@{https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css}">
+  <link rel="stylesheet" href="" th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css}"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <link th:href="@{https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css}" rel="stylesheet" />
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+  <link th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css}" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <!-- <base href="http://127.0.0.1:5500/FacultyLogin.html" target="_parent"> -->
+
+
+  <script>
+    /* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+    </script>
+  <style>
+
+
+.dropdowne ul li a{
+    color: #fff;
+       font-size: 12px;
+
+}
+
+
+.dropdowne ul li a i{
+    color: #fff;
+       font-size: 20px;
+
+}
+.dropdowne a{
+
+font-size: 16px;
+    margin-right: 7rem;
+
+}
+
+
+.dropdowne ul{
+
+    width: 12rem;
+    left: 90rem;
+
+}
+
+    </style>
+</head>
+
+<body>
+<div id="content">
+  <input type="checkbox" id="checkbox">
+  <header class="header">
+    <h2 alignment="left" class="u-name">
+      <button id="menubtn" style="">
+        <i id="navbtn" class="fa fa-bars" aria-hidden="true"> <label for="checkbox">
+          SIDE<b>Menu</b>  </label> </i>
+      </button>
+    </h2>
+
+
+    <!--            <h5 th:text="${session.userfirstname}"-->
+    <!--                style="position: absolute;left: 91rem;top:8px;"-->
+    <!--            >-->
+
+
+    <!--    </h5>-->
+    <div class="dropdowne" z-index="5">
+      <a class=" dropdown-toggle me-5" data-bs-toggle="dropdown" aria-expanded="true" th:text="${session.userfirstname}">
+
+      </a>
+      <ul class="dropdown-menu" >
+        <li><a class="dropdown-item " th:href="@{/deskfeedback}" >
+          <i class="bi bi-pencil-square" aria-hidden="true"></i>
+          <span>Feedback</span>
+
+        </a>
+        </li>
+        <li><a class="dropdown-item" th:href="@{/profileindex}">
+          <i class="bi bi-person-circle"></i>
+          <span>Profile</span>
+
+        </a></li>
+        <li>
+          <a class="dropdown-item" href="/logout">
+            <i class="bi bi-box-arrow-left" aria-hidden="true"></i>
+            <span>Logout</span>
+          </a>
+        </li>
+
+      </ul>
+    </div>
+    <!--            <div class="vr"></div>-->
+
+
+
+    <!--            <a th:href="@{/profileindex}">-->
+    <!--            <i class="fa fa-user" aria-hidden="true"></i>-->
+    <!--            </a>-->
+
+
+
+  </header>
+  <div class="body">
+    <nav class="side-bar" id="sidebar">
+      <div class="user-p">
+        <a th:href="@{/Admin}" id="pos" >
+                       <span>
+                       <img
+
+                               th:src="@{/img/asdrlogo1.jpg}"
+                               alt="ASDR InfoTech"
+
+
+                       ></span>
+
+        </a>
+        <a th:href="@{/Admin}" class="text-decoration-none">
+
+          <h6 th:text="${#authentication.name}" class="text-light">ASDR</h6>
+        </a>
+      </div>
+      <ul >
+
+
+        <div class="accordion-flush" id="accordionFlushExample">
+          <li class="--bs-dark--bs-dark-rgb accordion-item">
+            <a  class="accordion-header d-flex" style="color:#eee;"  >
+              <i class="fa fa-desktop" aria-hidden="true"></i>
+              <span class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseOne" aria-expanded="false"
+                    aria-controls="flush-collapseOne">
+                                Dashboard</span>
+
+
+            </a>
+          <li  id="flush-collapseOne" class="accordion-collapse collapse --bs-dark--bs-dark-rgb" data-bs-parent="#accordionFlushExample" sec:authorize="hasRole('ROLE_ADMIN') or hasRole('ROLE_TEACHER') ">
+            <a th:href="@{/TeacherDesk}" class="accordion-body d-flex" style="color:#eee;">
+              <i class="fa fa-user-circle" aria-hidden="true"></i>
+              <span>Teacher</span>
+            </a>
+          </li>
+          <li id="flush-collapseOne" class="accordion-collapse collapse --bs-dark--bs-dark-rgb" data-bs-parent="#accordionFlushExample" sec:authorize="hasRole('ROLE_ADMIN') or hasRole('ROLE_STUDENT')">
+            <a th:href="@{/StudentDesk}" class="accordion-body d-flex" style="color:#eee;">
+              <i class="fa fa-user-circle" aria-hidden="true"></i>
+              <span>Student</span>
+            </a>
+          </li>
+
+
+
+
+
+          </li></div>
+
+        <div class="btn-group dropend" sec:authorize="hasRole('ROLE_ADMIN')">
+
+          <li alignment="left">
+            <a href="./index.html"  th:href="@{./Admin}">
+              <i class="fa fa-user" aria-hidden="true"></i>
+              <span class="link">Admin</span>
+            </a>
+
+          </li>
+          <button  type="button"
+                   class="btn btn-secondary dropdown-toggle b1" data-bs-toggle="dropdown" aria-expanded="false">
+          </button>
+          <ul class="dropdown-menu ul1" >
+            <li class="w3-container w3-red">
+              <a class="dropdown-item" th:href="@{/indexforteacher}" style="font-size: 15px">
+                <i class="bi bi-briefcase-fill" aria-hidden="true"></i>
+                <span class="link">Faculty</span></a
+              >
+            </li>
+
+
+            <li>
+              <a
+                      class="dropdown-item"
+                      th:href="@{/indexforstudent}"
+                      target="_self"
+                      style="font-size: 15px"
+              >
+                <i class="bi bi-people" aria-hidden="true"></i>
+                <span class="link">Student</span></a
+              >
+            </li>
+          </ul>
+
+
+
+
+          <!--                        <li class="nav-item" >-->
+          <!--                            <a class="nav-link menu-link collapsed" href="#customization" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="customization">-->
+          <!--                                <i alignment="left" class="fa fa-user" aria-hidden="true"></i> <span class="link">Admin</span>-->
+          <!--                            </a>-->
+          <!--                            <div class="menu-dropdown collapse" id="customization" bis_skin_checked="1" style="">-->
+          <!--                                <ul class="nav nav-sm flex-column" style="background-color: #262931">-->
+          <!--                                    <li class="nav-item " >-->
+
+          <!--                                        <a  th:href="@{/indexforteacher}" style="font-size: 15px"  href="#" class="nav-link">-->
+          <!--                                            <i class="bi bi-briefcase-fill" aria-hidden="true"></i>-->
+          <!--                                            <span class="link">Faculty</span></a>-->
+          <!--                                    </li>-->
+          <!--                                    <li class="nav-item">-->
+
+          <!--                                        <a style="font-size: 15px" th:href="@{/indexforstudent}" href="#" class="nav-link">-->
+          <!--                                            <i class="bi bi-people" aria-hidden="true"></i>-->
+          <!--                                            <span class="link">Student</span></a>-->
+          <!--                                    </li>-->
+
+          <!--                                </ul>-->
+          <!--                            </div>-->
+          <!--                        </li>-->
+
+        </div>
+
+
+        <li>
+          <a th:href="@{/classroom}">
+            <i class="bi bi-building-fill" aria-hidden="true"></i>
+            <span>Classroom</span>
+          </a>
+        </li>
+
+        <li>
+          <a th:href="@{/coursespage}">
+            <i class="bi bi-ui-radios-grid" aria-hidden="true"></i>
+            <span>Courses</span>
+
+          </a>
+        </li>
+
+
+
+
+
+        <li>
+          <a th:href="@{/deskclasswork}">
+            <i class="bi bi-list-task" aria-hidden="true"></i>
+            <span>Classworks</span>
+          </a>
+        </li>
+
+        <li>
+          <a th:href="@{/deskassesments}">
+            <i class="bi bi-book-half" aria-hidden="true"></i>
+            <span>Assessment</span>
+          </a>
+        </li>
+
+
+
+
+        <!--                    <li>-->
+        <!--                        <a th:href="@{/deskfeedback}">-->
+        <!--                            <i class="bi bi-pencil-square" aria-hidden="true"></i>                            <span>Feedback</span>-->
+        <!--                        </a>-->
+        <!--                    </li>-->
+
+
+        <li>
+          <a th:href="@{/librarydesk}" >
+            <i class="bi bi-journal-richtext" aria-hidden="true"></i>
+            <span>Library</span>
+          </a>
+        </li>
+
+
+        <li>
+          <a href="/logout">
+            <i class="bi bi-box-arrow-left" aria-hidden="true"></i>
+            <span>Logout</span>
+          </a>
+        </li>
+
+
+      </ul>
+    </nav>
+    <section class="section-1">
+
+      <div
+              id="Container"
+              style="padding-bottom:56.25%; position:relative; display:block; width:100%; heigth:100%"
+      >
+        <iframe
+                id="UstreamIframe"
+                th:src="@{/classroompage1}  "
+                width="100%" height="100%"
+                style="position:absolute; top:0; left: 0"
+                allowfullscreen
+                webkitallowfullscreen
+                frameborder="0"
+
+                referrerpolicy="no-referrer-when-downgrade"
+        >
+        </iframe>
+      </div>
+
+<!--      th:replace="~{ /LMS/classroom/classpathtable :: pathtable }"-->
+<!--      <div th:replace="~{header :: header}">...</div>&ndash;&gt;-->
+<!--      <div >-->
+<!--        <iframe-->
+
+<!--                th:src="@{/classroompage1}  " src="/classroompage1"-->
+<!--                style="margin: auto"-->
+
+
+<!--        ></iframe>-->
+<!--        &lt;!&ndash; <h1><button type="button" class="btn btn-outline-dark" ><b class="started">Get Started</b> </button></h1> &ndash;&gt;-->
+
+<!--        &lt;!&ndash;<h1>LEARNING MANAGEMENT SYSTEM</h1>&ndash;&gt;-->
+
+<!--        &lt;!&ndash; </div>-->
+<!--                  <div><h1 class="started"><button type="button" class="btn btn-outline-dark" ><b >Get Started</b> </button></h1>-->
+<!--              </div> &ndash;&gt;-->
+<!--      </div>-->
+
+
+        <!-- <h1><button type="button" class="btn btn-outline-dark" ><b class="started">Get Started</b> </button></h1> -->
+
+        <!--<h1>LEARNING MANAGEMENT SYSTEM</h1>-->
+
+
+      <!-- <div><h1 class="started"><button type="button" class="btn btn-outline-dark" ><b >Get Started</b> </button></h1>
+  </div> -->
+
+
+
+    </section>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script> -->
+</body>
+<script>
+$(function() {
+    $('#menubtn').on('click', function() {
+        $('#sidebar, #content').toggleClass('active');
+    });
+});
+</script>
+
+</html>

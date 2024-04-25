@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MESSAGES FOR Student Detial</title>
+    <!-- Google fonts -->
+    <link href="//fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Template CSS Style link -->
+    <link rel="stylesheet" th:href="@{/assets/css/style-starter.css}">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+<!-- header -->
+<!--&lt;!&ndash;<div th:replace="~{header :: header}">...</div>&ndash;&gt;-->
+<!--&lt;!&ndash; //header &ndash;&gt;-->
+
+<!--&lt;!&ndash; inner banner &ndash;&gt;-->
+<!--<section class="inner-banner py-5">-->
+<!--    <div class="w3l-breadcrumb py-lg-5">-->
+<!--        <div class="container pt-4 pb-sm-4">-->
+<!--            <h4 class="inner-text-title pt-5">Contact Messages</h4>-->
+<!--            <ul class="breadcrumbs-custom-path">-->
+<!--                <li><a th:href="@{/home}">Home</a></li>-->
+<!--                <li class="active"><i class="fas fa-angle-right"></i>Messages</li>-->
+<!--            </ul>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
+<!-- //inner banner -->
+
+<div class="site-section card border-light ">
+
+    <div class="table-responsive-md card-header "  style="    background-color: rgb(42 62 82 / 12%);">
+        <div class="row mb-4">
+            <div class="col-md-7">
+                <h3 class="heading-21921">Student Detail</h3>
+            </div>
+        </div>
+        <ul>
+            <li style="font-size:11px;padding: 0px 0 0px;" class="alert alert-danger" role="alert"
+                th:each="error : ${#fields.errors('std.*')}" th:text="${error}"/>
+        </ul>
+<!--        <th:block th:if="${session.sms}">-->
+<!--            <p class="text-center fs-4 text-success">[[${session.sms}]]</p>-->
+<!--            <th:block th:text="${#session.removeAttribute('sms')}"></th:block>-->
+<!--        </th:block>-->
+
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary ms-0 mb-2" data-bs-toggle="modal" data-bs-target="#exampleModal">&plus;&nbsp;&nbsp;&nbsp;ADD STUDENT
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+               <!--                <form th:action="@{/public/addstudent}" id="form" name="myForm" method="POST" action="#" th:object="${studentMsgs}" >-->
+                <div class="modal-content">
+                    <form th:action="@{/public/addstudent}" id="form" name="myForm" method="POST" action="#" th:object="${std}" >
+
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Add STUDENT</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+<!--                    <form th:action="@{/addstudent}" id="form" name="myForm" method="POST" action="#" th:object="${studentMsgs}" >-->
+
+                <div class="modal-body">
+
+
+                        <input type="text"     th:field="*{fname}" class="form-control mb-3" placeholder="Enter your first name" aria-describedby="addon-wrapping" required>
+                          <input type="text"    th:field="*{lname}" class="form-control mb-3" placeholder="Enter your last name" aria-describedby="addon-wrapping" required>
+                          <input type="text"   th:field="*{email}" class="form-control mb-3" placeholder="Email Id" aria-describedby="addon-wrapping" required>
+                          <input type="password"   th:field="*{pwd}" class="form-control mb-3"  placeholder="Password" aria-describedby="addon-wrapping" required>
+                    <input type="password"    cc th:field="*{confirmPwd}" class="form-control mb-3"  placeholder="Confrim Password" aria-describedby="addon-wrapping" required>
+
+                    <input type="text" th:field="*{mob}" class="form-control mb-3" aria-label="Username" placeholder="Mobile No" aria-describedby="addon-wrapping" required>
+
+
+
+
+                        <select class="form-select" aria-label="Default select example" th:field="*{gender}"  >
+                            <option selected value="NULL">Please Select Gender </option>
+                            <option value="M" th:field="*{gender}" >Male</option>
+                            <option value="F" th:field="*{gender}" >Female</option>
+
+                        </select>
+
+
+
+
+
+
+                    </div>
+
+
+
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save changes</button>
+                    </div>
+
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+
+<div class="card-body" >
+        <table class="table table-striped table-hover">
+            <thead class="table-dark">
+            <tr>
+                <th scope="col">First Name</th>
+                <th scope="col">Second Name</th>
+                <th scope="col">Email ID</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Mobile No</th>
+                <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="msg: ${studentMsgs}">
+<!--                <td th:text="${msg.Roles.roleId}"></td>-->
+                <td th:text="${msg.fname}"></td>
+                <td th:text="${msg.lname}"></td>
+                <td th:text="${msg.email}"></td>
+                <td th:text="${msg.gender}"></td>
+                <td th:text="${msg.mob}"></td>
+
+                <td>
+                    <a th:href="@{/public/updatestudent/{id}(id=${msg.id})}" class="btn btn-primary">Update</a>
+                    <a th:href="@{/public/deletestudent/{id}(id=${msg.id})}"  class="btn btn-secondary">Delete</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+</div>
+
+    <div class="col-md-2 login-center text-start">
+        <a th:href="@{/Admin}">
+            <button class="btn btn-info btn-style-3 text-left">← &nbsp;&nbsp;BACK</button>
+        </a>
+    </div></div>
+</div>
+
+<!-- footer block -->
+<!--<div th:replace="~{footer :: footer}">...</div>-->
+<!-- //footer block -->
+
+<!-- Js scripts -->
+<!-- move top -->
+<button onclick="topFunction()" id="movetop" title="Go to top">
+    <span class="fas fa-level-up-alt" aria-hidden="true"></span>
+</button>
+<script>
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () {
+            scrollFunction()
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("movetop").style.display = "block";
+            } else {
+                document.getElementById("movetop").style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+<!-- //move top -->
+
+<!-- common jquery plugin -->
+<!--<script src="assets/js/jquery-3.3.1.min.js"></script>-->
+<!-- //common jquery plugin -->
+
+<!-- theme switch js (light and dark)-->
+<!--<script src="assets/js/theme-change.js"></script>-->
+<!-- //theme switch js (light and dark)-->
+
+<!-- MENU-JS -->
+<script>
+        $(window).on("scroll", function () {
+            var scroll = $(window).scrollTop();
+
+            if (scroll >= 80) {
+                $("#site-header").addClass("nav-fixed");
+            } else {
+                $("#site-header").removeClass("nav-fixed");
+            }
+        });
+
+        //Main navigation Active Class Add Remove
+        $(".navbar-toggler").on("click", function () {
+            $("header").toggleClass("active");
+        });
+        $(document).on("ready", function () {
+            if ($(window).width() > 991) {
+                $("header").removeClass("active");
+            }
+            $(window).on("resize", function () {
+                if ($(window).width() > 991) {
+                    $("header").removeClass("active");
+                }
+            });
+        });
+    </script>
+<!-- //MENU-JS -->
+
+<!-- disable body scroll which navbar is in active -->
+<script>
+        $(function () {
+            $('.navbar-toggler').click(function () {
+                $('body').toggleClass('noscroll');
+            })
+        });
+    </script>
+<!-- //disable body scroll which navbar is in active -->
+
+<!-- bootstrap -->
+<!--<script src="assets/js/bootstrap.min.js"></script>-->
+<!-- //bootstrap -->
+<!-- //Js scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+<script>
+
+    const myModal = document.getElementById('myModal')
+const myInput = document.getElementById('myInput')
+
+myModal.addEventListener('shown.bs.modal', () => {
+  myInput.focus()
+})
+</script>
+</body>
+
+</html>

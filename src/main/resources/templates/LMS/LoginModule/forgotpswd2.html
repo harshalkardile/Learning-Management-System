@@ -1,0 +1,169 @@
+<! DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+   <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Reset password
+ </title>
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+<!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">-->
+<!--<script defer src="scriptps.js"></script>-->
+<!--<script>
+   function vali()
+                        {
+ 
+                                 var name=document.getElementById("p").value;
+                                 //var password=document.getElementById("password").value;
+ 
+                                 if(name.length==0)
+                                         {
+                                                 alert("Please Enter the Username!!!");
+                                                 return false;
+                                         }
+                         }
+                   </script>-->
+                  <script type = "text/javascript">
+                     function validate() {
+                     
+                        //if(document.myForm.p.value == "") {
+                          //alert( "Text field must be filled" );
+                          //document.myForm.Name.focus();  
+                          //return false;
+                        //}
+                        if(document.myForm.p.value.length == 0) {
+                          alert( "Please enter your Email id " )
+                          return false;
+                        }
+                        if(document.myForm.p.value.length <= 5) {
+                          alert( "Email id can't be less than 5 chars" )
+                          return false;
+                        }
+                        if(document.myForm.p.value.length >= 35) {
+                          alert( "Email id should be less than 30 chars" )
+                          return false;
+                        }
+                        if(document.myForm.p.value.search(/[@]/) == -1) {
+                          alert( "Email id must included @" );  
+                          return false;
+                        }
+                        
+                        //if(document.myForm.p.value.search(/[a-z]/) == -1) {
+                          //alert( "Please enter atleast one Lowercase value" );
+                          //document.myForm.Name.focus();  
+                          //return false;
+                        //}
+                        //if(document.myForm.p.value.search(/[A-Z]/) == -1) {
+                          //alert( "Please enter atleast one Uppercase value" );
+                          //document.myForm.Name.focus();  
+                          //return false;
+                        //}
+                        //if(document.myForm.p.value.search(/[!\@\#\$\%\^\&]/) == -1) {
+                         // alert( "Please enter special character between!~@~#~$~%~^~&" );
+                          //document.myForm.Name.focus();  
+                          //return false;
+                       // }
+                  //     if(document.myForm.p.value.length <=8 ) {
+                    //      alert( "Email Id must be Longer than 8 characters" );
+                      //    document.myForm.Name.focus();
+                        //  return false;
+                       // }
+                        //if(document.myForm.p.value.length >= 30 ) {
+                          //alert( "Email Id must be Less than 30 characters" );
+                         // document.myForm.Name.focus();
+                         // return false;
+                        //}
+                    
+                     }
+                     //if(onclick==1){
+                       // location.replace("http://localhost:5500/mail.html")
+                     //}
+               </script>
+</head>
+
+<style>
+   
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+}
+
+html{ 
+   height: 100%; 
+   scroll-behavior: auto;
+}
+body{ 
+   height: 100%; 
+}
+
+.global-container {
+   height: 100%;
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background: linear-gradient(135deg, #262931, #EEE9E9);
+}
+
+form {
+   padding-top: 30px;
+   font-size: 14px;
+   margin-top: 10px;
+}
+.form-group{
+   padding-top: 10px;
+   padding-bottom: 5px;
+}
+.card-title { 
+font-weight: 350;
+ }
+.btn {
+   width: 100%;
+   font-size: 14px;
+   margin-top: 0px;
+   margin-bottom: 10px;
+}
+.login-form { 
+   width: 350px;
+   margin: 100px;
+   border-radius: 10px;
+
+}
+.sign-up {
+   text-align: center;
+   padding: 10px 0 0;
+}
+.alert {
+   margin-bottom: -30px;
+   font-size: 13px;
+   margin-top: 100px;
+}
+</style>
+<body>
+<div class="abc">
+  <div class="global-container">
+   <div class="card login-form">
+   <div class="card-body">
+      <h3 class="card-title text-center"> Reset password </h3>
+      <div class="card-text">
+         <form id="form" name="myForm" action="" method="GET" th:action="@{/MailSentS}">
+            <!--<div class="form-group">
+               <label for="exampleInputEmail1"> Enter EmailID </label>
+               <input type="email" class="form-control form-control-sm" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+            </div>-->
+
+            <div class="form-group" >
+               <label id="exampleInputPassword1">Enter Email ID </label>
+               <input type="email" name="p" class="form-control form-control-sm" id="exampleInputPassword" required minlength="5" maxlength="20">
+            </div>
+            <p style="float:inherit;font-size:10px;padding: 0px 0 10px;">&nbsp;&#x2022; Enter your registered EmailID.</p></center>
+            <center><button type="submit" onclick="return validate()"  class="btn btn-primary btn-block">Get Link </button></center>
+         </form>
+      </div>
+   </div>
+</div>
+</div>
+</div></body>
+</html>

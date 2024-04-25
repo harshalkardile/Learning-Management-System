@@ -1,0 +1,128 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="./src/calendar-gc.css">
+    <style>
+      html,
+      body {
+        margin: 0;
+        display: flexbox;
+        justify-content: end;
+        width: 1450px;
+        max-height: 700px;
+        overflow-x: hidden;
+      }
+    </style>
+  </head>
+
+  <body marginheight="200">
+    <div id="calendar" style="padding: 1rem"><div class="gc-calendar"><div class="gc-calendar-header"><span class="gc-calendar-month-year"><span class="month">March</span><span class="year"> 2023</span></span><button type="button" class="prev">&lt;</button><button type="button" class="next">&gt;</button></div><table class="calendar slide-in-left" style=""><thead><tr><th class="dayname">Sun</th><th class="dayname">Mon</th><th class="dayname">Tue</th><th class="dayname">Wed</th><th class="dayname">Thu</th><th class="dayname">Fri</th><th class="dayname">Sat</th></tr></thead><tbody><tr><td class="day prev-month"><a type="button" class="btn-gc-cell"><span class="day-number" style="">26</span></a></td><td class="day prev-month"><a type="button" class="btn-gc-cell"><span class="day-number" style="">27</span></a></td><td class="day prev-month"><a type="button" class="btn-gc-cell"><span class="day-number" style="">28</span></a></td><td class="day current-month"><a type="button" class="btn-gc-cell"><span class="day-number" style="">1</span></a></td><td class="day current-month"><a type="button" class="btn-gc-cell"><span class="day-number" style="">2</span></a></td><td class="day current-month"><a type="button" class="btn-gc-cell"><span class="day-number" style="">3</span></a></td><td class="day current-month event"><a type="button" class="btn-gc-cell"><span class="day-number" style="color:red">4</span></a><div class="gc-event undefined">undefined</div></td></tr><tr><td class="day current-month event"><a type="button" class="btn-gc-cell"><span class="day-number" style="color:red">5</span></a><div class="gc-event undefined"> </div></td><td class="day current-month"><a type="button" class="btn-gc-cell today"><span class="day-number" style="">6</span></a></td><td class="day current-month"><a type="button" class="btn-gc-cell"><span class="day-number" style="">7</span></a></td><td class="day current-month"><a type="button" class="btn-gc-cell"><span class="day-number" style="">8</span></a></td><td class="day current-month"><a type="button" class="btn-gc-cell"><span class="day-number" style="">9</span></a></td><td class="day current-month"><a type="button" class="btn-gc-cell"><span class="day-number" style="">10</span></a></td><td class="day current-month event"><a type="button" class="btn-gc-cell"><span class="day-number" style="color:red">11</span></a><div class="gc-event undefined">undefined</div></td></tr><tr><td class="day current-month event"><a type="button" class="btn-gc-cell"><span class="day-number" style="color:red">12</span></a><div class="gc-event undefined"> </div></td><td class="day current-month"><a type="button" class="btn-gc-cell"><span class="day-number" style="">13</span></a></td><td class="day current-month"><a type="button" class="btn-gc-cell"><span class="day-number" style="">14</span></a></td><td class="day current-month"><a type="button" class="btn-gc-cell"><span class="day-number" style="">15</span></a></td><td class="day current-month"><a type="button" class="btn-gc-cell"><span class="day-number" style="">16</span></a></td><td class="day current-month"><a type="button" class="btn-gc-cell"><span class="day-number" style="">17</span></a></td><td class="day current-month event"><a type="button" class="btn-gc-cell"><span class="day-number" style="color:red">18</span></a><div class="gc-event undefined">undefined</div></td></tr><tr><td class="day current-month event"><a type="button" class="btn-gc-cell"><span class="day-number" style="color:red">19</span></a><div class="gc-event undefined"> </div></td><td class="day current-month"><a type="button" class="btn-gc-cell"><span class="day-number" style="">20</span></a></td><td class="day current-month"><a type="button" class="btn-gc-cell"><span class="day-number" style="">21</span></a></td><td class="day current-month"><a type="button" class="btn-gc-cell"><span class="day-number" style="">22</span></a></td><td class="day current-month"><a type="button" class="btn-gc-cell"><span class="day-number" style="">23</span></a></td><td class="day current-month"><a type="button" class="btn-gc-cell"><span class="day-number" style="">24</span></a></td><td class="day current-month event"><a type="button" class="btn-gc-cell"><span class="day-number" style="color:red">25</span></a><div class="gc-event undefined">undefined</div></td></tr><tr><td class="day current-month event"><a type="button" class="btn-gc-cell"><span class="day-number" style="color:red">26</span></a><div class="gc-event undefined"> </div></td><td class="day current-month"><a type="button" class="btn-gc-cell"><span class="day-number" style="">27</span></a></td><td class="day current-month"><a type="button" class="btn-gc-cell"><span class="day-number" style="">28</span></a></td><td class="day current-month"><a type="button" class="btn-gc-cell"><span class="day-number" style="">29</span></a></td><td class="day current-month"><a type="button" class="btn-gc-cell"><span class="day-number" style="">30</span></a></td><td class="day current-month"><a type="button" class="btn-gc-cell"><span class="day-number" style="">31</span></a></td><td class="day next-month"><a type="button" class="btn-gc-cell"><span class="day-number" style="">1</span></a></td></tr></tbody></table></div></div>
+  
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  
+  <script src="./dist/calendar-gc.min.js"></script>
+  <script>
+    $(function (e) {
+      var calendar = $("#calendar").calendarGC({
+        dayBegin: 0,
+        prevIcon: "&#x3c;",
+        nextIcon: "&#x3e;",
+        onPrevMonth: function (e) {
+          console.log("prev");
+          console.log(e);
+        },
+        onNextMonth: function (e) {
+          console.log("next");
+          console.log(e);
+        },
+        events: getHoliday(),
+        onclickDate: function (e, data) {
+          console.log(e, data);
+        },
+      });
+    });
+        function getHoliday() {
+      var d = new Date();
+      var totalDay = new Date(d.getFullYear(), d.getMonth(), 0).getDate();
+      var events = [];
+      // if(newDate==$_SESSION['date']){
+
+
+
+      // }
+
+
+
+      
+      for (var i = 1; i <= totalDay; i++) {
+        var newDate = new Date(d.getFullYear(), d.getMonth(), i);
+       
+       
+      //   switch (newDate) {
+      //   case :
+          
+      //     break;
+      
+      //   default:
+      //     break;
+      // }
+        if (newDate.getDay() == 0) {
+          //if Sunday
+          events.push({
+            date: newDate,
+            eventName: " ",
+            
+            
+              
+                onclick(e, data) {
+              console.log(data);
+            },
+            dateColor: "red",
+          });
+        }
+        if (newDate.getDay() == 6) {
+          //if Saturday
+          events.push({
+            date: newDate,
+            // eventName: "NO Class",
+
+            // className: "badge bg-danger",
+            onclick(e, data) {
+              console.log(data);
+            },
+            dateColor: "red",
+          });
+        }
+        if (newDate.getDay() < 6  && newDate.getDay > 0 && newDate.getDate()==$_SESSION['date'] ){
+          //if Saturday
+          events.push({
+            
+            eventName: "class id : qqw2233<br>topic : qqw2233<br>class id : qqw2233<br>class id : qqw2233<br>",
+// className: "badge bg-danger",
+            onclick(e, data) {
+              console.log(data);
+            },
+            
+          });
+        }
+
+        //  $_SESSION['id']=$id;
+        //         $_SESSION['topic']=$topic;
+        //         $_SESSION['time']=$duration;
+        //         $_SESSION['link']=$zlink;
+        //         $_SESSION['date']=$datetime;
+
+        //  
+
+        // if()
+      }
+      return events;
+    }
+
+    getHoliday();
+  </script>
+
+</body></html>

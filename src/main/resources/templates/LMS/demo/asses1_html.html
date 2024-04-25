@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <form method="post" action=""> -->
+    <select name="cars" id="cars">
+      <option>Volvo</option>
+      <option>Saab</option>
+      <option>Opel</option>
+      <option>Audi</option></select
+    ><br />
+    <p id="s5"></p>
+    <br />
+    qty <input type="number" id="s2" /><br />
+
+    piece rs <input type="number" id="s3" /><br />
+    total price
+    <input type="text" id="s4" /><br />
+    discount
+    <input type="text" id="s1" /><br />
+    <button type="submit" name="submit" onclick=" return dick();">submit</button
+    ><br />
+    <button type="reset" name="reset">reset</button><br />
+    <!-- </form> -->
+    <script>
+      function dick() {
+        var item = document.getElementById("cars").value;
+        // alert(item);
+        var qty = document.getElementById("s2").value;
+        var p = document.getElementById("s3").value;
+        switch (item) {
+          case "Volvo":
+            document.getElementById("s4").value = qty * p;
+            var tr = qty * p;
+            document.getElementById("s1").value = (tr * 8) / 100;
+            break;
+          case "Saab":
+            document.getElementById("s4").value = qty * p;
+            break;
+          case "Opel":
+            document.getElementById("s4").value = qty * p;
+            break;
+          case "Audi":
+            document.getElementById("s4").value = qty * p;
+            break;
+          default:
+            document.getElementById("s5").innerHTML = "not selected any item";
+        }
+      }
+    </script>
+  </body>
+</html>

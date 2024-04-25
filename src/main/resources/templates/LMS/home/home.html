@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+
+    <link
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../../static/css/style.css" />
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <!-- <base href="http://127.0.0.1:5500/FacultyLogin.html" target="_parent"> -->
+  </head>
+
+  <body>
+    <input type="checkbox" id="checkbox" />
+    <header class="header">
+      <h2 alignment="left" class="u-name">
+        <label for="checkbox">
+          <i id="navbtn" class="fa fa-bars" aria-hidden="true">
+            SIDE <b>Menu</b></i
+          ></label
+        >
+      </h2>
+      <i class="fa fa-user" aria-hidden="true"></i>
+    </header>
+    <div class="body">
+      <nav class="side-bar">
+        <div class="user-p">
+          <img src="../img/asdrlogo1.jpg" />
+          <h4>ASDR</h4>
+        </div>
+        <ul>
+          <li class="--bs-dark--bs-dark-rgb">
+            <a href="../index.html">
+              <i class="fa fa-desktop" aria-hidden="true"></i>
+              <span>Dashboard</span>
+            </a>
+          </li>
+
+          <div class="btn-group dropend">
+            <li alignment="left">
+              <a href="#">
+                <i class="fa fa-user" aria-hidden="true"></i>
+                <span class="link">Admin</span>
+              </a>
+            </li>
+            <button
+              style="background-color: #262931; border-color: #262931"
+              type="button"
+              class="btn btn-secondary dropdown-toggle"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            ></button>
+            <ul class="dropdown-menu" style="background-color: #262931">
+              <li class="w3-container w3-red">
+                <a class="dropdown-item" href="#" style="font-size: 15px">
+                  <i class="bi bi-briefcase-fill" aria-hidden="true"></i>
+                  <span class="link">Faculty</span></a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="../Login/deskLogin.html"
+                  target="_self"
+                  style="font-size: 15px"
+                >
+                  <i class="bi bi-people" aria-hidden="true"></i>
+                  <span class="link">Student</span></a
+                >
+              </li>
+            </ul>
+
+            <!-- <li>
+						<a href="#">
+							<i class="bi bi-briefcase-fill" aria-hidden="true"></i>
+							<span class="link">Faculty</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<i class="bi bi-people" aria-hidden1="true"></i>
+							<span class="link">Student</span>
+						</a>
+					</li> -->
+          </div>
+
+          <li>
+            <a href="#THIS PAGE IS A CLASSROOM">
+              <i class="bi bi-building-fill" aria-hidden="true"></i>
+              <span>classroom</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              <i class="bi bi-ui-radios-grid" aria-hidden="true"></i>
+              <span>Courses</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              <i class="bi bi-journal-richtext" aria-hidden="true"></i>
+              <span>Library</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              <i class="bi bi-journal-richtext" aria-hidden="true"></i>
+              <span>Assignments</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <section class="section-1">
+        <!-- <script type="text/javascript" src="../Library/ASSSADP.js"></script>
+        <script type="text/javascript">
+          function renderPDF(url, canvasContainer, options) {
+            var options = options || { scale: 1 };
+
+            function renderPage(page) {
+              var viewport = page.getViewport(options.scale);
+              var canvas = document.createElement("canvas");
+              var ctx = canvas.getContext("2d");
+              var renderContext = {
+                canvasContext: ctx,
+                viewport: viewport,
+              };
+
+              canvas.height = viewport.height;
+              canvas.width = viewport.width;
+              canvasContainer.appendChild(canvas);
+              page.render(renderContext);
+            }
+            function renderPages(pdfDoc) {
+              for (var num = 1; num <= pdfDoc.numPages; num++)
+                pdfDoc.getPage(num).then(renderPage);
+            }
+
+            PDFJS.disableWorker = true;
+
+            PDFJS.getDocument(url).then(renderPages);
+          }
+        </script>
+        <div id="holder"></div>
+        <script type="text/javascript">
+          renderPDF("sample.pdf", document.getElementById("holder"));
+        </script> -->
+        <!-- 
+        <embed
+          src="../Library/ASSSADP.pdf#toolbar=0&navpanes=0&scrollbar=0"
+          type="application/pdf"
+          width="100%"
+          height="100%"
+        /> -->
+        <!-- <embed scrolling="none" src="#" width="1400" height="900" style="margin-bottom:10%"> -->
+        <!-- <h1><button type="button" class="btn btn-outline-dark" ><b class="started">Get Started</b> </button></h1> -->
+
+        <!--<h1>LEARNING MANAGEMENT SYSTEM</h1>-->
+
+        <!-- </div>
+					<div><h1 class="started"><button type="button" class="btn btn-outline-dark" ><b >Get Started</b> </button></h1>
+				</div> -->
+      </section>
+      <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"
+      ></script>
+    </div>
+  </body>
+</html>

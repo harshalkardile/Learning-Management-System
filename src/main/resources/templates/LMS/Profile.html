@@ -1,0 +1,269 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+-->
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LMS Profile</title>
+    <!-- Google fonts -->
+    <link href="//fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Template CSS Style link -->
+    <link rel="stylesheet" href="/assets/css/style-starter.css">
+</head>
+
+<body>
+
+<!-- header -->
+<!--<div th:replace="~{header :: header}">...</div>-->
+<!-- //header -->
+
+<!-- inner banner -->
+<!--<section class="inner-banner py-5">-->
+<!--    <div class="w3l-breadcrumb py-lg-5">-->
+<!--        <div class="container pt-4 pb-sm-4">-->
+<!--            <h4 class="inner-text-title pt-5">Profile</h4>-->
+<!--            <ul class="breadcrumbs-custom-path">-->
+<!--                <li><a th:href="@{/home}">Home</a></li>-->
+<!--                <li class="active"><i class="fas fa-angle-right"></i>Profile</li>-->
+<!--            </ul>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
+<!-- //inner banner -->
+
+<!-- profile block -->
+<section class="w3l-addBookModel py-5" id="addBookModel">
+    <div class="container py-md-5 py-4">
+        <div class="title-main text-center mx-auto mb-md-5 mb-4" style="max-width:500px;">
+            <h3 class="title-style">My Profile</h3>
+        </div>
+        <div class="row login-block">
+            <div class="col-md-7 login-center">
+
+                <ul>
+                    <li class="alert alert-danger" role="alert" th:each="error : ${#fields.errors('profile.*')}" th:text="${error}" />
+                </ul>
+
+
+                    <th:block th:if="${session.msg}">
+                      <li class="text-center fs-4 text-success alert alert-success">[[${session.msg}]]</li>
+<!--                      <th:block th:text = "${#session.removeAttribute('msg')}" ></th:block>-->
+                        <a style="
+    position: sticky;
+    left: 71rem;
+        bottom: 40.9rem;
+
+    font-size: 23px;"  th:href="@{/remove}">&times;</a>
+                    </th:block>
+
+
+<!--                <div th:if="${showMessage}" class="message">-->
+<!--                    <li class="text-center fs-4 text-success alert alert-success " th:text="${mass}"></li>-->
+<!--                </div>-->
+
+
+                <form th:action="@{/updateProfile}" method="post" class="signin-form" th:object="${profile}">
+                    <div class="title-main text-center mx-auto mb-md-5 mb-4" style="max-width:500px;">
+                        <h5 class="footer-title-29" >ID :- <span th:text="${profile.profileid}"></span></h5>
+
+                    </div>
+                    <div class="title-main text-center mx-auto mb-md-5 mb-4" style="max-width:500px;">
+                        <h5 class="footer-title-29">Personal Details</h5>
+                    </div>
+                    <div class="input-grids">
+                      <div class="form-input"
+
+                      >
+
+
+                          <label class="control-label" for="name"
+                                 >Name:</label>
+                        <input type="text" th:readonly="true"
+                            th:field="*{name}" id="name" class="addBookModel-input"
+
+                        />
+
+                       </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <label class="control-label" for="mobileNumber">Mobile Number:</label>
+                                <input type="text" th:field="*{mobileNumber}" id="mobileNumber"
+                                       class="addBookModel-input" />
+                            </div>
+                            <div class="col-sm-6">
+                                <label class="control-label" for="email">Email:</label>
+                                <input type="text" th:field="*{email}" id="email"
+                                       class="addBookModel-input" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="title-main text-center mx-auto mb-md-5 mb-4" style="max-width:500px;">
+                        <h5 class="footer-title-29">Address Details</h5>
+                    </div>
+                    <div class="input-grids">
+                        <label class="control-label form-floating" for="address1">Address Line 1:</label>
+                        <input type="text" th:field="*{address1}" id="address1" class="addBookModel-input" />
+                        <label for="address2">Address Line 2:</label>
+                        <input type="text" th:field="*{address2}" id="address2" class="addBookModel-input" />
+                        <label class="control-label" for="city">City:</label>
+                        <input type="text" th:field="*{city}" id="city" class="addBookModel-input" />
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <label class="control-label" for="floatingSelect" >State:</label>
+                                <select class="form-select" id="floatingSelect" aria-label="Floating label select example"
+                                        th:field="*{state}"
+                                        style="height: 3.5rem;"
+                                >
+                                        <option value="">Open this select State</option>
+                                        <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                                        <option value="Assam">Assam</option>
+                                        <option value="Bihar">Bihar</option>
+                                        <option value="Chhattisgarh">Chhattisgarh</option>
+                                        <option value="Goa">Goa</option>
+                                        <option value="Gujarat">Gujarat</option>
+                                        <option value="Haryana">Haryana</option>
+                                        <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                        <option value="Jharkhand">Jharkhand</option>
+                                        <option value="Karnataka">Karnataka</option>
+                                        <option value="Kerala">Kerala</option>
+                                        <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                        <option value="Maharashtra">Maharashtra</option>
+                                        <option value="Manipur">Manipur</option>
+                                        <option value="Meghalaya">Meghalaya</option>
+                                        <option value="Mizoram">Mizoram</option>
+                                        <option value="Nagaland">Nagaland</option>
+                                        <option value="Odisha">Odisha</option>
+                                        <option value="Punjab">Punjab</option>
+                                        <option value="Rajasthan">Rajasthan</option>
+                                        <option value="Sikkim">Sikkim</option>
+                                        <option value="Tamil Nadu">Tamil Nadu</option>
+                                        <option value="Telangana">Telangana</option>
+                                        <option value="Tripura">Tripura</option>
+                                        <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                        <option value="Uttarakhand">Uttarakhand</option>
+                                        <option value="West Bengal">West Bengal</option>
+                                        <option value="Chandigarh">Chandigarh</option>
+
+
+                                </select>
+
+                            </div>
+                            <div class="col-sm-6">
+                                <label class="control-label" for="zipCode">Zip Code:</label>
+                                <input type="text" th:field="*{zipCode}" id="zipCode"
+                                       class="addBookModel-input"  />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8 login-center text-start ">
+                        <button class="btn btn-style  btn-style-3  text-center" style="margin-left: 16rem;">Update</button>
+<!--                        <a th:href="@{#!}" class="new-user text-right">-->
+<!--                            <button class="btn btn-style btn-style-3 text-left" th:formaction="@{/Admin}">BACK</button></a>-->
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- //profile block -->
+
+<!-- footer block -->
+<!--<div th:replace="~{footer :: footer}">...</div>-->
+<!-- //footer block -->
+
+<!-- Js scripts -->
+<!-- move top -->
+<button onclick="topFunction()" id="movetop" title="Go to top">
+    <span class="fas fa-level-up-alt" aria-hidden="true"></span>
+</button>
+<script>
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () {
+            scrollFunction()
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("movetop").style.display = "block";
+            } else {
+                document.getElementById("movetop").style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+<!-- //move top -->
+
+<!-- common jquery plugin -->
+<script src="/assets/js/jquery-3.3.1.min.js"></script>
+<!-- //common jquery plugin -->
+
+<!-- theme switch js (light and dark)-->
+<script src="/assets/js/theme-change.js"></script>
+<!-- //theme switch js (light and dark)-->
+
+<!-- MENU-JS -->
+<script>
+        $(window).on("scroll", function () {
+            var scroll = $(window).scrollTop();
+
+            if (scroll >= 80) {
+                $("#site-header").addClass("nav-fixed");
+            } else {
+                $("#site-header").removeClass("nav-fixed");
+            }
+        });
+
+        //Main navigation Active Class Add Remove
+        $(".navbar-toggler").on("click", function () {
+            $("header").toggleClass("active");
+        });
+        $(document).on("ready", function () {
+            if ($(window).width() > 991) {
+                $("header").removeClass("active");
+            }
+            $(window).on("resize", function () {
+                if ($(window).width() > 991) {
+                    $("header").removeClass("active");
+                }
+            });
+        });
+    </script>
+<!-- //MENU-JS -->
+
+<!-- disable body scroll which navbar is in active -->
+<script>
+        $(function () {
+            $('.navbar-toggler').click(function () {
+                $('body').toggleClass('noscroll');
+            })
+        });
+
+
+
+
+    </script>
+<!-- //disable body scroll which navbar is in active -->
+<script th:inline="javascript">
+       setTimeout(function() {
+           document.querySelector('.message').style.display = 'none';
+       }, 500000); // Set the time (in milliseconds) after which the message should vanish (e.g., 5000 ms = 5 seconds)
+   </script>
+<!-- bootstrap -->
+<script src="/assets/js/bootstrap.min.js"></script>
+<!-- //bootstrap -->
+<!-- //Js scripts -->
+</body>
+
+</html>

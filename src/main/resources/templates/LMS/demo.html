@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dashboard</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="../../static/css/style.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+</head>
+<body>
+	
+	<header class="header">
+		<h2 class="u-name">SIDE <b>BAR</b>
+			<label for="checkbox" >
+				<i id="navbtn" class="fa fa-bars" aria-hidden="true"></i>
+			</label>
+		</h2>
+		<i class="fa fa-user" aria-hidden="true"></i>
+	</header>
+	<div class="body">
+		<nav class="side-bar">
+			<div class="user-p">
+				<img  width="200px"  src="img/user.jpg">
+				
+			</div>
+			<ul>
+				<li>
+					<a href="#">
+						<i class="fa fa-desktop" aria-hidden="true"></i>
+						<span>Dashboard</span>
+					</a>
+				</li>
+				<li class="nav-item dropdown">
+					<a href="attendanceAdmin.php" class="nav-link text-dark ropdown-toggle" data-bs-toggle="dropdown"
+						aria-expanded="false">
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+							class="bi bi-person-check" viewBox="0 0 16 16">
+							<path
+								d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm1.679-4.493-1.335 2.226a.75.75 0 0 1-1.174.144l-.774-.773a.5.5 0 0 1 .708-.708l.547.548 1.17-1.951a.5.5 0 1 1 .858.514ZM11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" />
+							<path
+								d="M8.256 14a4.474 4.474 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10c.26 0 .507.009.74.025.226-.341.496-.65.804-.918C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4s1 1 1 1h5.256Z" />
+						</svg>
+						<!-- <i class="fa fa-file mr-3 text-primary fa-fw"></i> -->
+						Attendance
+					</a>
+					<ul class="dropdown-menu">
+						<li><a class="dropdown-item" href="attendanceAdmin.php">In Time</a></li>
+						<li><a class="dropdown-item" href="attendanceOutTimeAdmin.php">Out Time</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">
+						<i class="fa fa-comment-o" aria-hidden="true"></i>
+						<span>Comment</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<i class="fa fa-info-circle" aria-hidden="true"></i>
+						<span>About</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<i class="fa fa-cog" aria-hidden="true"></i>
+						<span>Setting</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<i class="fa fa-power-off" aria-hidden="true"></i>
+						<span>Logout</span>
+					</a>
+				</li>
+			</ul>
+		</nav>
+		
+	</div>
+	<div class="dropdown show">
+		<a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		  Dropdown link
+		</a>
+	  
+		<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+		  <a class="dropdown-item" href="#">Action</a>
+		  <a class="dropdown-item" href="#">Another action</a>
+		  <a class="dropdown-item" href="#">Something else here</a>
+		</div>
+	  </div>
+
+	  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+</body>
+</html>

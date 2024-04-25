@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Dashboard</title>
+	<!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+	<link rel="stylesheet" th:href="@{https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css}">
+	<link rel="stylesheet" th:href="@{https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css}">
+	<link rel="stylesheet" href="" th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css}"
+		  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+	<link th:href="@{https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css}" rel="stylesheet" />
+	<link rel="stylesheet" th:href="@{/css/style.css}">
+	<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+	<link th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css}" rel="stylesheet"
+		  integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+	<!-- <base href="http://127.0.0.1:5500/FacultyLogin.html" target="_parent"> -->
+
+
+	<script>
+    /* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+    </script>
+
+</head>
+
+<body>
+<div id="content">
+	<input type="checkbox" id="checkbox">
+	<header class="header">
+		<h2 alignment="left" class="u-name">
+
+			<button id="menubtn" style="background:#262931;border:#262931;border-radius:10px;">
+				<i id="navbtn" class="fa fa-bars" aria-hidden="true"> <label for="checkbox">
+					SIDE<b>Menu</b>  </label> </i>
+			</button>
+		</h2>
+		<i class="fa fa-user" aria-hidden="true">
+
+
+		</i>
+	</header>
+	<div class="body">
+		<nav class="side-bar" id="sidebar">
+			<div class="user-p">
+				<img src=""
+					 th:src="@{/img/asdrlogo1.jpg }"
+					 alt="">
+				<h4>ASDR</h4>
+			</div>
+			<ul>
+				<li class="--bs-dark--bs-dark-rgb">
+					<a th:href="@{./Admin}" href="">
+						<i class="fa fa-desktop" aria-hidden="true"></i>
+						<span>Dashboard</span>
+					</a>
+				</li>
+
+				<div class="btn-group dropend">
+
+					<li alignment="left">
+						<a href="./index.html"  th:href="@{./Admin}">
+							<i class="fa fa-user" aria-hidden="true"></i>
+							<span class="link">Admin</span>
+						</a>
+
+					</li>
+					<button style="background-color:#262931;border-color: #262931;" type="button"
+							class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+					</button>
+					<ul class="dropdown-menu" style="background-color: #262931">
+						<li class="w3-container w3-red">
+							<a class="dropdown-item" href="#" style="font-size: 15px">
+								<i class="bi bi-briefcase-fill" aria-hidden="true"></i>
+								<span class="link">Faculty</span></a
+							>
+						</li>
+						<li>
+							<a
+									class="dropdown-item"
+									th:href="@{/DLogin}"
+									target="_self"
+									style="font-size: 15px"
+							>
+								<i class="bi bi-people" aria-hidden="true"></i>
+								<span class="link">Student</span></a
+							>
+						</li>
+					</ul>
+					<!-- <li>
+                    <a href="#">
+                        <i class="bi bi-briefcase-fill" aria-hidden="true"></i>
+                        <span class="link">Faculty</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="bi bi-people" aria-hidden1="true"></i>
+                        <span class="link">Student</span>
+                    </a>
+                </li> -->
+				</div>
+
+
+				<li>
+					<a href="./classroom/classroompahe.html">
+						<i class="bi bi-building-fill" aria-hidden="true"></i>
+						<span>classroom</span>
+					</a>
+				</li>
+
+				<li>
+					<a href="./Courses/Coursehome.html">
+						<i class="bi bi-ui-radios-grid" aria-hidden="true"></i>
+						<span>Courses</span>
+
+					</a>
+				</li>
+
+				<li>
+					<a href="./Library/desklibrary.html">
+						<i class="bi bi-journal-richtext" aria-hidden="true"></i>
+						<span>Library</span>
+					</a>
+				</li>
+
+
+
+
+
+				<li>
+					<a href="#">
+						<i class="bi bi-journal-richtext" aria-hidden="true"></i>
+						<span>Assignments</span>
+					</a>
+				</li>
+
+
+			</ul>
+		</nav>
+		<section class="section-1">
+
+<!--			<embed scrolling="yes" th:src="@{/Login}" src="" width="1400" height="830">-->
+			<div
+					id="Container"
+					style="padding-bottom:56.25%; position:relative; display:block; width:100%; heigth:100%"
+			>
+				<iframe
+						id="UstreamIframe"
+						th:src="@{/Login}"  src="/classroompage1"
+						width="100%" height="100%"
+						style="position:absolute; top:0; left: 0"
+						allowfullscreen
+						webkitallowfullscreen
+						frameborder="0"
+						referrerpolicy="no-referrer-when-downgrade"
+				>
+				</iframe>
+			</div>
+
+		</section>
+	</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script> -->
+</body>
+<script>
+$(function() {
+    $('#menubtn').on('click', function() {
+        $('#sidebar, #content').toggleClass('active');
+    });
+});
+</script>
+
+</html>

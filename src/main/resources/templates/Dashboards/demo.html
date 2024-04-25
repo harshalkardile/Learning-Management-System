@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+  let str = "welcome @ ASDR on 06-04-2023";
+
+let capitalLetters = 0;
+let smallLetters = 0;
+let digits = 0;
+let spaces = 0;
+let specialChars = 0;
+let length = str.length;
+
+for (let i = 0; i < length; i++) {
+  let char = str[i];
+  if (char >= "A" && char <= "Z") {
+    capitalLetters++;
+  } else if (char >= "a" && char <= "z") {
+    smallLetters++;
+  } else if (char >= "0" && char <= "9") {
+    digits++;
+  } else if (char === " ") {
+    spaces++;
+  } else {
+    specialChars++;
+  }
+}
+
+document.write("Number of capital letters:  " + capitalLetters+"<br>");
+document.write("Number of small letters:  " + smallLetters+"<br>");
+document.write("Number of digits:  " + digits+"<br>");
+document.write("Number of spaces:  " + spaces+"<br>");
+document.write("Number of special characters:  " + specialChars+"<br>");
+document.write("Overall length of the string:  " + length+"<br>");
+
+</script>
+</body>
+</html>

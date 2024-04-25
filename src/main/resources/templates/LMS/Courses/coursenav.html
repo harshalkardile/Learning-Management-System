@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+  />
+  <link
+          rel="stylesheet"
+          href="path/to/font-awesome/css/font-awesome.min.css"
+  />
+
+  <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
+  />
+  <link
+          href="https://getbootstrap.com/docs/5.3/assets/css/docs.css"
+          rel="stylesheet"
+  />
+  <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+
+  <!-- <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
+  /> -->
+  <!-- <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"
+  />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
+  <link rel="stylesheet" href="../../../static/css/style.css" />
+  <title>Courses</title>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+  <style>
+      .list-group > * {
+        margin-left: 5%;
+        text-align: center;
+      }
+      body {
+          background: linear-gradient(to left,#4F709C,#025464);
+      }
+      h1 {
+        text-decoration: #defcf9;
+        text-decoration-color: #defcf9;
+        color: #defcf9;
+      }
+      .checked {
+        color: orange;
+      }
+      ul,
+      .card-body {
+        background-color: #defcf9;
+        grid-auto-flow: row;
+            padding: 5px;
+      }
+      ul {
+        position: inherit;
+        align-items: baseline;
+      }
+      .scroll-container > * {
+        display: flex;
+        /* width: 100px; */
+        flex-wrap: wrap;
+
+        flex-direction: row;
+        overflow: visible;
+        justify-items: center;
+        justify-content: evenly-between;
+        padding-left: 30px;
+      }
+
+      @media screen and (max-width: 575px) {
+        .scroll-container {
+          min-width: 12px;
+        }
+      }
+
+      /* use {
+        align-self: auto;
+        align-items: baseline;
+
+        justify-content: flex-start;
+      } */
+
+      .rating {
+        position: relative;
+        top: 50%;
+        padding-right: 175px;
+        transform: translate(-50%, -50%) rotateY(180deg);
+        display: grid;
+        grid-auto-flow: column;
+        grid-column: auto;
+        padding-bottom: 15px;
+        /* padding-left: 100px; */
+      }
+      .rating input {
+        display: none;
+      }
+      .rating label {
+        display: flex;
+        cursor: pointer;
+        width: 50px;
+        padding-right: 5px;
+        /* padding-left: 10px; */
+      }
+
+      .colk {
+
+    width: 370px;
+    padding-right: 0;
+    padding-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+
+}
+      }
+      .modal-header {
+  background-color: darkblue;
+  color: white;
+}
+      .rating label:before {
+        content: "\f005";
+        font-family: fontAwesome;
+        position: relative;
+        display: block;
+        font-size: 10px;
+        opacity: 0;
+        color: #101010;
+      }
+
+      .rating label:after {
+        content: "\f005";
+        font-family: fontAwesome;
+        position: absolute;
+        display: block;
+        font-size: 20px;
+        color: #1f9cff;
+        opacity: 1;
+        transition: 0.5s;
+        text-shadow: 0 2px Spx rgba(0, 0, 0, 0.5);
+      }
+      .rating label:hover:after,
+      .rating label:hover ~ label:after,
+      .rating input:checked ~ label:after {
+        opacity: 1;
+      }
+      .rate {
+        position: absolute;
+        padding-left: 14rem;
+        padding-top: 0mm;
+        font-size: 20px;
+      }
+      .rupees {
+        font-size: 20px;
+      }
+
+
+      .Abutton{
+          margin-left: 26px;
+          padding: 0;
+
+      }
+    </style>
+</head>
+
+<body class="p-3 m-0 border-0 bd-example">
+<!-- Example Code -->
+<div style="scroll-snap-type: y; overflow-x: hidden; height: 750px">
+  <div>
+    <h1>What to learn next</h1>
+<!--    <th:block th:if="${session.msg}">-->
+<!--      <p class="text-center fs-4 text-success">[[${session.msg}]]</p>-->
+<!--      <th:block th:text="${#session.removeAttribute('msg')}"></th:block>-->
+<!--    </th:block>-->
+    <button type="button" class="btn btn-info rounded-pill ms-auto mb-4 me-5" data-bs-toggle="modal" data-bs-target="#exampleModal" style="
+    margin-block-end: 100px;
+    display: grid;
+    margin-top: -53px;
+    ace-around;
+    align-items: start;
+    justify-items: center;
+    justify-content: space-between;
+"       sec:authorize="hasRole('ROLE_ADMIN')"        >
+      &plus; &nbsp;&nbsp;Add Cards
+    </button>
+
+
+
+    <!-- Modal -->
+    <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog ">
+        <div class="modal-content" style="
+    background:   cadetblue;
+">
+
+          <form th:action="@{/coursesupload}" enctype="multipart/form-data"  method="post"  th:object="${card}" >
+
+            <div class="modal-header">
+              <h1 class="modal-title fs-5 " id="exampleModalLabel">Add Course Card</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+
+            <div class="modal-body">
+              <input type="file" name="updata" class="form-control mb-3" placeholder="Image" aria-describedby="addon-wrapping"  accept="image/x-png,image/gif,image/jpeg" required>
+              <input type="text" th:field="*{cctitle}" class="form-control mb-3" placeholder="title" aria-describedby="addon-wrapping" required>
+              <textarea  rows="5" th:field="*{ccdescrip}" cols="30" minlength="10" maxlength="100"></textarea>
+              <input type="text" th:field="*{cclink}" class="form-control mb-3" placeholder="link" aria-describedby="addon-wrapping" required>
+              <input type="text" th:field="*{videolink}" class="form-control mb-3" placeholder="link" aria-describedby="addon-wrapping" required>
+              <input type="text" th:field="*{pdflink}" class="form-control mb-3" placeholder="link" aria-describedby="addon-wrapping" required>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary">Save changes</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+
+
+  <div class="row row-cols-1 row-cols-md-4 g-4 scroll-container" style="
+                  display: flex;
+                  flex-wrap: wrap;
+                  align-content: center;
+                  justify-content: flex-start;
+                  align-items: flex-start;
+                  ">
+
+
+    <!--        <div class="colk">-->
+    <!--          <div class="card" style="width: 430px">-->
+    <!--            <img src="../img/book2.jpg" class="card-img-top" alt="..." />-->
+    <!--            <div class="card-body">-->
+    <!--              <h5 class="card-title">-->
+    <!--                The Complete 2023 Web-->
+    <!--              </h5>-->
+    <!--              <p class="card-text">-->
+    <!--                Some quick example text to build on the card-->
+    <!--              </p>-->
+    <!--            </div>-->
+
+    <!--            <div class="card-body">-->
+    <!--              <a-->
+    <!--                      th:href="@{/coursedetail}"-->
+    <!--                class="btn btn-gradient-light btn-icon btn-icon-right btn-sm"-->
+    <!--              >-->
+    <!--                View<i class="bi bi-caret-right-fill"></i>-->
+    <!--              </a>-->
+    <!--            </div>-->
+    <!--          </div>-->
+    <!--        </div>-->
+
+    <div class="colk ms-3 mb-3" th:each="msg: ${cardMsgs}"  >
+      <div class="card" style="width: 330px">
+        <img th:src="@{'/image/'+${msg.ccimage}}" class="card-img-top" alt="..."  height="270px" width="250px"/>
+
+        <div class="card-body">
+          <h5 class="card-title" th:text="${msg.cctitle}" >
+            <!--                The Complete 2023 Web Development Bootcamp-->
+          </h5>
+          <p class="card-text" th:text="${msg.ccdescrip}">
+            <!--                Some quick example text to build on the card title and make up-->
+            <!--                the bulk of the card's content.-->
+          </p>
+        </div>
+
+        <div class="card-body" sec:authorize="hasRole('ROLE_ADMIN')">
+          <a th:href="@{/editform/{id}(id=${msg.cc_id})}" class="Abutton">
+            <button type="button"  class="btn btn-info ms-auto mb-4 " data-bs-toggle="modal" data-bs-target="#exampleModal2" sec:authorize="hasRole('ROLE_ADMIN')">
+              UPDATE
+            </button></a>
+          <a th:href="@{/deleteform/{id}(id=${msg.cc_id})}" class="ml-auto align-item-end Abutton" >
+            <button type="button"  class="btn  btn-danger ms-auto mb-4" data-bs-toggle="modal" onclick="alert('Are you sure you want to Delete a Card?)" data-bs-target="#exampleModal2" sec:authorize="hasRole('ROLE_ADMIN')" >
+              DELETE
+            </button></a>
+          <a th:href="@{/viewStudents(id=${msg.cc_id})}" class="ml-auto align-item-end Abutton" >
+            <button type="button"  class="btn btn-info ms-auto mb-4" data-bs-toggle="modal" onclick="alert('Are you sure you want to Delete a Card?)" data-bs-target="#exampleModal2" sec:authorize="hasRole('ROLE_ADMIN')" >
+              View
+            </button></a>
+        </div>
+
+
+
+
+
+
+        <a
+                th:href="@{/courseDetials/{id}(id=${msg.cc_id})}"
+                class="btn btn-gradient-light btn-icon btn-icon-right btn-sm"
+        >
+          View<i class="bi bi-caret-right-fill"></i>
+
+        </a>
+
+
+      </div>
+    </div>
+
+
+
+
+
+  </div>
+
+</div>
+</div>
+<!-- End Example Code -->
+<script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"
+></script>
+</body>
+</html>
